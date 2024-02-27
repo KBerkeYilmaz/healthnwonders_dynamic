@@ -1,0 +1,26 @@
+section.blog-grid.pb-50
+    .container
+        .row
+            .col-sm-12.col-md-12.col-lg-6.offset-lg-3
+                .heading.text-center.mb-40
+                    h2.heading__subtitle Blog
+                    h3.heading__title Son Makaleler
+        .row
+            //- Post Items
+            each blog in blogs.slice(-3)
+                .col-sm-12.col-md-6.col-lg-4
+                        .post-item
+                            .post__img
+                                a(href=`/blog/${blog.name.split(' ').join('-')}`)
+                                    img(src="/images/blog/grid/kilo_verme_yolculugu.png", alt="post image", loading="lazy")
+                            .post__body
+                                .post__meta-cat(style="opacity: 0")
+                                    a(href="#") Tüp Mide Ameliyatı
+                                .post__meta.d-flex
+                                    span.post__meta-date 30 Ocak 2022
+                                h4.post__title
+                                    a(href=`/blog/${blog.name.split(' ').join('-')}`)= blog.name
+                                .post__desc= blog.thumbnailDescription
+                                a(href=`/blog/${blog.name.split(' ').join('-')}`, class="btn btn__secondary btn__link btn__rounded")
+                                    span Devamını oku
+                                    i.icon-arrow-right

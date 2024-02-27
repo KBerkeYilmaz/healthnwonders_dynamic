@@ -1,0 +1,38 @@
+script(src="/javascripts/jquery-3.5.1.min.js")
+script(src="/javascripts/plugins.js")
+script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
+script(src="/javascripts/main.js").
+  | $(document).ready(function () {
+  |   $("#imageModal").hide();
+  |   // Variables to store drag start and end positions
+  |   let startX, startY, endX, endY;
+  |
+  |   // Mouse or touch start event
+  |   $(".member__img img").on("mousedown touchstart", function (event) {
+  |     // Normalize event location
+  |     startX = event.pageX || event.originalEvent.touches[0].pageX;
+  |     startY = event.pageY || event.originalEvent.touches[0].pageY;
+  |   });
+  |
+  |   // Mouse or touch end event
+  |   $(".member__img img").on("mouseup touchend", function (event) {
+  |     // Normalize event location
+  |     endX = event.pageX || event.changedTouches[0].pageX;
+  |     endY = event.pageY || event.changedTouches[0].pageY;
+  |
+  |     // Check if the drag distance is small enough to be considered a click
+  |     if (Math.abs(startX - endX) < 10 && Math.abs(startY - endY) < 10) {
+  |       // Set the src of the clicked image to the modal image src
+  |       $("#img01").attr("src", $(this).attr("src"));
+  |       // Set the alt text of the clicked image as the caption
+  |       $("#caption").text($(this).attr("alt"));
+  |       // Display the modal
+  |       $("#imageModal").css("display", "block");
+  |     }
+  |   });
+  |
+  |   // Close modal on clicking the close button
+  |   $(".close-modal").click(function () {
+  |     $("#imageModal").css("display", "none");
+  |   });
+  | });

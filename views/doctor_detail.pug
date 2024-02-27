@@ -1,0 +1,112 @@
+
+extends layout
+
+block content
+    //- ===========================
+    //- page title 
+    //- ===========================
+
+    section.page-title.page-title-layout5
+      .bg-img
+        img(src="/images/backgrounds/6.jpg", alt="background")
+      .container
+        .row
+          .col-12
+            h1.pagetitle__heading= doctor.name
+            nav
+              ol.breadcrumb.mb-0
+                li.breadcrumb-item
+                  a(href="/") Ana Sayfa
+                li.breadcrumb-item
+                  a(href="#") Doktorumuz
+                li.breadcrumb-item.active(aria-current="page")= doctor.name
+    //- ===========================
+    //- content
+    //- ===========================
+
+    section.pt-120.pb-80(style="background-color: #f8f8f8;")
+      .container
+        .row
+          .col-sm-12.col-md-12.col-lg-4
+            aside.sidebar.has-marign-right
+              .widget.widget-member
+                .member.mb-0
+                  .member__img
+                    img(src="/images/team/isaktasdemir-1.webp", alt="member img")
+                  .member__info
+                    h5.member__name
+                      a(href="#")= doctor.name
+                    p.member__job= doctor.specialty
+                    //- p.member__desc Brian specializes in treating skin, hair, nail, and mucous membrane. He also address cosmetic issues, helping to revitalize the appearance of the skin
+              .widget.widget-help.bg-overlay.bg-overlay-primary-gradient
+                .bg-img
+                  img(src="/images/banners/5.jpg", alt="background")
+                .widget-content
+                  .widget__icon
+                    i.icon-call3
+                  h4.widget__title Hızlı İletişim
+                  p.widget__desc Sorularınız varsa veya yardıma ihtiyacınız varsa, ekibimizle iletişime geçebilirsiniz.
+                  a(href="tel:+905319831396", class="phone__number")
+                    i.icon-phone
+                    span +90 531 983 1396
+              .widget.widget-schedule
+                .widget-content
+                .widget__icon
+                    i.icon-charity2
+                h4.widget__title Çalışma Saatleri
+                ul.time__list.list-unstyled.mb-0
+                    li
+                    span Pazartesi - Cuma
+                    span 8.00 - 19:00
+                    li
+                    span Cumartesi
+                    span 9.00 - 22:00
+                    li
+                    span Pazar
+                    span 10.00 - 00:00
+              .widget.widget-reports
+                a(href="appointment.html", class="btn btn__primary btn__block")
+                  span Randevu Oluşturun
+          .col-sm-12.col-md-12.col-lg-8
+            //- Biography
+            .text-block.mb-50
+              h5.text-block__title Biografi
+              p.text-block__desc.mb-20.font-weight-bold.color-secondary= doctor.bio 
+
+            //- Experience Section (Commented Out)
+            .text-block.mb-40
+              h5.text-block__title Deneyim
+              //- p.text-block__desc.mb-20 She then went to LSU Medical School in New Orleans where she...
+
+            //- Timeline Wrapper
+            .timeline-wrapper.mb-60
+              each experience in doctor.experiences
+                .timeline-item.d-flex
+                  span.timeline__year #{experience.startDate} 
+                  .timeline__body
+                    h4.timeline__title #{experience.title}
+                    if experience.description
+                      p.timeline__desc #{experience.description}
+
+
+            //- Expertise List
+            ul.details-list.list-unstyled.mb-60
+              li
+                h5.details__title Uzmanlık Alanları
+                .details__content
+                  ul.list-items.list-items-layout2.list-unstyled.mb-0
+                    each interest in doctor.interests
+                      li= interest.title
+
+              li
+                h5.details__title Ofis
+                .details__content
+                  p.mb-0= doctor.location
+
+              li
+                h5.details__title Eğitim
+                .details__content.d-flex.flex-column
+                  each education in doctor.education
+                    p.mb-0= education.title
+                    
+                  

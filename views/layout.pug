@@ -1,0 +1,18 @@
+doctype html
+html
+  include includes/head.pug
+  body
+    .wrapper 
+      .preloader
+        .loading 
+          span 
+          span 
+          span 
+          span
+      // navbar
+      include partials/navbar.pug
+      block content
+      include partials/footer.pug
+      block scripts
+
+  include includes/foot.pug

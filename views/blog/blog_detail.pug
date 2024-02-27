@@ -1,0 +1,46 @@
+extends ../layout
+
+block content 
+    section.page-title.pt-30.pb-30.text-center
+        .container
+            .row.align-items-center
+            .col-12
+                nav
+                ol.breadcrumb.mb-0
+                    li.breadcrumb-item
+                        a(href="/") Ana Sayfa
+                    li.breadcrumb-item
+                        a(href="/blog") Blog
+                    li.breadcrumb-item.active(aria-current="page")
+                    | Gastric Sleeve Ameliyatı: Kilo Verme Yolculuğunuzda Neden Bu Yöntemi Seçmelisiniz?
+    section.blog.blog-single.pt-0.pb-80
+        .container
+            .row
+                .col-sm-12.col-md-12.col-lg-8
+                    .post-item.mb-0
+                        .post__img
+                            a(href="#")
+                                img(src="/images/blog/single/kilo_verme_yolculugu.png" alt="post image" loading="lazy")
+                        .post__body.pb-0
+                            .post__meta-cat(style="opacity: 0")
+                                a(href="#") Consulting
+                                a(href="#") Sales
+                            .post__meta.d-flex.align-items-center.mb-20
+                                span.post__meta-date Ocak 20, 2022
+                            h1.post__title.mb-30=blog.name
+                            each item in blog.description
+                                p.post__desc.mb-20= item.title
+                .col-sm-12.col-md-12.col-lg-4
+                    aside.sidebar
+                        .widget.widget-posts
+                            h5.widget__title Son Yazılanlar
+                            .widget__content
+                                each blog in blogs
+                                    .widget-post-item.d-flex.align-items-center
+                                        .widget-post__img
+                                            a(href=`/blog/${blog.name.split(' ').join('-')}`)
+                                                img(src="/images/blog/grid/kilo_verme_yolculugu.png" alt="thumb")
+                                        .widget-post__content
+                                            h4.widget-post__title
+                                                a(href=`/blog/${blog.name.split(' ').join('-')}`)= blog.name
+

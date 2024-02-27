@@ -1,0 +1,226 @@
+extends layout
+
+block content
+  //- Slider
+  section.slider
+    .slick-carousel.m-slides-0(data-slick='{"slidesToShow": 1, "arrows": true, "dots": false, "speed": 700,"fade": true,"cssEase": "linear"}')
+      .slide-item.align-v-h
+        .bg-img
+          img(src="/images/page-titles/landingslider_healthandwonder2.webp" alt="slide img")
+        .container
+          .row.align-items-center
+            .col-sm-12.col-md-12.col-lg-12.col-xl-7
+              .slide__content
+                h2.slide__title Sağlık ve Mucizelerle Dolu Bir Yolculuğa Hazır mısınız?
+                p.slide__desc Uzman doktorlarımız ve modern hastanemizle, sizlere sadece bir tedavi değil, bir deneyim sunuyoruz.
+                .d-flex.flex-wrap.align-items-center
+                  a(href="/appointment" class="btn btn__primary btn__rounded mr-30")
+                    span İletişime Geçin
+                    i.icon-arrow-right
+                  a(href="/services" class="btn btn__white btn__rounded")
+                    span Hizmetlerimiz
+                    i.icon-arrow-right
+  //- About Layout 1
+  section.about-layout1.pb-0
+    .container
+      .row
+        .col-sm-12.col-md-12.col-lg-6
+          .heading-layout2
+            h3.heading__title.mb-40 A BETTER LIFE IS POSSIBLE WITH US
+      .row
+        .col-sm-12.col-md-12.col-lg-6
+          .about__Text
+            p.mb-30 Health and Wonders olarak, hayatınızın en önemli dönüm noktalarında yanınızda olmanın verdiği sorumlulukla hareket ediyoruz.
+            p.mb-30 Sağlık yolculuğunuzda, dil engellerini aşan, 7/24 ulaşılabilir bir hizmet anlayışı ile konfor ve güvenliğinizi en üst düzeyde tutmayı amaçlıyoruz. Bizimle adım atın, daha sağlıklı bir yaşama birlikte yürüyelim.
+            .d-flex.align-items-center.mb-30
+              a(href="about-us.html" class="btn btn__primary btn__outlined btn__rounded mr-30") Hakkımızda
+              img(src="/images/logo/H&W Yatay.png" alt="sub-logo" style="max-width: 130px")
+        .col-sm-12.col-md-12.col-lg-6
+          .video-banner
+            img(src="/images/about/youtube_thumbnail_health2.webp" alt="about")
+            a.video__btn.video__btn-white.popup-video(href="https://www.youtube-nocookie.com/embed/e1WWDCJ0taw?si=UfzM2tsRvD6xmXAx")
+              .video__player
+                i.fa.fa-play
+  //- Features Layout 1
+  section.features-layout1.pt-130.pb-50.mt--90
+    .bg-img
+      img(src="/images/backgrounds/1.jpg" alt="background")
+    .container
+      .row.mb-40
+        .col-sm-12.col-md-12.col-lg-5
+          .heading__layout2
+            h3.heading__title Bizimle Evinizin Konforunu ve Ailenizin Sıcaklığını Deneyimleyin.
+        .col-sm-12.col-md-12.col-lg-5.offset-lg-1
+          p.heading__desc.font-weight-bold İyileşme sürecinizdeki konforunuz ve memnuniyetiniz bizim için en önemli önceliktir. Bu yüzden cerrahımızın dinamik ve enerjik ekibi, hastane konaklamanız boyunca size özel ANA DİLİNİZDE hizmet sunar. Ameliyat öncesi, sırası ve sonrasında her adımda size destek olan bu özel hizmetle, kendinizi güvende ve rahat hissetmeniz garanti. Huzur içinde yolculuğunuza başlamaya hazır mısınız? Bugün Health and Wonders ile iletişime geçin ve hak ettiğiniz bakımı ve desteği size sağlayalım.
+          .d-flex.flex-wrap.align-items-center.mt-40.mb-30
+            a(href="/appointment" class="btn btn__primary btn__rounded mr-30")
+              span Bize Ulaşın
+              i.icon-arrow-right
+      //- features layout        
+      include ./partials/featured.pug
+  section.services-layout2.services-carousel.bg-overlay.bg-overlay-primary.pt-130
+    .bg-img
+      img(src="assets/images/banners/1.jpg", alt="background")
+    .container
+      .row
+        .col-sm-12.col-md-12.col-lg-6
+          .heading-layout1.heading-light.mb-60
+            h3.heading__title Hizmetlerimiz
+            p.heading__desc
+              | Sağlıklı bir kilo verme yolculuğu, estetik bir güzellik dokunuşu ve dengeli vücut hatları için yenilikçi cerrahi çözümlerimizle yanınızdayız.
+      .row
+        .col-12
+          .carousel-container
+            .slick-carousel.carousel-arrows-light.carousel-dots-light(data-slick='{"slidesToShow": 4, "slidesToScroll": 2, "autoplay": true, "arrows": false, "dots": false, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 2}}, {"breakpoint": 767, "settings": {"slidesToShow": 1}}, {"breakpoint": 480, "settings": {"slidesToShow": 1}}]}')
+              // service item #1
+              .service-item
+                .service__img
+                  img(src="/images/services/1.jpg", alt="img", loading="lazy")
+                .service__content
+                  h4.service__title Kilo Verme Ameliyatı
+                  p.service__desc
+                    | Sağlıklı bir yaşam için özelleştirilmiş kilo verme ameliyatlarıyla kendinizi yeniden keşfedin.
+                  br
+                  br
+                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="services.html")
+                    span Okumaya devam et
+                    i.icon-arrow-right
+              // service item #2
+              .service-item
+                .service__img
+                  img(src="/images/services/2.jpg", alt="img", loading="lazy")
+                .service__content
+                  h4.service__title Kozmetik Cerrahi
+                  p.service__desc
+                    | Güzelliğinizi öne çıkaracak kozmetik çözümlerle doğal ve zarif bir görünüme kavuşun.
+                  br
+                  br
+                  br
+                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="services.html")
+                    span Okumaya devam et
+                    i.icon-arrow-right
+              // service item #3
+              .service-item
+                .service__img
+                  img(src="/images/services/3.jpg", alt="img", loading="lazy")
+                .service__content
+                  h4.service__title Göğüs Operasyonu
+                  p.service__desc
+                    | Estetik ve fonksiyonel göğüs operasyonlarıyla vücut hatlarınızı dengeli ve estetik bir şekilde şekillendirin.
+                  br
+                  br
+                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="services.html")
+                    span Okumaya devam et
+                    i.icon-arrow-right
+      .row
+        .col-12.d-flex.justify-content-end.mt--40
+          a.btn.btn__white.btn__link(href="services.html")
+            span Tedavilerimiz
+            i.icon-arrow-right
+  include ./partials/certificates.pug
+  //- Testimonials Layout 1
+  section.testimonials-layout1.pt-130.pb-80
+    .container
+      .testimonials-wrapper
+        .row
+          .col-sm-12.col-md-12.col-lg-7.offset-lg-5
+            .heading-layout2
+              h3.heading__title Hasta Yorumları
+          .col-sm-12.col-md-12.col-lg-5
+            .slider-nav.mb-60
+              each authorThumb in ["1.png", "2.png", "3.png"]
+                .testimonial__meta
+                  .testimonial__thmb
+                    img(src=`/images/testimonials/thumbs/${authorThumb}`, alt="author thumb")
+                  div
+                    h4.testimonial__meta-title Testimonial
+          .col-sm-12.col-md-12.col-lg-7
+            .slider-with-navs
+              each testimonialText, index in ["“Health and Wonders sayesinde hayatım değişti. Gastric Sleeve ameliyatım sonrası, 6 ay içinde kilomda önemli bir azalma yaşadım ve çok daha enerjik hissetmeye başladım. Her adımda yanımda olan ekibe ve harika sonuçlar için cerrahıma minnettarım. Konaklama ve transfer hizmetleri mükemmeldi, kendimi çok rahat hissettim. Ayrıca, ilk ilaç kitimin ücretsiz sağlanması ve sürekli dil desteği, bu yolculukta bana büyük destek oldu.”", "“Kuşadası'ndaki Health and Wonders'da Tummy Tuck ameliyatı oldum ve sonuçlardan çok memnunum. Operasyon sonrası karın bölgemdeki sarkıklık tamamen giderildi ve daha sıkı bir görünüme kavuştum. En çok takdir ettiğim şey, cerrahım ile yüz yüze interaktif iletişim ve toplantı imkanıydı. Ayrıca, hastanede 7/24 yanımda olan refakatçi ve bekleme listesi olmaması süreci çok daha konforlu hale getirdi. Tüm ekip profesyonel ve cana yakındı.”", "“Mastopexia ameliyatım için Health and Wonders'ı seçtim ve kararımın ne kadar doğru olduğunu her geçen gün daha iyi anlıyorum. Ameliyat sonrasında göğüslerimin şekli ve duruşu önemli ölçüde iyileşti, bu da benim özgüvenimi artırdı. Bir yıl boyunca sundukları ücretsiz aftercare hizmeti, iyileşme sürecimi kolaylaştırdı. Havalimanında karşılanmaktan ana dil desteğine kadar her detay düşünülmüştü. Tüm ekip, beklentilerimi aştı ve herkese bu deneyimi yaşamalarını öneririm.”"]
+                .testimonial-item
+                  h3.testimonial__title= testimonialText
+  include ./partials/blog_grid.pug
+  //- Contact Layout 5
+  .contact-layout5.bg-overlay.bg-overlay-blue-gradient.pb-60.pt-130
+    .bg-img
+      img(src="assets/images/banners/3.jpg", alt="banner")
+    .container
+      .row
+        .col-sm-12.col-md-12.col-lg-5.d-flex.flex-column.justify-content-start
+          div
+            .heading.heading-light.mb-30
+              h3.heading__title.mb-30 Global Vizyonumuz: Sağlık Turizminde Yenilik ve Özen
+              p.heading__desc
+                | Global bir marka olma hedefimiz var. Hastalarımıza karar anında ve tedavi sürecinde psikolojik, fiziksel destek sunuyoruz. Sağlık turizminde yenilikçi, özenli yaklaşımla fark yaratmayı amaçlıyoruz.
+            .d-flex.align-items-center.mb-30
+              a.btn.btn__white.btn__white-style2.btn__rounded.mr-30(href="services.html")
+                span Hizmetlerimiz
+                  i.icon-arrow-right
+              a.btn.btn__white.btn__outlined.btn__rounded(href="contact-us.html") İletişim
+          ul.list-items.list-items-layout2.list-items-light.list-horizontal.list-unstyled.mb-50
+            li 1 Yıl Boyunca Ücretsiz 'Aftercare' Hizmeti
+            li Bekleme Listesi Yok
+            li Cerrah ile Yüzyüze Interaktif İletişim ve Toplantı
+            li Hastane Refakatçisi
+            li İlk İlaç Kitinin Ücretsiz Sağlanması
+        .col-sm-12.col-md-12.col-lg-7
+          .contact-panel.mb-50
+            form.contact-panel__form(method="post", action="assets/php/contact.php", id="contactForm")
+              .row
+                .col-sm-12
+                  h4.contact-panel__title Randevu Alın
+                  p.contact-panel__desc.mb-30
+                    | Randevu için bizimle iletişime geçin. Genel ve tıbbi sorularınızda doktorlarımız size yardımcı olacaktır.
+                .col-sm-6.col-md-6.col-lg-6
+                  .form-group
+                    i.icon-widget.form-group-icon
+                    select.form-control
+                      option(value="0") Tedavinizi seçin
+                      option(value="1") Mide küçültme
+                      option(value="2") Mide büyültme
+                      option(value="3") Mide çektirme
+                .col-sm-6.col-md-6.col-lg-6
+                  .form-group
+                    i.icon-user.form-group-icon
+                    select.form-control
+                      option(value="0") Doktorunuzu seçin
+                      option(value="1") İsak Taşdemir
+                .col-sm-6.col-md-6.col-lg-6
+                  .form-group
+                    i.icon-news.form-group-icon
+                    input.form-control(type="text", placeholder="Adı Soyadı", id="contact-name", name="contact-name", required)
+                .col-sm-6.col-md-6.col-lg-6
+                  .form-group
+                    i.icon-email.form-group-icon
+                    input.form-control(type="email", placeholder="E-Posta", id="contact-email", name="contact-email", required)
+                .col-sm-4.col-md-4.col-lg-4
+                  .form-group
+                    i.icon-phone.form-group-icon
+                    input.form-control(type="text", placeholder="Telefon", id="contact-Phone", name="contact-phone", required)
+                .col-sm-4.col-md-4.col-lg-4
+                  .form-group.form-group-date
+                    i.icon-calendar.form-group-icon
+                    input.form-control(type="date", id="contact-date", name="contact-date", placeholder="Tedavi Tarihi", required)
+                .col-sm-4.col-md-4.col-lg-4
+                  .form-group
+                    select.form-control(id="contact-gender", name="contact-gender", aria-placeholder="Cinsiyet", required)
+                      option(value="") Cinsiyet
+                      option(value="erkek") Erkek
+                      option(value="kadin") Kadın
+                      option(value="belirtmek_istemiyor") Belirtmek İstemiyor
+                .col-12
+                  .form-group
+                    i.icon-note.form-group-icon
+                    textarea.form-control(id="contact-special-requests", name="contact-special-requests", placeholder="Özel talepler", rows="3", required, style="padding: 1rem")
+                  .form-check.form-check-inline(style="margin-bottom: 1rem")
+                    input.form-check-input(type="checkbox", id="contact-privacy-agreement", name="contact-privacy-agreement", required)
+                    label.form-check-label(for="contact-privacy-agreement") Gizlilik ve Veri Koruma Onayı
+                  .form-check.form-check-inline(style="margin-bottom: 1rem")
+                    input.form-check-input(type="checkbox", id="contact-privacy-policy", name="contact-privacy-policy", required)
+                    label.form-check-label(for="contact-privacy-policy") Kişisel ve sağlık bilgilerinin korunması ile ilgili gizlilik politikası ve şartlarının okudum
+                .col-12
+                  button.btn.btn__primary.btn__rounded.btn__block.btn__xhight.mt-10(type="submit")
+                    span Randevunuzu Oluşturun
+                      i.icon-arrow-right
+                  .contact-result
+  include ./partials/map.pug

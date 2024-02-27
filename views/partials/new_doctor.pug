@@ -1,0 +1,55 @@
+.container(style='margin-top: 20px;')
+    h1 Yeni Bir Doktor Ekleyin
+    form(method="POST" action="/dashboard/doctors/new")
+        .form-row
+            .form-group.col-md-4
+                label(for="name") İsim:
+                input#name.form-control.form-control-sm(type="text" name="name", required=true style='border-radius:5px;!important')
+            .form-group.col-md-4
+                label(for="specialty") Ana Uzmanlık:
+                input#specialty.form-control.form-control-sm(type="text" name="specialty", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+            .form-group.col-md-4
+                label(for="location") Konum:
+                input#location.form-control.form-control-sm(type="text" name="location", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+            //- .form-group.col-md-2
+            //- label(for="picture") Resim:
+            //- input#picture.form-control(type="file" name="picture", required=false)
+
+        .form-group.mb-2
+            label(for="bio") Biyografi:
+            textarea#bio.form-control(name="bio", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+            //- Dynamic Experience Section
+        #experienceSection
+            h4 Deneyim Bilgileri
+            #exprience-pane.experience-pane.d-flex.flex-column.mb-2
+                .form-row.mb-2.d-inline-flex.align-items-center
+                    .form-group.col-md-2
+                        label(for="experienceStart") Başlangıç Yılı:
+                        input.form-control(type="text" name="experiences[0][startDate]" required=true style='border-radius:5px;!important') 
+                    .form-group.col-md-2
+                        label(for="experienceEnd") Bitiş Yılı:
+                        input.form-control(type="text" name="experiences[0][endDate]" required=true style='border-radius:5px;!important') 
+                    .form-group.col-md-6
+                        label(for="experienceTitle") Deneyim Başlığı:
+                        input.form-control(type="text" name="experiences[0][title]" required=true style='border-radius:5px;!important')
+                    button.btn.btn-primary.col-md-1(type="button" id="addExperienceBtn") +
+
+        //- Dynamic Education Section
+        #educationSection
+            h4 Eğitim Bilgileri
+            .education-pane.d-flex.flex-column.mb-2
+                .form-row.mb-2.d-inline-flex.align-items-center
+                    .form-group.col-md-10
+                        label(for="educationTitle") Eğitim Başlığı:
+                        input.form-control(type="text" name="education[0][title]" required=true style='border-radius:5px;!important')
+                    button.btn.btn-primary.col-md-1(type="button" id="addEducationBtn") +
+        //- Dynamic Interest Section
+        #interestSection.mb-2
+            h4 Uzmanlık Bilgileri
+            .interest-pane.d-flex.flex-column.mb-2
+                .form-row.mb-2.d-inline-flex.align-items-center
+                    .form-group.col-md-10
+                        label(for="interestsTitle") Uzmanlık Başlığı:
+                        input.form-control(type="text" name="interests[0][title]" required=true style='border-radius:5px;!important')
+                    button.btn.btn-primary.col-md-1(type="button" id="addInterestBtn") +
+        button.mb-20.col-12(type="submit" style="background-color: blue; padding: 15px 0; border-radius:5px") Ekle

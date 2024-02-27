@@ -1,0 +1,20 @@
+.container(style='margin-top: 20px;')
+    h1 Yeni Bir Blog Yazısı Ekleyin
+    form(method="POST" action="/dashboard/blog/new")#newBlogForm
+        .form-row
+            .form-group.col-md-4
+                label(for="name") İsim:
+                input#name.form-control.form-control-sm(type="text" name="name", required=true style='border-radius:5px;!important')
+            .form-group.col-md-4
+                label(for="thumbnailName") Önizleme Başlık:
+                input#thumbnail-name.form-control.form-control-sm(type="text" name="thumbnailName", required=true style='border-radius:5px;!important')
+        .form-group.mb-2
+            label(for="thumbnailDescription") Önizleme İçerik:
+            textarea#thumbnail-description.form-control(name="thumbnailDescription", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+
+        .form-group.mb-2
+            label(for="description") İçerik:
+            textarea#description.form-control(name="description[0][title]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+        button.btn.btn-primary.col-md-12(type="button" id="addParagraphBtn" style="margin-bottom:5rem;") Paragraf Ekle
+
+        button.mb-20.col-12(type="submit" style="background-color: blue; padding: 15px 0; border-radius:5px") Blog Ekle

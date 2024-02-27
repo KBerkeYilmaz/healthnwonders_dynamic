@@ -1,0 +1,77 @@
+header.header.header-layout2
+    .header-topbar
+        .container-fluid
+            .row.align-items-center
+                .col-12
+                    .d-flex.align-items-center.justify-content-between
+                        ul.contact__list.d-flex.flex-wrap.align-items-center.list-unstyled.mb-0
+                            li
+                                i.icon-phone
+                                a(href='tel:+905319831396') Acil durum hattı: +90 531 983 1396
+                            li
+                                i.icon-location
+                                span(style='color: white') Konum: Çeltikçi Mahallesi Uludağ Sokak No:5/A Söke/Aydın/TÜRKİYE 09200
+                            li
+                                i.icon-clock
+                                span(style='color: white') Pazartesi - Cuma: 8:00 - 19:00
+                        .d-flex
+                            ul.social-icons.list-unstyled.mb-0.mr-30
+                                li
+                                    a(href='https://www.facebook.com/healthnwonders')
+                                        i.fab.fa-facebook-f
+                                li
+                                    a(href='https://www.instagram.com/healthandwonders/' rel='noopener noreferrer' target='_blank')
+                                        i.fab.fa-instagram
+                                li
+                                    a(href='https://www.tiktok.com/@healthandwonders' rel='noopener noreferrer' target='_blank')
+                                        i.fab.fa-tiktok
+                                li
+                                    a(href='https://www.linkedin.com/company/health-wonders/' rel='noopener noreferrer' target='_blank')
+                                        i.fab.fa-linkedin
+                                li
+                                    a(href='https://twitter.com/healthnwonders' rel='noopener noreferrer' target='_blank')
+                                        i.fab.fa-twitter
+                                li
+                                    a(href='https://www.youtube.com/@HealthandWonders' rel='noopener noreferrer' target='_blank')
+                                        i.fab.fa-youtube
+    nav.navbar.navbar-expand-lg.sticky-navbar
+        .container-fluid
+            a.navbar-brand(href='/')
+                img(src='/images/logo/H&W ikincil.png' alt='logo-brand' style='height: auto; width: 160px')
+            button.navbar-toggler(type='button')
+                span.menu-lines
+                    span 
+            .collapse.navbar-collapse#mainNavigation
+                ul.navbar-nav.ml-auto
+                    li.nav__item
+                        a(href='/' class='nav__item-link') Ana Sayfa
+                    li.nav__item.has-dropdown
+                        a(href='/about-us' data-toggle='dropdown' class='dropdown-toggle nav__item-link') Hakkımızda
+                        ul.dropdown-menu
+                            li.nav__item
+                                a(href='about-us.html' class='nav__item-link') Biz Kimiz?
+                            li.nav__item
+                                a(href='services.html' class='nav__item-link') Hizmetlerimiz
+                            li.nav__item
+                                a(href='faqs.html' class='nav__item-link') Sık Sorulan Sorular
+                    li.nav__item.has-dropdown
+                        a(href='#' data-toggle='dropdown' class='dropdown-toggle nav__item-link') Doktorlarımız
+                        ul.dropdown-menu
+                            each doctor in doctors ? doctors : []
+                                li.nav__item
+                                    //- .split(' ').join('-')
+                                    a(href=`/doctors/${doctor.name.split(' ').join('-')}` class='nav__item-link')= doctor.name
+                    li.nav__item
+                        a(href='/blog' class='nav__item-link') Blog
+                    li.nav__item.has-dropdown
+                        a(href='#' data-toggle='dropdown' class='dropdown-toggle nav__item-link') Tedavilerimiz
+                        ul.dropdown-menu
+                            each treatment in treatments ? treatments : []
+                                li.nav__item
+                                    a(href=`/treatments/${treatment.name.split(' ').join('-')}` class='nav__item-link')= treatment.name
+                    //- li.nav__item
+                    //-     a(href='contact-us.html' class='nav__item-link') Bize Ulaşın
+            .d-none.d-xl-flex.align-items-center.position-relative.ml-0
+                a(href='appointment.html' class='btn btn__primary btn__rounded ml-30')
+                    i.icon-calendar
+                    span Bize Ulaşın

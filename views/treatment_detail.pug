@@ -1,0 +1,152 @@
+
+extends layout
+
+block content
+    //- Page title section
+    section.page-title.page-title-layout2.bg-overlay.text-center.pb-0
+        .bg-img
+            img(src="/images/page-titles/3.jpg" alt="background")
+        .container
+            .row
+            .col-sm-12.col-md-12.col-lg-12.col-xl-8.offset-xl-2
+                .pagetitle__icon
+                    i.icon-microscope
+                h1.pagetitle__heading= treatment.name
+                p.pagetitle__desc.mb-30= treatment.subTitle
+                a(href="#content" class="scroll-down")
+                    i.fas.fa-long-arrow-alt-down
+
+    //- Content section
+    section#content.pb-80
+        .container
+            .row
+                .col-sm-12.col-md-12.col-lg-8
+                    //- Text block section
+                    .text-block.mb-50
+                        p.text-block__desc.mb-20.font-weight-bold.color-secondary= treatment.abstract
+                    //- Video banner section
+                    .video-banner-layout3.bg-overlay.mb-50
+                        img(src="/images/banners/7.jpg" alt="banner")
+                        a(href="https://www.youtube.com/watch?v=nrJtHemSPW4" class="video__btn video__btn-white popup-video")
+                            .video__player
+                                i.fa.fa-play
+                    each item in treatment.description
+                        p.text-block__desc.mb-20= item.title
+                    
+                    //- Additional sections such as "widget-plan", "fancybox-layout1", and sidebar content would follow the same pattern of indentation and element conversion to Pug syntax.
+                    //- Widget Plan
+                    .widget-plan.mb-60
+                        .widget__body
+                            h5.widget__title Hastalarımıza Özel Ayrıcalıklar
+                            p 
+                            | Sağlık turizminde fark yaratmayı amaçlayan kliniğimiz,
+                            | hastalarımıza sadece tedavi süreçlerinde değil, tedavi
+                            | öncesinde ve sonrasında da eksiksiz bir deneyim sunmaktadır.
+                            | Her bir hastamızın konforu, memnuniyeti ve hızlı iyileşmesi
+                            | için özenle hazırlanmış özel ayrıcalıklarımız, tedavi
+                            | sürecinizi birinci sınıf bir hizmet yolculuğuna dönüştürmeyi
+                            | vaat ediyor.
+                            .row
+                                .col-sm-12.col-md-6
+                                    .plan__items
+                                        ul.list-items.list-items-layout2.list-unstyled.mb-0
+                                            li Bir Gece Otel Konaklaması
+                                            li Transfer Hizmetleri
+                                            li Ücretsiz Bir Yıl Aftercare
+                                            li Bekleme Listesi Yok, Direkt Operasyon
+                                .col-sm-12.col-md-6
+                                    .plan__items
+                                        ul.list-items.list-items-layout2.list-unstyled.mb-0
+                                            li Ücretsiz İlk İlaç Kiti
+                                            li Cerrahla Online İletişim
+                                            li Hastane Refakatçisi
+
+                    //- Text Block
+                    .text-block.mb-50
+                    h5.text-block__title Sağlık Yolculuğunuzda Özel Ayrıcalıklar
+                    p.text-block__desc.mb-20 
+                        | Tedavi sürecinizi sadece etkili değil, aynı zamanda konforlu
+                        | ve özel kılan hizmetlerimizle, iyileşmenizi bir üst seviyeye
+                        | taşıyoruz.
+
+                    //- Fancybox Layout1
+                    .fancybox-layout1
+                        .row
+                            //- Fancybox Item #1
+                            .col-md-6
+                                .fancybox-item.d-flex
+                                    .fancybox__icon
+                                        i.icon-heart
+                                    .fancybox__content
+                                        h4.fancybox__title Özel Refakatçi Desteği
+                                        p.fancybox__desc 
+                                        | Hastane süreciniz boyunca yanınızda olan özel
+                                        | refakatçi hizmetimizle kendinizi her an güvende
+                                        | hissedin.
+                            //- Fancybox Item #2
+                            .col-md-6
+                                .fancybox-item.d-flex
+                                    .fancybox__icon
+                                        i.icon-doctor
+                                    .fancybox__content
+                                        h4.fancybox__title Hızlı Tedaviye Direkt Erişim
+                                        p.fancybox__desc 
+                                        | Bekleme listesi olmadan hızlı ve etkin tedavi
+                                        | süreciyle sağlığınıza en kısa zamanda kavuşun.
+                            //- Additional Fancybox items follow the same structure...
+
+                    //- Team Section
+                    section.team-layout2.pt-0.pb-30
+                    .heading.mb-40
+                        h3.heading__title Sertifikalarımız
+                        p.heading__desc 
+                        | Sertifikalarımız, sağlık hizmetlerimizdeki yüksek
+                        | standartlarımızı ve sürekli gelişim anlayışımızı temsil
+                        | ederek, siz değerli hastalarımıza en iyi hizmeti sunma
+                        | konusundaki kararlılığımızı göstermektedir.
+                    .slick-carousel(data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "autoplay": true, "arrows": false, "dots": false, "responsive": [{"breakpoint": 992, "settings": {"slidesToShow": 2}}, {"breakpoint": 767, "settings": {"slidesToShow": 1}}, {"breakpoint": 480, "settings": {"slidesToShow": 1}}]}')
+                        //- Member #1
+                        .member
+                            .member__img(style="cursor: pointer")
+                                img(src="/images/team/1.jpg" alt="certificate_1")
+                        //- Member #2
+                        .member
+                            .member__img(style="cursor: pointer")
+                                img(src="/images/team/1.jpg" alt="certificate_1")
+                        //- Member #2
+                        .member
+                            .member__img(style="cursor: pointer")
+                                img(src="/images/team/1.jpg" alt="certificate_1")
+                        //- Member #2
+                        .member
+                            .member__img(style="cursor: pointer")
+                                img(src="/images/team/1.jpg" alt="certificate_1")
+                        //- Additional members follow the same structure...
+                //- Sidebar
+                .col-sm-12.col-md-12.col-lg-4
+                    aside.sidebar.has-margin-left.sticky-top
+                        //- Widget Services
+                        .widget.widget-services
+                            h5.widget__title Tedavilerimiz
+                            .widget-content
+                                ul.list-unstyled.mb-0
+                                    each treatment in treatments
+                                        li
+                                            a(href=`/treatments/${treatment.name.split(' ').join('-')}` class='nav__item-link')= treatment.name
+                        .widget.widget-help.bg-overlay.bg-overlay-secondary-gradient
+                            .bg-img
+                                img(src="assets/images/banners/5.jpg" alt="background")
+                            .widget-content
+                                .widget__icon
+                                    i.icon-call3
+                                h4.widget__title Hızlı İletişim
+                                p.widget__desc 
+                                | Sorularınız varsa veya yardıma ihtiyacınız varsa,
+                                | ekibimizle iletişime geçebilirsiniz.
+                                a.phone__number(href="tel:+201061245741")
+                                    i.icon-phone 
+                                    span +90 531 983 1396
+                        .widget.widget-reports
+                            a.btn.btn__primary.btn__block(href="appointment.html")
+                                span Başvuru Formu
+
