@@ -28,7 +28,7 @@ block content
       .container
         .row
           .col-sm-12.col-md-12.col-lg-4
-            aside.sidebar.has-marign-right
+            aside.sidebar.has-margin-right
               .widget.widget-member
                 .member.mb-0
                   .member__img
@@ -87,8 +87,6 @@ block content
                     h4.timeline__title #{experience.title}
                     if experience.description
                       p.timeline__desc #{experience.description}
-
-
             //- Expertise List
             ul.details-list.list-unstyled.mb-60
               li
@@ -97,12 +95,10 @@ block content
                   ul.list-items.list-items-layout2.list-unstyled.mb-0
                     each interest in doctor.interests
                       li= interest.title
-
               li
                 h5.details__title Ofis
                 .details__content
                   p.mb-0= doctor.location
-
               li
                 h5.details__title Eğitim
                 .details__content.d-flex.flex-column

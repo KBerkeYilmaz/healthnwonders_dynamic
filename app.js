@@ -8,7 +8,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const connectDB = require("./lib/database");
 
-
+// ROUTES
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var aboutUsRouter = require("./routes/about-us");
@@ -17,6 +17,8 @@ var doctorsRouter = require("./routes/doctors");
 var treatmentsRouter = require('./routes/treatments');
 var blogRouter = require('./routes/blog'); 
 var servicesRouter = require('./routes/services');
+var faqRouter = require('./routes/faq');
+var appointmentRouter = require('./routes/appointment');
 
 var app = express();
 
@@ -28,7 +30,7 @@ connectDB();
 const Doctor = require('./models/doctor'); 
 const Treatment = require('./models/treatment'); 
 const Blog = require('./models/blog'); 
-
+const Faq = require('./models/faq');
 
 
 // view engine setup
@@ -91,6 +93,8 @@ app.use("/doctors", doctorsRouter);
 app.use('/treatments', treatmentsRouter);
 app.use('/blog', blogRouter);
 app.use('/services', servicesRouter);
+app.use('/faq', faqRouter)
+app.use('/appointment', appointmentRouter)
 
 
 

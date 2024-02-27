@@ -1,0 +1,148 @@
+extends layout
+
+block content
+    section.page-title.page-title-layout4.bg-overlay.text-center
+        .bg-img
+            img(src="assets/images/page-titles/5.jpg", alt="background")
+        .container
+            .row
+                .col-sm-12.col-md-12.col-lg-12.col-xl-6.offset-xl-3
+                    h1.pagetitle__heading
+                        | Başvuru Formu İle Sağlığınıza İlk Adımı Atın
+                    p.pagetitle__desc
+                        | Sağlık yolculuğunuza başlamak için aşağıdaki başvuru formunu 
+                        | doldurun ve Health&Wonders ailesi olarak size nasıl yardımcı 
+                        | olabileceğimizi keşfedin.
+    section.testimonials-layout3.pt-130.bg-overlay.bg-overlay-secondary
+        .bg-img
+            img(src="assets/images/banners/4.jpg", alt="background")
+        .container
+            .testimonials-wrapper
+                .row
+                    .col-sm-12.col-md-12.col-lg-5
+                        .heading-layout2
+                            h3.heading__title.color-primary Hasta Yorumları
+                    .col-sm-12.col-md-12.col-lg-7
+                        .slider-with-navs
+                            // Testimonial #1
+                            .testimonial-item
+                                h3.testimonial__title
+                                    | “Health and Wonders sayesinde hayatım değişti. Gastric Sleeve ameliyatım sonrası, 6 ay içinde kilomda önemli bir azalma yaşadım ve çok daha enerjik hissetmeye başladım. Her adımda yanımda olan ekibe ve harika sonuçlar için cerrahıma minnettarım. Konaklama ve transfer hizmetleri mükemmeldi, kendimi çok rahat hissettim. Ayrıca, ilk ilaç kitimin ücretsiz sağlanması ve sürekli dil desteği, bu yolculukta bana büyük destek oldu.”
+                            // Testimonial #2
+                            .testimonial-item
+                                h3.testimonial__title
+                                    | “Kuşadası'ndaki Health and Wonders'da Tummy Tuck ameliyatı oldum ve sonuçlardan çok memnunum. Operasyon sonrası karın bölgemdeki sarkıklık tamamen giderildi ve daha sıkı bir görünüme kavuştum. En çok takdir ettiğim şey, cerrahım ile yüz yüze interaktif iletişim ve toplantı imkanıydı. Ayrıca, hastanede 7/24 yanımda olan refakatçi ve bekleme listesi olmaması süreci çok daha konforlu hale getirdi. Tüm ekip profesyonel ve cana yakındı.”
+                            // Testimonial #3
+                            .testimonial-item
+                                h3.testimonial__title
+                                    | “Mastopexia ameliyatım için Health and Wonders'ı seçtim ve kararımın ne kadar doğru olduğunu her geçen gün daha iyi anlıyorum. Ameliyat sonrasında göğüslerimin şekli ve duruşu önemli ölçüde iyileşti, bu da benim özgüvenimi artırdı. Bir yıl boyunca sundukları ücretsiz aftercare hizmeti, iyileşme sürecimi kolaylaştırdı. Havalimanında karşılanmaktan ana dil desteğine kadar her detay düşünülmüştü. Tüm ekip, beklentilerimi aştı ve herkese bu deneyimi yaşamalarını öneririm.”
+                        .slider-nav.mb-60
+                            .testimonial__meta
+                                .testimonial__thmb
+                                    img(src="/images/testimonials/thumbs/1.png", alt="author thumb")
+                                div
+                                    h4.testimonial__meta-title Sami Wade
+                            .testimonial__meta
+                                .testimonial__thmb
+                                    img(src="/images/testimonials/thumbs/2.png", alt="author thumb")
+                                div
+                                    h4.testimonial__meta-title Ahmed
+                            .testimonial__meta
+                                .testimonial__thmb
+                                    img(src="/images/testimonials/thumbs/3.png", alt="author thumb")
+                                div
+                                    h4.testimonial__meta-title Sonia Blake
+    // /.container
+    section.contact-layout2.pt-0
+        .container
+            .row
+                .col-12
+                    .contact-panel.d-flex.flex-wrap
+                        form.contact-panel__form(method="post", action="assets/php/contact.php", id="contactForm")
+                            .row
+                                .col-sm-12
+                                    h4.contact-panel__title Randevu Alın
+                                    p.contact-panel__desc.mb-30
+                                        | Randevu için bizimle iletişime geçin. Genel ve tıbbi sorularınızda doktorlarımız size yardımcı olacaktır.
+                                .col-sm-6.col-md-6.col-lg-6
+                                    .form-group
+                                        i.icon-widget.form-group-icon
+                                        select.form-control
+                                            option(value="0") Tedavinizi seçin
+                                            option(value="1") Mide küçültme
+                                            option(value="2") Mide büyültme
+                                            option(value="2") Mide çektirme
+                                // /.col-lg-6
+                                .col-sm-6.col-md-6.col-lg-6
+                                    .form-group
+                                        i.icon-user.form-group-icon
+                                        select.form-control
+                                            option(value="0") Doktorunuzu seçin
+                                            option(value="1") İsak Taşdemir
+                                // /.col-lg-6
+                                .col-sm-6.col-md-6.col-lg-6
+                                    .form-group
+                                        i.icon-news.form-group-icon
+                                        input(type="text", class="form-control", placeholder="Adı Soyadı", id="contact-name", name="contact-name", required)
+                                // /.col-lg-6
+                                .col-sm-6.col-md-6.col-lg-6
+                                    .form-group
+                                        i.icon-email.form-group-icon
+                                        input(type="email", class="form-control", placeholder="E-Posta", id="contact-email", name="contact-email", required)
+                                // /.col-lg-6
+                                .col-sm-4.col-md-4.col-lg-4
+                                    .form-group
+                                        i.icon-phone.form-group-icon
+                                        input(type="text", class="form-control", placeholder="Telefon", id="contact-Phone", name="contact-phone", required)
+                                // /.col-lg-4
+                                .col-sm-4.col-md-4.col-lg-4
+                                    .form-group.form-group-date
+                                        i.icon-calendar.form-group-icon
+                                        input(type="date", class="form-control", id="contact-date", name="contact-date", required)
+                                // /.col-lg-4
+                                .col-sm-4.col-md-4.col-lg-4
+                                    .form-group
+                                        select.form-control(id="contact-gender", name="contact-gender", aria-placeholder="Cinsiyet", required)
+                                            option(value="") Cinsiyet
+                                            option(value="erkek") Erkek
+                                            option(value="kadin") Kadın
+                                            option(value="belirtmek_istemiyor") Belirtmek İstemiyor
+                                // /.col-lg-12
+                                .col-12
+                                    .form-group
+                                        i.icon-note.form-group-icon
+                                        textarea.form-control(id="contact-special-requests", name="contact-special-requests", placeholder="Özel talepler", rows="3", required, style="padding: 1rem")
+                                // /.col-lg-12
+                                .col-12
+                                    .form-check.form-check-inline(style="margin-bottom: 1rem")
+                                        input.form-check-input(type="checkbox", id="contact-privacy-agreement", name="contact-privacy-agreement", required)
+                                        label.form-check-label(for="contact-privacy-agreement") Gizlilik ve Veri Koruma Onayı
+                                    .form-check.form-check-inline(style="margin-bottom: 1rem")
+                                        input.form-check-input(type="checkbox", id="contact-privacy-policy", name="contact-privacy-policy", required)
+                                        label.form-check-label(for="contact-privacy-policy") Kişisel ve sağlık bilgilerinin korunması ile ilgili gizlilik politikası ve şartlarının okudum
+                                // /.col-lg-12
+                                .col-12
+                                    button.btn.btn__primary.btn__rounded.btn__block.btn__xhight.mt-10(type="submit")
+                                        span Randevunuzu Oluşturun
+                                        i.icon-arrow-right
+                                    .contact-result
+                        // /.contact-panel__form
+                        .contact-panel__info.d-flex.flex-column.justify-content-start.bg-overlay.bg-overlay-primary-gradient
+                            .bg-img
+                                img(src="assets/images/banners/1.jpg", alt="banner")
+                            div
+                                h4.contact-panel__title.color-white Quick Contacts
+                                p.contact-panel__desc.font-weight-bold.color-white.mb-30
+                                    | Randevu için bizimle iletişime geçin. Genel ve tıbbi sorularınızda doktorlarımız size yardımcı olacaktır.
+                            div
+                                ul.contact__list.list-unstyled.mb-30
+                                    li
+                                        i.icon-phone
+                                        a(href="tel:+905319831396") İletişim Hattı: +905319831396
+                                    li
+                                        i.icon-location
+                                        a(href="#") Konum: Söke, Kuşadası
+                                    li
+                                        i.icon-clock
+                                        a(href="contact-us.html") Pazartesi - Cuma: 8:00 - 19:00
+            // /.container

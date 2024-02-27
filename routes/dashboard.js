@@ -15,6 +15,8 @@ router.get("/doctors", function (req, res, next) {
   res.render("dashboard/doctors", { title: "Doktorlar" });
 });
 
+
+
 router.post("/doctors/new", async (req, res) => {
   const { name, specialty, location, bio, interests, education, experiences } =
     req.body;
