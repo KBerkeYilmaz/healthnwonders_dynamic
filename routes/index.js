@@ -4,9 +4,13 @@ const Blog = require("../models/blog");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Health and Wonders Official" });
+  res.render("index", { title: "Health and Wonders" });
 });
 
+
+
+
+// API BLOG
 router.post("/api/blog", async (req, res) => {
   const { name, description, thumbnailDescription, thumbnailName } = req.body;
   console.log(req.body);
@@ -28,6 +32,12 @@ router.post("/api/blog", async (req, res) => {
   }
 });
 
+
+
+
+
+
+// API DOCTORS
 router.post("/api/doctors", async (req, res) => {
   const { name, specialty, location, bio, interests, education, experiences } =
     req.body;

@@ -11,7 +11,7 @@ block content
           .row.align-items-center
             .col-sm-12.col-md-12.col-lg-12.col-xl-7
               .slide__content
-                h2.slide__title Sağlık ve Mucizelerle Dolu Bir Yolculuğa Hazır mısınız?
+                h1.slide__title Sağlık ve Mucizelerle Dolu Bir Yolculuğa Hazır mısınız?
                 p.slide__desc Uzman doktorlarımız ve modern hastanemizle, sizlere sadece bir tedavi değil, bir deneyim sunuyoruz.
                 .d-flex.flex-wrap.align-items-center
                   a(href="/appointment" class="btn btn__primary btn__rounded mr-30")
@@ -119,26 +119,7 @@ block content
             i.icon-arrow-right
   include ./partials/certificates.pug
   //- Testimonials Layout 1
-  section.testimonials-layout1.pt-130.pb-80
-    .container
-      .testimonials-wrapper
-        .row
-          .col-sm-12.col-md-12.col-lg-7.offset-lg-5
-            .heading-layout2
-              h3.heading__title Hasta Yorumları
-          .col-sm-12.col-md-12.col-lg-5
-            .slider-nav.mb-60
-              each authorThumb in ["1.png", "2.png", "3.png"]
-                .testimonial__meta
-                  .testimonial__thmb
-                    img(src=`/images/testimonials/thumbs/${authorThumb}`, alt="author thumb")
-                  div
-                    h4.testimonial__meta-title Testimonial
-          .col-sm-12.col-md-12.col-lg-7
-            .slider-with-navs
-              each testimonialText, index in ["“Health and Wonders sayesinde hayatım değişti. Gastric Sleeve ameliyatım sonrası, 6 ay içinde kilomda önemli bir azalma yaşadım ve çok daha enerjik hissetmeye başladım. Her adımda yanımda olan ekibe ve harika sonuçlar için cerrahıma minnettarım. Konaklama ve transfer hizmetleri mükemmeldi, kendimi çok rahat hissettim. Ayrıca, ilk ilaç kitimin ücretsiz sağlanması ve sürekli dil desteği, bu yolculukta bana büyük destek oldu.”", "“Kuşadası'ndaki Health and Wonders'da Tummy Tuck ameliyatı oldum ve sonuçlardan çok memnunum. Operasyon sonrası karın bölgemdeki sarkıklık tamamen giderildi ve daha sıkı bir görünüme kavuştum. En çok takdir ettiğim şey, cerrahım ile yüz yüze interaktif iletişim ve toplantı imkanıydı. Ayrıca, hastanede 7/24 yanımda olan refakatçi ve bekleme listesi olmaması süreci çok daha konforlu hale getirdi. Tüm ekip profesyonel ve cana yakındı.”", "“Mastopexia ameliyatım için Health and Wonders'ı seçtim ve kararımın ne kadar doğru olduğunu her geçen gün daha iyi anlıyorum. Ameliyat sonrasında göğüslerimin şekli ve duruşu önemli ölçüde iyileşti, bu da benim özgüvenimi artırdı. Bir yıl boyunca sundukları ücretsiz aftercare hizmeti, iyileşme sürecimi kolaylaştırdı. Havalimanında karşılanmaktan ana dil desteğine kadar her detay düşünülmüştü. Tüm ekip, beklentilerimi aştı ve herkese bu deneyimi yaşamalarını öneririm.”"]
-                .testimonial-item
-                  h3.testimonial__title= testimonialText
+  include ./partials/testimonials.pug
   include ./partials/blog_grid.pug
   //- Contact Layout 5
   .contact-layout5.bg-overlay.bg-overlay-blue-gradient.pb-60.pt-130

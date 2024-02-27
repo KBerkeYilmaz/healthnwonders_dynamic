@@ -4,23 +4,11 @@ block content
   .container-fluid(style='display: flex; height: 100vh;')
     .row.flex-grow-1
       //- Sidebar with full viewport height and sticky behavior
-      .col-md-3.col-lg-2.d-md-block.bg-light.sidebar.collapse(style='min-height: 100vh; overflow-y: auto;')
-        ul.nav.flex-column(style='font-size: 20px; margin-top: 20px;')
-          li.nav-item
-            a.nav-link(href="/dashboard") Panel
-          li.nav-item
-            a.nav-link.active(href="/dashboard/blog") Blog Yazıları
-          li.nav-item
-            a.nav-link(href="/dashboard/treatments") Tedaviler
-          li.nav-item
-            a.nav-link(href="/dashboard/doctors") Doktorlar
-          li.nav-item
-            a.nav-link(href="#") Hastaneler
+      include ../partials/sidebar.pug
       //- Main content with scrollable behavior
       .col-md-9.ml-sm-auto.col-lg-10.px-md-4#mainContent(style='overflow-y: auto;')
-        include ../partials/new_blog.pug
-        //- #newDoctorForm(style='display: none;')
-        //-   include ../partials/new_treatment.pug
+        #newblogForm(style='display: none;')
+          include ../partials/new_blog.pug
         div.container-fluid
           .row
             .col-md-12

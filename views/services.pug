@@ -1,0 +1,128 @@
+extends layout
+
+block content
+    // page title
+    section.page-title.page-title-layout1.bg-overlay.mb-60
+        .bg-img
+            img(src="/images/page-titles/hizmetlerimiz_gorsel_preview.png", alt="background")
+        .container
+            .row
+                .col-sm-12.col-md-12.col-lg-12.col-xl-5
+                    span.pagetitle__subheading Sağlığınız İçin Uzman Çözümler
+                    h1.pagetitle__heading(style="color: white;") Kapsamlı Tedavi Seçenekleri
+                    p.pagetitle__desc(style="color:white") Health and Wonders olarak, ihtiyacınıza uygun çeşitli sağlık hizmetleri sunuyoruz. Amacımız, size en etkili tedavi yöntemlerini sağlamak.
+                    .d-flex.flex-wrap.align-items-center
+                    a.btn.btn__secondary.btn__rounded.mr-30(href="appointment.html")
+                        span Randevu alın
+                        i.icon-arrow-right
+                    a.btn.btn__secondary.btn__rounded(href="about-us.html")
+                        span Hakkımızda
+    // Services Layout 1
+    section.services-layout1.pt-130
+        .bg-img
+            img(src="/images/backgrounds/2.jpg", alt="background")
+        .container
+            .row
+                .col-sm-12.col-md-12.col-lg-6.offset-lg-3
+                    .heading.text-center.mb-60
+                        h2.heading__subtitle Sağlığınızı Yeniden Keşfedin!
+                        h3.heading__title Özel Tedavi Seçeneklerimiz
+            .row
+                // service item #1
+                .col-sm-12.col-md-6.col-lg-4
+                    .service-item
+                        .service__icon
+                            i.icon-head
+                            i.icon-head
+                        .service__content
+                            h4.service__title Tüp Mide Ameliyatı
+                            p.service__desc Tüp Mide Ameliyatı, fazla kilolarınızdan kalıcı bir şekilde kurtulmanızı sağlar. Bu operasyon, mide hacmini azaltarak daha hızlı doymanıza yardımcı olur.
+                            ul.list-items.list-items-layout1.list-unstyled
+                                li Uzun süreli kilo kaybı
+                                li Metabolizmanın iyileştirilmesi
+                                li Diyabet gibi kronik hastalıkların riskinin azaltılması
+                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="gastric_sleeve.html")
+                                span Detaylı Bilgi
+                                    i.icon-arrow-right
+                // service item #2
+                .col-sm-12.col-md-6.col-lg-4
+                    .service-item
+                        .service__icon
+                            i.icon-heart
+                            i.icon-heart
+                        .service__content
+                            h4.service__title Mide Balonu
+                            p.service__desc Mide Balonu, diyet ve egzersizle kilo veremeyenler için ideal bir çözümdür. Mideye yerleştirilen bu balon, daha az yemek yemenize yardımcı olur.
+                            ul.list-items.list-items-layout1.list-unstyled
+                                li Cerrahi bir müdahale gerektirmemesi
+                                li Kısa sürede kilo kaybı
+                                li İyi bir başlangıç noktası sağlaması
+                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="gastric_balloon.html")
+                                span Detaylı Bilgi
+                                i.icon-arrow-right
+                // service item #3
+                .col-sm-12.col-md-6.col-lg-4
+                    .service-item
+                        .service__icon
+                            i.icon-microscope
+                            i.icon-microscope
+                        .service__content
+                            h4.service__title Mide Botoksu
+                            p.service__desc Mide Botoksu, iştah kontrolünü sağlayarak kilo vermenize yardımcı olur. Midenin kasılmalarını azaltarak daha uzun süre tok kalmanızı sağlar.
+                            ul.list-items.list-items-layout1.list-unstyled
+                                li İşlem sonrası hızlı iyileşme
+                                li İştah kontrolünde etkinlik
+                                li Non-invazif bir yöntem olması
+                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="gastric_botox.html")
+                                span Detaylı Bilgi
+                                i.icon-arrow-right
+                // service item #4
+                .col-sm-12.col-md-6.col-lg-4
+                    .service-item
+                        .service__icon
+                            i.icon-dropper
+                            i.icon-dropper
+                        .service__content
+                            h4.service__title Karın Germe Ameliyatı
+                            p.service__desc Karın Germe Ameliyatı, sarkmış veya gevşemiş karın derisini toparlayarak daha sıkı bir görünüm kazandırır. Estetik ve fonksiyonel bir iyileşme sağlar.
+                            ul.list-items.list-items-layout1.list-unstyled
+                                li Sıkı ve düz bir karın bölgesi
+                                li Vücut konturunun iyileştirilmesi
+                                li Fazla deri ve yağın alınması
+                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="tummy_tuck.html")
+                                span Detaylı Bilgi
+                                i.icon-arrow-right
+                // service item #5
+                .col-sm-12.col-md-6.col-lg-4
+                    .service-item
+                        .service__icon
+                            i.icon-heart3
+                            i.icon-heart3
+                        .service__content
+                            h4.service__title Meme Dikleştirme
+                            p.service__desc Meme Dikleştirme, meme dokusunu yeniden şekillendirerek genç ve estetik bir görünüm sağlar. Bu operasyon, sarkan memelerin daha dik bir forma kavuşmasını sağlar.
+                            ul.list-items.list-items-layout1.list-unstyled
+                                li Daha genç ve estetik bir görünüm
+                                li Giysilerin daha iyi oturması
+                                li Artan özgüven ve memnuniyet
+                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="breast_lift.html")
+                                span Detaylı Bilgi
+                                i.icon-arrow-right
+    // Features Layout 2
+    section.features-layout2.pt-130.bg-overlay.bg-overlay-primary
+        .bg-img
+            img(src="/images/backgrounds/2.jpg", alt="background")
+        .container
+            .col-sm-12.col-md-12.col-lg-5
+                .heading__layout2
+                    h3.heading__title(style="color: white") Bizimle Evinizin Konforunu ve Ailenizin Sıcaklığını Deneyimleyin.
+            .row.mb-100
+                .col-sm-3.col-md-3.col-lg-1.offset-lg-5
+                    .heading__icon
+                        i.icon-insurance
+                .col-sm-9.col-md-9.col-lg-6
+                    p.heading__desc.font-weight-bold.color-white.mb-30 İyileşme sürecinizdeki konforunuz ve memnuniyetiniz bizim için en önemli önceliktir. Bu yüzden cerrahımızın dinamik ve enerjik ekibi, hastane konaklamanız boyunca size özel ANA DİLİNİZDE hizmet sunar. Ameliyat öncesi, sırası ve sonrasında her adımda size destek olan bu özel hizmetle, kendinizi güvende ve rahat hissetmeniz garanti. Huzur içinde yolculuğunuza başlamaya hazır mısınız? Bugün Health and Wonders ile iletişime geçin ve hak ettiğiniz bakımı ve desteği size sağlayalım.
+            include ./partials/featured.pug
+    include ./partials/certificates.pug
+    include ./partials/testimonials.pug
+    include ./partials/blog_grid.pug

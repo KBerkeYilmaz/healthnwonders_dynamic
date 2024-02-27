@@ -46,16 +46,16 @@ header.header.header-layout2
                     li.nav__item
                         a(href='/' class='nav__item-link') Ana Sayfa
                     li.nav__item.has-dropdown
-                        a(href='/about-us' data-toggle='dropdown' class='dropdown-toggle nav__item-link') Hakkımızda
+                        a(data-toggle='dropdown' class='dropdown-toggle nav__item-link') Hakkımızda
                         ul.dropdown-menu
                             li.nav__item
-                                a(href='about-us.html' class='nav__item-link') Biz Kimiz?
+                                a(href='/about-us' class='nav__item-link') Biz Kimiz?
                             li.nav__item
-                                a(href='services.html' class='nav__item-link') Hizmetlerimiz
+                                a(href='/services' class='nav__item-link') Hizmetlerimiz
                             li.nav__item
-                                a(href='faqs.html' class='nav__item-link') Sık Sorulan Sorular
+                                a(href='/faq' class='nav__item-link') Sık Sorulan Sorular
                     li.nav__item.has-dropdown
-                        a(href='#' data-toggle='dropdown' class='dropdown-toggle nav__item-link') Doktorlarımız
+                        a(data-toggle='dropdown' class='dropdown-toggle nav__item-link') Doktorlarımız
                         ul.dropdown-menu
                             each doctor in doctors ? doctors : []
                                 li.nav__item
@@ -64,7 +64,7 @@ header.header.header-layout2
                     li.nav__item
                         a(href='/blog' class='nav__item-link') Blog
                     li.nav__item.has-dropdown
-                        a(href='#' data-toggle='dropdown' class='dropdown-toggle nav__item-link') Tedavilerimiz
+                        a(data-toggle='dropdown' class='dropdown-toggle nav__item-link') Tedavilerimiz
                         ul.dropdown-menu
                             each treatment in treatments ? treatments : []
                                 li.nav__item

@@ -16,7 +16,7 @@ var dashboardRouter = require("./routes/dashboard");
 var doctorsRouter = require("./routes/doctors");
 var treatmentsRouter = require('./routes/treatments');
 var blogRouter = require('./routes/blog'); 
-
+var servicesRouter = require('./routes/services');
 
 var app = express();
 
@@ -90,8 +90,7 @@ app.use("/dashboard", dashboardRouter);
 app.use("/doctors", doctorsRouter);
 app.use('/treatments', treatmentsRouter);
 app.use('/blog', blogRouter);
-
-
+app.use('/services', servicesRouter);
 
 
 
