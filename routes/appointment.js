@@ -7,4 +7,4 @@ router.get("/", function (req, res, next) {
   });
 });
 
-module.exports = router; // Path: healthnwonders_dynamic/routes/contact.js
+module.exports = router; 

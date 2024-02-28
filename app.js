@@ -55,68 +55,39 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware to attach doctors list to all responses
-let doctorsCache;
-
 app.use(async (req, res, next) => {
-  if (!doctorsCache) {
-    console.log('Cache miss');
-    try {
-      const doctorsList = await Doctor.find({});
-      doctorsCache = doctorsList;
-      // Timeout to invalidate cache after a certain period
-      setTimeout(() => { doctorsCache = null; }, 100000); // Invalidate cache after 10 seconds
-    } catch (error) {
-      console.error('Error fetching doctors:', error);
-      return next(error);
-    }
-  } else {
-    console.log('Cache hit');
+  try {
+    const doctorsList = await Doctor.find({});
+    res.locals.doctors = doctorsList; // This makes `doctors` available in all templates
+    next();
+  } catch (error) {
+    console.error('Error fetching doctors:', error);
+    next(error);
   }
-  res.locals.doctors = doctorsCache;
-  next();
 });
 
 // Middleware to attach treatment list to all responses
-let treatmentsCache;
-
 app.use(async (req, res, next) => {
-  if (!treatmentsCache) {
-    console.log('Cache miss');
-    try {
-      const treatmentsList = await Treatment.find({});
-      treatmentsCache = treatmentsList;
-      // Timeout to invalidate cache after a certain period
-      setTimeout(() => { treatmentsCache = null; }, 100000); // Invalidate cache after 10 seconds
-    } catch (error) {
-      console.error('Error fetching doctors:', error);
-      return next(error);
-    }
-  } else {
-    console.log('Cache hit');
+  try {
+    const treatmentList = await Treatment.find({});
+    res.locals.treatments = treatmentList; // This makes `treatments` available in all templates
+    next();
+  } catch (error) {
+    console.error('Error fetching doctors:', error);
+    next(error);
   }
-  res.locals.treatments = treatmentsCache;
-  next();
 });
 
-let blogCache;
-
+// Middleware to attach blog list to all responses
 app.use(async (req, res, next) => {
-  if (!blogCache) {
-    console.log('Cache miss');
-    try {
-      const blogList = await Blog.find({});
-      doctorsCache = blogList;
-      // Set a timeout to invalidate cache after a certain period
-      setTimeout(() => { blogCache = null; }, 100000); // Invalidate cache after 10 seconds
-    } catch (error) {
-      console.error('Error fetching blog:', error);
-      return next(error);
-    }
-  } else {
-    console.log('Cache hit');
+  try {
+    const blog = await Blog.find({});
+    res.locals.blogs = blog; // This makes `blog` available in all templates
+    next();
+  } catch (error) {
+    console.error('Error fetching doctors:', error);
+    next(error);
   }
-  res.locals.blog = blogCache;
-  next();
 });
 
 
