@@ -63,4 +63,34 @@ router.post("/api/doctors", async (req, res) => {
   }
 });
 
+
+
+
+// API TREATMENTS
+router.post("/api/treatments", async (req, res) => {
+  const { name, subTitle, abstract, description } =
+    req.body;
+  console.log(req.body);
+  try {
+    const newTreatment = new Treatment({
+      name,
+      subTitle,
+      description,
+      abstract,
+    });
+
+    await newTreatment.save();
+    res
+    .status(201)
+    .redirect("/dashboard");
+  } catch (error) {
+    console.error("Failed to add new treeament:", error);
+    res
+      .status(500)
+      .json({ message: "Error adding new treeament", error: error.message });
+  }
+});
+
+
+
 module.exports = router;

@@ -82,7 +82,7 @@ block content
             .timeline-wrapper.mb-60
               each experience in doctor.experiences
                 .timeline-item.d-flex
-                  span.timeline__year #{experience.startDate} 
+                  span.timeline__year #{experience.startDate}/#{experience.endDate.slice(2,4)} 
                   .timeline__body
                     h4.timeline__title #{experience.title}
                     if experience.description
