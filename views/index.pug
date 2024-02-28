@@ -1,5 +1,7 @@
 extends layout
 
+block head
+    link(fetchpriority="high", rel="preload", as="image" href="/images/page-titles/landingslider_healthandwonder2.webp", type="image/webp")
 block content
   //- Slider
   section.slider
@@ -44,7 +46,7 @@ block content
   //- Features Layout 1
   section.features-layout1.pt-130.pb-50.mt--90
     .bg-img
-      img(src="/images/backgrounds/1.jpg" alt="background")
+      img(src="/images/backgrounds/1.webp" alt="background")
     .container
       .row.mb-40
         .col-sm-12.col-md-12.col-lg-5
@@ -60,7 +62,7 @@ block content
       include ./partials/featured.pug
   section.services-layout2.services-carousel.bg-overlay.bg-overlay-primary.pt-130
     .bg-img
-      img(src="assets/images/banners/1.jpg", alt="background")
+      img(src="/images/banners/1.jpg", alt="background")
     .container
       .row
         .col-sm-12.col-md-12.col-lg-6
@@ -124,7 +126,7 @@ block content
   //- Contact Layout 5
   .contact-layout5.bg-overlay.bg-overlay-blue-gradient.pb-60.pt-130
     .bg-img
-      img(src="assets/images/banners/3.jpg", alt="banner")
+      img(src="/images/banners/3.jpg", alt="banner")
     .container
       .row
         .col-sm-12.col-md-12.col-lg-5.d-flex.flex-column.justify-content-start
