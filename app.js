@@ -6,6 +6,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var compression = require('compression');
 const connectDB = require("./lib/database");
 
 // ROUTES
@@ -36,8 +37,13 @@ const Faq = require('./models/faq');
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
-
-app.use(logger("dev"));
+app.use(compression());
+if (process.env.NODE_ENV === 'development') {
+  app.use(logger('dev'));
+} else {
+  // 'tiny' or 'combined' can be used in production for less verbose logs
+  app.use(logger('combined'));
+}
 app.use(express.json());
 
 // For simple form data
@@ -49,39 +55,68 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware to attach doctors list to all responses
+let doctorsCache;
+
 app.use(async (req, res, next) => {
-  try {
-    const doctorsList = await Doctor.find({});
-    res.locals.doctors = doctorsList; // This makes `doctors` available in all templates
-    next();
-  } catch (error) {
-    console.error('Error fetching doctors:', error);
-    next(error);
+  if (!doctorsCache) {
+    console.log('Cache miss');
+    try {
+      const doctorsList = await Doctor.find({});
+      doctorsCache = doctorsList;
+      // Timeout to invalidate cache after a certain period
+      setTimeout(() => { doctorsCache = null; }, 100000); // Invalidate cache after 10 seconds
+    } catch (error) {
+      console.error('Error fetching doctors:', error);
+      return next(error);
+    }
+  } else {
+    console.log('Cache hit');
   }
+  res.locals.doctors = doctorsCache;
+  next();
 });
 
 // Middleware to attach treatment list to all responses
+let treatmentsCache;
+
 app.use(async (req, res, next) => {
-  try {
-    const treatmentList = await Treatment.find({});
-    res.locals.treatments = treatmentList; // This makes `treatments` available in all templates
-    next();
-  } catch (error) {
-    console.error('Error fetching doctors:', error);
-    next(error);
+  if (!treatmentsCache) {
+    console.log('Cache miss');
+    try {
+      const treatmentsList = await Treatment.find({});
+      treatmentsCache = treatmentsList;
+      // Timeout to invalidate cache after a certain period
+      setTimeout(() => { treatmentsCache = null; }, 100000); // Invalidate cache after 10 seconds
+    } catch (error) {
+      console.error('Error fetching doctors:', error);
+      return next(error);
+    }
+  } else {
+    console.log('Cache hit');
   }
+  res.locals.treatments = treatmentsCache;
+  next();
 });
 
-// Middleware to attach blog list to all responses
+let blogCache;
+
 app.use(async (req, res, next) => {
-  try {
-    const blog = await Blog.find({});
-    res.locals.blogs = blog; // This makes `blog` available in all templates
-    next();
-  } catch (error) {
-    console.error('Error fetching doctors:', error);
-    next(error);
+  if (!blogCache) {
+    console.log('Cache miss');
+    try {
+      const blogList = await Blog.find({});
+      doctorsCache = blogList;
+      // Set a timeout to invalidate cache after a certain period
+      setTimeout(() => { blogCache = null; }, 100000); // Invalidate cache after 10 seconds
+    } catch (error) {
+      console.error('Error fetching blog:', error);
+      return next(error);
+    }
+  } else {
+    console.log('Cache hit');
   }
+  res.locals.blog = blogCache;
+  next();
 });
 
 
