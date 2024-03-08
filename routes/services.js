@@ -6,7 +6,7 @@ router.get("/", function (req, res, next) {
   const currentLanguage = req.language; // This should reflect the current language used in rendering
 
   res.render("services", {
-    title: "Hizmetlerimiz",
+    title: req.t('route_titles.services_page_title'),
     currentLanguage: currentLanguage,
   });
 });

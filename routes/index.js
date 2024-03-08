@@ -16,6 +16,7 @@ router.get("/", function (req, res, next) {
   res.render("index", {
     t: req.t,
     currentLanguage:currentLanguage,
+    title: req.t('route_titles.index_page_title')
   });
 });
 
@@ -49,7 +50,7 @@ router.post("/api/doctors", async (req, res) => {
     req.body;
   // const profilePic = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
   
-  console.log(req.body);
+  console.log("hello from api " + req.body);
   try {
     const newDoctor = new Doctor({
       name,
