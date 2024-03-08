@@ -16,38 +16,6 @@ router.get("/doctors", function (req, res, next) {
 });
 
 
-
-router.post("/doctors/new", async (req, res) => {
-  const { name, specialty, location, bio, interests, education, experiences } =
-    req.body;
-  console.log(req.body);
-  try {
-    const newDoctor = new Doctor({
-      name,
-      specialty,
-      location,
-      bio,
-      interests, 
-      education, 
-      experiences, 
-    });
-
-    await newDoctor.save();
-    res
-
-      .status(201)
-      .redirect("/doctors");
-  } catch (error) {
-    console.error("Failed to add new doctor:", error);
-    res
-      .status(500)
-      .json({ message: "Error adding new doctor", error: error.message });
-  }
-});
-
-
-
-
 /* GET treatments page. */
 router.get("/treatments", async (req, res, next) => {
   try {
@@ -64,33 +32,9 @@ router.get("/treatments", async (req, res, next) => {
 router.get("/blog", async (req, res, next) => {
   try {
     const treatments = await Blog.find({});
-    res.render("dashboard/blog", { title: "Blog Yazıları", treatments });
+    res.render("dashboard/blog", { title: "Admin", treatments });
   } catch (error) {
     next(error); // Forward to the error handling middleware
-  }
-});
-
-router.post("/blog/new", async (req, res) => {
-  const { name, description, thumbnailDescription, thumbnailName } =
-    req.body;
-  console.log(req.body);
-  try {
-    const newBlog = new Blog({
-      name,
-      description,
-      thumbnailDescription,
-      thumbnailName,
-    });
-
-    await newBlog.save();
-    res
-    .status(201)
-    .redirect("/dashboard/blog");
-  } catch (error) {
-    console.error("Failed to add new post:", error);
-    res
-      .status(500)
-      .json({ message: "Error adding new post", error: error.message });
   }
 });
 

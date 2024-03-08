@@ -12,13 +12,13 @@ footer.footer
                 .col-sm-12.col-md-12.col-lg-3
                     .footer-widget-about
                         img(src="/images/logo/H&W koyu zemin .png" alt="logo" class="mb-30")
-                        p.color-gray Kliniğimiz, Ege'de kilo kaybı operasyonlarında öncü. Yenilikçi tedavilerimizle sağlık ve mutluluk sunuyoruz. Siz de bu yolculuğa katılın.
+                        p.color-gray=t("footer.description")
                         a(href="appointment.html" class="btn btn__primary btn__primary-style2 btn__link")
-                            span Randevuru Oluşturun
+                            span= t("footer.button")
                             i.icon-arrow-right
                 .col-sm-6.col-md-6.col-lg-2.offset-lg-1
                     .footer-widget-nav
-                        h6.footer-widget__title Hizmetlerimiz
+                        h6.footer-widget__title=t("footer.services.title")
                         nav
                             ul.list-unstyled
                                 each treatment in treatments ? treatments : []
@@ -26,29 +26,29 @@ footer.footer
                                         a(href=`/treatments/${treatment.name.split(' ').join('-')}`)= treatment.name
                 .col-sm-6.col-md-6.col-lg-2
                     .footer-widget-nav
-                        h6.footer-widget__title Linkler
+                        h6.footer-widget__title=t("footer.quick-links.title")
                         nav
                             ul.list-unstyled
                                 li
-                                    a(href="about-us.html") Hakkımızda 
+                                    a(href="about-us.html")=t("footer.quick-links.item1") 
                                 li
-                                    a(href="services.html") Hizmetlerimiz
+                                    a(href="services.html")=t("footer.quick-links.item2")
                                 li
-                                    a(href="blog.html") Blog
+                                    a(href="blog.html")=t("footer.quick-links.item3")
                                 li
-                                    a(href="faqs.html") Sık Sorulanlar
+                                    a(href="faqs.html")=t("footer.quick-links.item4")
                                 li
-                                    a(href="appointment.html") Randevu
+                                    a(href="appointment.html")=t("footer.quick-links.item5")
                 .col-sm-12.col-md-6.col-lg-4
                     .footer-widget-contact
-                        h6.footer-widget__title.color-heading Hızlı İletişim
+                        h6.footer-widget__title.color-heading=t("footer.contact.title")
                         ul.contact-list.list-unstyled
-                            li Sorularınız varsa veya yardıma ihtiyacınız varsa, ekibimizle iletişime geçebilirsiniz.
+                            li=t("footer.contact.description")
                             li
                                 a(href="tel:01061245741" class="phone__number")
                                     i.icon-phone
                                     span +90 531 983 1396
-                            li.color-body Çeltikçi Mahallesi Uludağ Sokak No:5/A Söke/Aydın/ TÜRKİYE 09200
+                            li.color-body=t("footer.contact.address")
                         .d-flex.align-items-center
                             ul.social-icons.list-unstyled.mb-0
                                 li
@@ -73,7 +73,7 @@ footer.footer
         .container
             .row.align-items-center
                 .col-sm-12.col-md-6.col-lg-6
-                    span.fz-14 &copy; 2024 Medusa Global, Tüm Hakları Saklıdır
+                    span.fz-14= "© 2024 Medusa Global " + t("footer.copyright.title")
 
 //- Search Popup
 div.search-popup

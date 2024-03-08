@@ -27,8 +27,8 @@ block content
                             .widget-content
                                 .widget__icon
                                     i.icon-call3
-                                h4.widget__title Hızlı İletişim
-                                p.widget__desc Sorularınız varsa veya yardıma ihtiyacınız varsa, ekibimizle iletişime geçebilirsiniz.
+                                h4.widget__title=t("faq.sidebar-quickcontact.title")
+                                p.widget__desc=t("faq.sidebar-quickcontact.description")
                                 a.phone__number(href="tel:+201061245741")
                                     i.icon-phone
                                     span +90 531 983 1396
@@ -37,18 +37,18 @@ block content
                             .widget-content
                                 .widget__icon
                                     i.icon-charity2
-                                h4.widget__title Çalışma Saatleri
+                                h4.widget__title=t("faq.sidebar-workinghours.title")
                                 ul.time__list.list-unstyled.mb-0
                                     li
-                                        span Pazartesi - Cuma: 8.00 - 19:00
+                                        span=t("faq.sidebar-workinghours.weekdays")
                                     li  
-                                        span Cumartesi: 9.00 - 22:00
+                                        span=t("faq.sidebar-workinghours.saturday")
                                     li  
-                                        span Pazar: 10.00 - 00:00
+                                        span=t("faq.sidebar-workinghours.sunday")
                         // Widget Reports
                         .widget.widget-reports
                             a.btn.btn__primary.btn__block(href="appointment.html") 
-                                span Randevu Oluşturun
+                                span=t("faq.button")
                 .col-sm-12.col-md-12.col-lg-8#accordion
                         //- Accordion Item
                         .accordion-item

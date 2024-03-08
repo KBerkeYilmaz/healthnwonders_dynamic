@@ -1,0 +1,274 @@
+{
+    "route_titles": {
+        "index_page_title": "Health and Wonders",
+        "about_us_page_title": "Hakkımızda",
+        "services_page_title": "Hizmetlerimiz",
+        "blog_page_title": "Blog",
+        "appointment_page_title": "Bize Ulaşın"
+    },
+    "topbar": {
+        "emergency": "Acil durum hattı:",
+        "location": "Konum: Çeltikçi Mahallesi Uludağ Sokak No:5/A Söke/Aydın/TÜRKİYE 09200",
+        "workinghours": "Pazartesi - Cuma: 08:00 - 19:00"
+    },
+    "navbar": {
+        "home": "Anasayfa",
+        "about_us": {
+            "title": "Hakkımızda",
+            "sub-menu": {
+                "who-are-we": "Biz Kimiz?",
+                "services": "Hizmetlerimiz",
+                "faq": "Sık Sorulan Sorular"
+            }
+        },
+        "doctors": "Doktorlarımız",
+        "blog": "Blog",
+        "treatments": "Tedavilerimiz",
+        "appointment": "Bize Ulaşın"
+    },
+    "index": {
+        "banner": {
+            "title": "Sağlık ve Mucizelerle Dolu Bir Yolculuğa Hazır Mısınız?",
+            "description": "Uzman doktorlarımız ve modern hastanemizle, sizlere sadece bir tedavi değil, bir deneyim sunuyoruz.",
+            "button1": "İletişime Geçin",
+            "button2": "Hizmetlerimiz"
+        },
+        "section1": {
+            "title": "A BETTER LIFE IS POSSIBLE WITH US",
+            "sub-title": "Health and Wonders olarak, hayatınızın en önemli dönüm noktalarında yanınızda olmanın verdiği sorumlulukla hareket ediyoruz.",
+            "description": "Sağlık yolculuğunuzda, dil engellerini aşan, 7/24 ulaşılabilir bir hizmet anlayışı ile konfor ve güvenliğinizi en üst düzeyde tutmayı amaçlıyoruz. Bizimle adım atın, daha sağlıklı bir yaşama birlikte yürüyelim.",
+            "button": "Hakkımızda"
+        },
+        "callToAction": {
+            "title": "Bizimle Evinizin Konforunu Ve Ailenizin Sıcaklığını Deneyimleyin.",
+            "description": "İyileşme sürecinizdeki konforunuz ve memnuniyetiniz bizim için en önemli önceliktir. Bu yüzden cerrahımızın dinamik ve enerjik ekibi, hastane konaklamanız boyunca size özel ANA DİLİNİZDE hizmet sunar. Ameliyat öncesi, sırası ve sonrasında her adımda size destek olan bu özel hizmetle, kendinizi güvende ve rahat hissetmeniz garanti. Huzur içinde yolculuğunuza başlamaya hazır mısınız? Bugün Health and Wonders ile iletişime geçin ve hak ettiğiniz bakımı ve desteği size sağlayalım.",
+            "button": "Hakkımızda",
+            "card1": "Otel Konaklaması",
+            "card2": "Kirpik Ve Tırnak Bakımı",
+            "card3": "Transfer Hizmetleriz",
+            "card4": "Ücretsiz Bir Yıl Aftercare",
+            "card5": "Ücretsiz İlaç Kiti",
+            "card6": "Carrahla Online İletişim",
+            "card7": "Hastane Refakatçisi",
+            "card8": "Bekleme Listesi Yok, Direkt Operasyon"
+        },
+        "services": {
+            "title": "Hizmetlerimiz",
+            "description": "Sağlıklı bir kilo verme yolculuğu, estetik bir güzellik dokunuşu ve dengeli vücut hatları için yenilikçi cerrahi çözümlerimizle yanınızdayız.",
+            "service_1": {
+                "title": "Kilo Verme Ameliyatı",
+                "description": "Sağlıklı bir yaşam için özelleştirilmiş kilo verme ameliyatları ile kendinizi yeniden keşfedin."
+            },
+            "service_2": {
+                "title": "Kozmetik Cerrahi",
+                "description": "Güzelliğinizi öne çıkaracak kozmetik çözümlerle doğal ve zarif bir görünüme kavuşun."
+            },
+            "service_3": {
+                "title": "Göğüs Operasyonu",
+                "description": "Estetik ve fonksiyonel göğüs operasyonlarıyla vücut hatlarınızı dengeli ve estetik bir şekilde şekillendirin."
+            },
+            "button": "Tedavilerimiz",
+            "button2": "Okumaya Devam Et"
+        },
+        "certificates": {
+            "title": "Sertifikalarımız",
+            "description": "Sertifikalarımız, sağlık hizmetlerimizdeki yüksek standartlarımızı ve sürekli gelişim anlayışımızı temsil ederek, siz değerli hastalarımıza en iyi hizmeti sunma konusundaki kararlılığımızı göstermektedir."
+        },
+        "blogLatest": {
+            "title": "Blog",
+            "description": "Son Makaleler"
+        },
+        "appointmentForm": {
+            "title": "Global Vizyonumuz: Sağlık Turizminde Yenilik Ve Özen",
+            "description": "Global bir marka olma hedefimiz var. Hastalarımıza karar anında ve tedavi sürecinde psikolojik, fiziksel destek sunuyoruz. Sağlık turizminde yenilikçi, özenli yaklaşımla fark yaratmayı amaçlıyoruz.",
+            "button_service": "Hizmetlerimiz",
+            "button_contact": "İletişim",
+            "grid_item1": "1 Yıl Boyunca Ücretsiz 'Aftercare' Hizmeti",
+            "grid_item2": "Bekleme Listesi Yok",
+            "grid_item3": "Hastane Refakatçisi",
+            "grid_item4": "Cerrah ile Yüzyüze Interaktif İletişim ve Toplantı",
+            "grid_item5": "İlk İlaç Kitinin Ücretsiz Sağlanması",
+            "form-title": "Bize ulaşın",
+            "form-subtitle": "Randevu için bizimle iletişime geçin. Genel ve tıbbi sorularınızda doktorlarımız size yardımcı olacaktır.",
+            "form-treatment": "Tedavinizi Seçin",
+            "form-doctor": "Doktorunuzu Seçin",
+            "form-name": "Adı Soyadı",
+            "form-gender": "Cinsiyet",
+            "form-gender1": "Erkek",
+            "form-gender2": "Kadın",
+            "form-gender3": "Belirtmek İstemiyor",
+            "form-email": "E-Posta",
+            "form-phone": "Telefon",
+            "form-message": "Özel Talepler",
+            "form-button": "Randevunuzu Oluşturun",
+            "form-privacy": "Gizlilik ve Veri Koruma Onayı",
+            "form-privacy2": "Kişisel ve sağlık bilgilerinin korunması ile ilgili gizlilik politikası ve şartlarının okudum."
+        },
+        "map": {
+            "title": "Sağlık Turizminde Kuşadası!",
+            "description": "Kuşadası'nın doğa ve tarihle buluşan cennetinde sağlıklı bir yaşama adım atın. Neden Kuşadası? Antik şifa bilgisiyle dolu bu topraklar, tıbbi evrimin yüzyıllarını gördü. Efes, sağlık bilgisinin bir sembolü olarak, modern iyileşme uygulamalarını şekillendiriyor.",
+            "button": "Tedavine Başla",
+            "button2": "Hakkımızda",
+            "list-item1": "Modern tıbbi altyapıya ve uzman hekim kadrosuna sahip firmamız, sağlık turizminde öne çıkmaktadır.",
+            "list-item2": "Kuşadası'nda, deniz ve güneşin yanı sıra, termal sular ve doğal şifa kaynakları ile bütünleşik sağlık hizmetlerinin keyfini çıkarın.",
+            "list-item3": "Sorunsuz seyahat, üst düzey sağlık hizmetleri, uzman ekip ve zengin kültürel dokusuyla Kuşadası, unutulmaz anlar vaat ediyor."
+        }
+    },
+    "aboutUs": {
+        "banner": {
+            "title": "Health & Wonders, Sağlıkta Yenilikçi Hizmet.",
+            "description": "Yıllarca birikmiş tecrübemizi hastalarımıza birebir sunarak, bu alandaki potansiyeli ve eksiklikleri göz önünde bulundurarak kendi yenilikçi, samimi ve profesyonel hizmetimizi sunmayı amaçlıyoruz.",
+            "button1": "Bize Ulaşın",
+            "button2": "Tedavilerimiz"
+        },
+        "section1": {
+            "title": "Neden Health And Wonders?",
+            "description": "Markamızı global bir marka haline getirmek bizim en büyük hedefimiz. Misyonumuz hastalarımıza bu kararı aldıkları aşamada ve sonrasında her türlü psikolojik ve fiziksel desteği sunmak.Sağlık turizminde daha yenilikçi ve titiz bir yaklaşımla farkımızı ortaya koymayı hedefliyoruz."
+        },
+        "section2": {
+            "title": "Hastalarımıza Sunduğumuz Ayrıcalıklar",
+            "description": "Hastalarımızın konforu ve iyileşme sürecindeki memnuniyeti için özel NATIVE career (hastane refakatçisi) hizmeti sunuyoruz. İletişim sorununu ortadan kaldırıyoruz ve hızlı tedavi imkanı sunuyoruz. Ayrıca, ameliyat sonrası 1 yıl boyunca ücretsiz 'aftercare' hizmeti ile destek sağlıyoruz. Ege bölgesinde güvenilir ve yenilikçi bir seçenek sunuyoruz.",
+            "button": "Bize Ulaşın"
+        },
+        "section3": {
+            "pre-title": "Sağlıkta Kişisel Çözümler Sunan Health&Wonders",
+            "title": "Health&Wonders Olarak, Aile Bireylerinizin Sağlık Ihtiyaçlarını Karşılamak Için Geniş Bir Yelpazede Özel Tedavi Yöntemleri Sunuyoruz!",
+            "description": "Modern tıbbın sunduğu yenilikçi seçeneklerle, Tüp Mide Ameliyatından Karın Germe Ameliyatına kadar her bir tedaviyi kişinin kendi ihtiyaçlarına özel olarak uyguluyoruz.",
+            "grid": {
+                "item1": "Tüp Mide Ameliyatı",
+                "item2": "Mide Balonu",
+                "item3": "Mide Botoksu",
+                "item4": "Meme Dikleştirme",
+                "item5": "Karın Germe Ameliyatı"
+            },
+            "card-slider": {
+                "item1": {
+                    "title": "Özel Refakatçi Desteği",
+                    "description": "Hastane süreciniz boyunca ysnınızda olan özel refakatçi hizmetimizle kendinizi her an güvende hissedin."
+                },
+                "item2": {
+                    "title": "Hızlı Tedaviye Direkt Erişim",
+                    "description": "Bekleme listesi olmadan hızlı ve etkin tedavi süreciyle sağlığınıza en kısa zamanda kavuşun."
+                },
+                "item3": {
+                    "title": "7/24 Aftercare İmkanı",
+                    "description": "Operasyon sonrası bir yıl boyunca sürekli yanınızda olacak aftercare hizmetimizle, iyileşme sürecinizde kesintisiz destek alın."
+                },
+                "item4": {
+                    "title": "Yenilikçi Sağlık Çözümleri",
+                    "description": "Ege'nin yenilikçi sağlık hizmetlerimizle sağlığınızı yeniden kazanın ve mutlu bir yaşama adım atın."
+                }
+            }
+        },
+        "section4": {
+            "title": "Sağlık Yolculuğunuzda Özel Ayrıcalıklar",
+            "description": "Tedavi sürecinizi sadece etkili değil, aynı zamanda konforlu ve özel kılan hizmetlerimizle, iyileşmenizi bir üst seviyeye taşıyoruz.",
+            "button": "Bize Ulaşın"
+        }
+    },
+    "services": {
+        "banner": {
+            "pre-title": "Sağlığınız için Uzman Çözümler",
+            "title": "Kapsamlı tedavi seçenekleri",
+            "description": "Health and Wonders olarak, ihtiyacınıza uygun çeşitli sağlık hizmetleri sunuyoruz. Amacımız, size en etkili tedavi yöntemlerini sağlamak.",
+            "button": "Randevu Alın",
+            "button2": "Hakkımızda"
+        },
+        "section1": {
+            "pre-title": "Sağlığınızı Yeniden Keşfedin!",
+            "title": "Özel Tedavi Seçeneklerimiz",
+            "card1": {
+                "title": "Tüp Mide Ameliyatı",
+                "description": "Tüp Mide Ameliyatı, fazla kilolarınızdan kalıcı bir şekilde kurtulmanızı sağlar. Bu operasyon, mide hacmini azaltarak daha hızlı doymanıza yardımcı olur.",
+                "item1": "Uzun süreli kilo kaybı",
+                "item2": "Metabolizmanın iyileştirilmesi",
+                "item3": "Diyabet gibi kronik hastalıkların riskinin azaltılması"
+            },
+            "card2": {
+                "title": "Mide Balonu",
+                "description": "Mide Balonu, diyet ve egzersizle kilo veremeyenler için ideal bir çözümdür. Mideye yerleştirilen bu balon, daha az yemek yemenize yardımcı olur.",
+                "item1": "Cerrahi bir müdahale gerektirmemesi",
+                "item2": "Kısa sürede kilo kaybı",
+                "item3": "İyi bir başlangıç noktası sağlanması"
+            },
+            "card3": {
+                "title": "Mide Botoksu",
+                "description": "Mide Botoksu, iştah kontrolünü sağlayarak kilo vermenize yardımcı olur. Midenin kasılmalarını azaltarak daha uzun süre tok kalmanızı sağlar.",
+                "item1": "İşlem sonrası hızlı iyileşme",
+                "item2": "İştah kontrolünde etkinlik",
+                "item3": "Non-invazif bir yöntem olması"
+            },
+            "card4": {
+                "title": "Karın Germe Ameliyatı",
+                "description": "Karın Germe Ameliyatı, sarkmış veya gevşemiş karın derisini toparlayarak daha sıkı bir görünüm kazandırır. Estetik ve fonksiyonel bir iyileşme sağlar.",
+                "item1": "Karın bölgesindeki sarkmaların giderilmesi",
+                "item2": "Daha düz ve sıkı bir karın görünümü",
+                "item3": "Vücut hatlarının dengelenmesi"
+            },
+            "card5": {
+                "title": "Meme Dikleştirme",
+                "description": "Meme Dikleştirme, sarkmış memelerinizi yeniden şekillendirerek daha genç ve estetik bir görünüme kavuşmanızı sağlar.",
+                "item1": "Göğüslerin daha genç ve estetik bir görünüme kavuşması",
+                "item2": "Meme sarkmalarının giderilmesi",
+                "item3": "Göğüslerin daha dolgun ve dik bir görünüme kavuşması"
+            },
+            "button": "Detaylı Bilgi"
+        },
+        "section2": {
+            "title": "Bizimle Evinizin Konforunu Ve Ailenizin Sıcaklığını Deneyimleyin.",
+            "description": "İyileşme sürecinizdeki konforunuz ve memnuniyetiniz bizim için en önemli önceliktir. Bu yüzden cerrahımızın dinamik ve enerjik ekibi, hastane konaklamanız boyunca size özel ANA DİLİNİZDE hizmet sunar. Ameliyat öncesi, sırası ve sonrasında her adımda size destek olan bu özel hizmetle, kendinizi güvende ve rahat hissetmeniz garanti. Huzur içinde yolculuğunuza başlamaya hazır mısınız? Bugün Health and Wonders ile iletişime geçin ve hak ettiğiniz bakımı ve desteği size sağlayalım.",
+            "button": "Hakkımızda"
+        }
+    },
+    "faq": {
+        "sidebar-quickcontact": {
+            "title": "Hızlı İletişim",
+            "description": "Sorularınız varsa veya yardıma ihtiyacınız varsa, ekibimizle iletişime geçebilirsiniz."
+        },
+        "sidebar-workinghours": {
+            "title": "Çalışma Saatleri",
+            "weekdays": "Pazartesi - Cuma: 08:00 - 19:00",
+            "saturday": "Cumartesi: 09:00 - 22:00",
+            "sunday": "Pazar: 10:00 - 00:00"
+        },
+        "button": "Randevu Alın"
+    },
+    "appointment": {
+        "title": "Başvuru Formu ile Sağlığınıza İlk Adımı Atın",
+        "sub-title": "Sağlık yolculuğunuza başlamak için aşağıdaki başvuru formunu doldurun ve Health&Wonders ailesi olarak size nasıl yardımcı olabileceğimizi keşfedin.",
+        "form": {
+            "title": "Randevu alın",
+            "description": "Randevu için bizimle iletişime geçin. Genel ve tıbbi sorularınızda doktorlarımız size yardımcı olacaktır.",
+            "sidebar": {
+                "title": "Quick Contacts",
+                "description": "Randevu için bizimle iletişime geçin. Genel ve tıbbi sorularınızda doktorlarımız size yardımcı olacaktır.",
+                "emergency": "İletişim Hattı",
+                "location": "Konum: Söke,Kuşadası",
+                "workinghours": "Pazartesi - Cuma: 08:00 - 19:00"
+            }
+        }
+    },
+    "footer": {
+        "description": "Kliniğimiz, Ege'de kilo kaybı operasyonlarında öncü. Yenilikçi tedavilerimizle sağlık ve mutluluk sunuyoruz. Siz de bu yolculuğa katılın.",
+        "button": "Randevu Oluşturun",
+        "quick-links": {
+            "title": "Linkler",
+            "item1": "Hakkımızda",
+            "item2": "Hizmetler",
+            "item3": "Blog",
+            "item4": "Sık Sorulanlar",
+            "item5": "Bize Ulaşın"
+        },
+        "services": {
+            "title": "Hizmetlerimiz"
+        },
+        "contact": {
+            "title": "Hızlı İletişim",
+            "description": "Sorularınız varsa veya yardıma ihtiyacınız varsa, ekibimizle iletişime geçebilirsiniz.",
+            "address": "Çeltikçi Mahallesi Uludağ Sokak No:5/A Söke/Aydın/TÜRKİYE 09200"
+        },
+        "copyright": {
+            "title": "Tüm Hakları Saklıdır"
+        }
+    }
+}

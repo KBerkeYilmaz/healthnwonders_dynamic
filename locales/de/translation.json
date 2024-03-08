@@ -1,0 +1,274 @@
+{
+    "route_titles": {
+        "index_page_title": "Gesundheit und Wunder",
+        "about_us_page_title": "Über Uns",
+        "services_page_title": "Unsere Dienstleistungen",
+        "blog_page_title": "Blog",
+        "appointment_page_title": "Kontaktieren Sie Uns"
+    },
+    "topbar": {
+        "emergency": "Notrufleitung:",
+        "location": "Standort: Çeltikçi Viertel, Uludağ Straße Nr.5/A Söke/Aydın/TÜRKEI 09200",
+        "workinghours": "Montag - Freitag: 08:00 - 19:00"
+    },
+    "navbar": {
+        "home": "Startseite",
+        "about_us": {
+            "title": "Über Uns",
+            "sub-menu": {
+                "who-are-we": "Wer Sind Wir?",
+                "services": "Unsere Dienstleistungen",
+                "faq": "Häufig Gestellte Fragen"
+            }
+        },
+        "doctors": "Unsere Ärzte",
+        "blog": "Blog",
+        "treatments": "Unsere Behandlungen",
+        "appointment": "Kontaktieren Sie Uns"
+    },
+    "index": {
+        "banner": {
+            "title": "Sind Sie Bereit für eine Reise Voll von Gesundheit und Wundern?",
+            "description": "Mit unseren Expertenärzten und unserem modernen Krankenhaus bieten wir Ihnen nicht nur eine Behandlung, sondern ein Erlebnis.",
+            "button1": "Kontaktieren Sie Uns",
+            "button2": "Unsere Dienstleistungen"
+        },
+        "section1": {
+            "title": "EIN BESSERES LEBEN IST MIT UNS MÖGLICH",
+            "sub-title": "Als Gesundheit und Wunder handeln wir mit der Verantwortung, in den wichtigsten Wendepunkten Ihres Lebens bei Ihnen zu sein.",
+            "description": "Auf Ihrer Gesundheitsreise zielen wir darauf ab, Ihren Komfort und Ihre Sicherheit auf höchstem Niveau zu halten, mit einem Serviceverständnis, das Sprachbarrieren überwindet und 24/7 zugänglich ist. Machen Sie einen Schritt mit uns, lassen Sie uns gemeinsam zu einem gesünderen Leben gehen.",
+            "button": "Über Uns"
+        },
+        "callToAction": {
+            "title": "Erleben Sie den Komfort Ihres Zuhauses und die Wärme Ihrer Familie mit Uns.",
+            "description": "Ihr Komfort und Ihre Zufriedenheit während des Genesungsprozesses sind unsere oberste Priorität. Deshalb bietet das dynamische und energische Team unseres Chirurgen einen Service IN IHRER MUTTERSPRACHE während Ihres Krankenhausaufenthaltes an. Mit diesem speziellen Service, der Sie vor, während und nach der Operation unterstützt, ist sich sicher und wohl zu fühlen garantiert. Sind Sie bereit, Ihre Reise in Frieden zu beginnen? Kontaktieren Sie heute Gesundheit und Wunder und lassen Sie uns Ihnen die Pflege und Unterstützung bieten, die Sie verdienen.",
+            "button": "Über Uns",
+            "card1": "Hotelunterbringung",
+            "card2": "Wimpern- und Nagelpflege",
+            "card3": "Transferdienste",
+            "card4": "Kostenlose Einjährige Nachsorge",
+            "card5": "Kostenloses Medikamenten-Set",
+            "card6": "Online-Kommunikation mit Carrah",
+            "card7": "Krankenhausbegleiter",
+            "card8": "Keine Warteliste, Direkte Operation"
+        },
+        "services": {
+            "title": "Unsere Dienstleistungen",
+            "description": "Wir stehen Ihnen mit innovativen chirurgischen Lösungen für eine gesunde Gewichtsabnahme, einen ästhetischen Schönheitstouch und ausgeglichene Körperkonturen zur Seite.",
+            "service_1": {
+                "title": "Gewichtsverlustchirurgie",
+                "description": "Entdecken Sie sich selbst neu mit maßgeschneiderten Gewichtsverlustoperationen für ein gesundes Leben."
+            },
+            "service_2": {
+                "title": "Kosmetische Chirurgie",
+                "description": "Erreichen Sie ein natürliches und elegantes Aussehen mit kosmetischen Lösungen, die Ihre Schönheit hervorheben."
+            },
+            "service_3": {
+                "title": "Brustchirurgie",
+                "description": "Formen Sie Ihre Körperkonturen auf eine ausgeglichene und ästhetische Weise mit ästhetischen und funktionalen Brustoperationen."
+            },
+            "button": "Unsere Behandlungen",
+            "button2": "Mehr Lesen"
+        },
+        "certificates": {
+            "title": "Unsere Zertifikate",
+            "description": "Unsere Zertifikate repräsentieren unsere hohen Standards in den Gesundheitsdienstleistungen und unser Engagement für kontinuierliche Verbesserung, was unsere Entschlossenheit demonstriert, den besten Service für unsere geschätzten Patienten zu bieten."
+        },
+        "blogLatest": {
+            "title": "Blog",
+            "description": "Neueste Artikel"
+        },
+        "appointmentForm": {
+            "title": "Unsere Globale Vision: Innovation und Fürsorge im Gesundheitstourismus",
+            "description": "Wir zielen darauf ab, mit unserem innovativen, sorgfältigen Ansatz im Gesundheitstourismus einen Unterschied zu machen, als Teil unseres Ziels, eine globale Marke zu werden. Wir bieten psychologische und physische Unterstützung für unsere Patienten in der Entscheidungsphase und während des Behandlungsprozesses.",
+            "button_service": "Unsere Dienstleistungen",
+            "button_contact": "Kontakt",
+            "grid_item1": "Kostenloser 'Aftercare'-Dienst für Ein Jahr",
+            "grid_item2": "Keine Warteliste",
+            "grid_item3": "Krankenhausbegleiter",
+            "grid_item4": "Interaktive Kommunikation und Treffen mit dem Chirurgen von Angesicht zu Angesicht",
+            "grid_item5": "Kostenlose Bereitstellung des Ersten Medikamenten-Sets",
+            "form-title": "Kontaktieren Sie uns",
+            "form-subtitle": "Kontaktieren Sie uns für einen Termin. Unsere Ärzte werden Ihnen bei Ihren allgemeinen und medizinischen Fragen behilflich sein.",
+            "form-treatment": "Wählen Sie Ihre Behandlung",
+            "form-doctor": "Wählen Sie Ihren Arzt",
+            "form-name": "Name Nachname",
+            "form-gender": "Geschlecht",
+            "form-gender1": "Männlich",
+            "form-gender2": "Weiblich",
+            "form-gender3": "Bevorzuge keine Angabe",
+            "form-email": "E-Mail",
+            "form-phone": "Telefon",
+            "form-message": "Spezielle Anfragen",
+            "form-button": "Erstellen Sie Ihren Termin",
+            "form-privacy": "Zustimmung zum Datenschutz und zum Schutz der Privatsphäre",
+            "form-privacy2": "Ich habe die Datenschutzrichtlinie und die Bedingungen zum Schutz personenbezogener und gesundheitlicher Informationen gelesen."
+        },
+        "map": {
+            "title": "Gesundheitstourismus in Kuşadası!",
+            "description": "Beginnen Sie ein gesundes Leben im Paradies von Kuşadası, wo Natur und Geschichte aufeinandertreffen. Warum Kuşadası? Diese Länder, voller antiken Heilwissens, waren Zeugen von Jahrhunderten medizinischer Evolution. Ephesus, als ein Symbol des Gesundheitswissens, formt moderne Heilpraktiken.",
+            "button": "Beginnen Sie Ihre Behandlung",
+            "button2": "Über Uns",
+            "list-item1": "Unser Unternehmen, mit seiner modernen medizinischen Infrastruktur und erfahrenem medizinischem Personal, sticht im Gesundheitstourismus hervor.",
+            "list-item2": "In Kuşadası genießen Sie integrierte Gesundheitsdienste mit Meer und Sonne, sowie Thermalwässern und natürlichen Heilressourcen.",
+            "list-item3": "Kuşadası verspricht unvergessliche Momente mit stressfreier Reise, erstklassigen Gesundheitsdiensten, einem Expertenteam und einem reichen kulturellen Gefüge."
+        }
+    },
+    "aboutUs": {
+        "banner": {
+            "title": "Gesundheit & Wunder, Innovative Dienstleistungen im Gesundheitswesen.",
+            "description": "Indem wir unsere jahrelang angesammelte Erfahrung direkt an unsere Patienten weitergeben, zielen wir darauf ab, unseren eigenen innovativen, aufrichtigen und professionellen Service zu bieten, unter Berücksichtigung des Potenzials und der Mängel in diesem Bereich.",
+            "button1": "Kontaktieren Sie Uns",
+            "button2": "Unsere Behandlungen"
+        },
+        "section1": {
+            "title": "Warum Gesundheit Und Wunder?",
+            "description": "Unsere Marke zu einer globalen Marke zu machen, ist unser größtes Ziel. Unsere Mission ist es, unseren Patienten in der Phase, in der sie diese Entscheidung treffen, und danach jede Art von psychologischer und physischer Unterstützung zu bieten. Wir zielen darauf ab, uns mit einem innovativeren und sorgfältigeren Ansatz im Gesundheitstourismus zu differenzieren."
+        },
+        "section2": {
+            "title": "Privilegien, Die Wir Unseren Patienten Bieten",
+            "description": "Wir bieten einen speziellen NATIVE career (Krankenhausbegleiter) Service für den Komfort und die Zufriedenheit unserer Patienten während ihres Genesungsprozesses. Wir beseitigen Kommunikationsprobleme und bieten schnelle Behandlungsoptionen. Zusätzlich unterstützen wir mit einem kostenlosen 'Aftercare'-Dienst für ein Jahr nach der Operation. Wir bieten eine zuverlässige und innovative Option in der Ägäis-Region.",
+            "button": "Kontaktieren Sie Uns"
+        },
+        "section3": {
+            "pre-title": "Persönliche Gesundheitslösungen von Gesundheit&Wunder",
+            "title": "Als Gesundheit&Wunder Bieten Wir Eine Breite Palette von Speziellen Behandlungsmethoden, Um Den Gesundheitsbedürfnissen Ihrer Familienmitglieder Zu Begegnen!",
+            "description": "Mit den innovativen Optionen, die die moderne Medizin bietet, wenden wir jede Behandlung spezifisch auf die individuellen Bedürfnisse an, von der Schlauchmagenoperation bis zur Bauchstraffung.",
+            "grid": {
+                "item1": "Schlauchmagenoperation",
+                "item2": "Magenballon",
+                "item3": "Magenbotox",
+                "item4": "Bruststraffung",
+                "item5": "Bauchstraffung"
+            },
+            "card-slider": {
+                "item1": {
+                    "title": "Spezielle Begleiterunterstützung",
+                    "description": "Fühlen Sie sich sicher zu jedem Zeitpunkt mit unserem speziellen Begleiterservice während Ihres Krankenhausaufenthaltes."
+                },
+                "item2": {
+                    "title": "Direkter Zugang zu Schneller Behandlung",
+                    "description": "Erreichen Sie Ihre Gesundheit in kürzester Zeit mit einem schnellen und effektiven Behandlungsprozess ohne Warteliste."
+                },
+                "item3": {
+                    "title": "24/7 Nachsorge-Möglichkeit",
+                    "description": "Mit unserem Nachsorge-Service, der ein Jahr lang nach der Operation bei Ihnen sein wird, erhalten Sie ununterbrochene Unterstützung während Ihres Genesungsprozesses."
+                },
+                "item4": {
+                    "title": "Innovative Gesundheitslösungen",
+                    "description": "Gewinnen Sie Ihre Gesundheit mit unseren innovativen Gesundheitsdienstleistungen in der Ägäis zurück und treten Sie in ein glückliches Leben ein."
+                }
+            }
+        },
+        "section4": {
+            "title": "Spezielle Privilegien Auf Ihrer Gesundheitsreise",
+            "description": "Wir heben Ihren Behandlungsprozess nicht nur effektiv, sondern auch komfortabel und speziell mit unseren Dienstleistungen an, um Ihre Genesung auf die nächste Stufe zu bringen.",
+            "button": "Kontaktieren Sie Uns"
+        }
+    },
+    "services": {
+        "banner": {
+            "pre-title": "Expertenlösungen Für Ihre Gesundheit",
+            "title": "Umfassende Behandlungsoptionen",
+            "description": "Als Gesundheit und Wunder bieten wir verschiedene Gesundheitsdienste an, die Ihren Bedürfnissen entsprechen. Unser Ziel ist es, Ihnen die effektivsten Behandlungsmethoden zu bieten.",
+            "button": "Vereinbaren Sie Einen Termin",
+            "button2": "Über Uns"
+        },
+        "section1": {
+            "pre-title": "Entdecken Sie Ihre Gesundheit Neu!",
+            "title": "Unsere Speziellen Behandlungsoptionen",
+            "card1": {
+                "title": "Gewichtsverlustchirurgie",
+                "description": "Gewichtsverlustchirurgie ermöglicht es Ihnen, überschüssiges Gewicht dauerhaft zu verlieren. Diese Operation hilft Ihnen, sich schneller satt zu fühlen, indem sie die Größe Ihres Magens reduziert.",
+                "item1": "Langfristiger Gewichtsverlust",
+                "item2": "Verbesserung des Stoffwechsels",
+                "item3": "Vermindertes Risiko chronischer Krankheiten wie Diabetes"
+            },
+            "card2": {
+                "title": "Magenballon",
+                "description": "Der Magenballon ist eine ideale Lösung für diejenigen, die mit Diät und Bewegung allein kein Gewicht verlieren können. Dieser im Magen platzierte Ballon hilft Ihnen, weniger zu essen.",
+                "item1": "Kein chirurgischer Eingriff erforderlich",
+                "item2": "Schneller Gewichtsverlust",
+                "item3": "Bietet einen guten Ausgangspunkt"
+            },
+            "card3": {
+                "title": "Magenbotox",
+                "description": "Magenbotox hilft Ihnen, Gewicht zu verlieren, indem es Ihren Appetit kontrolliert. Es reduziert die Kontraktionen des Magens und lässt Sie länger satt fühlen.",
+                "item1": "Schnelle Erholung nach dem Eingriff",
+                "item2": "Wirksam in der Appetitkontrolle",
+                "item3": "Eine nicht-invasive Methode"
+            },
+            "card4": {
+                "title": "Bauchstraffung",
+                "description": "Eine Bauchstraffung strafft schlaffe oder lose Bauchhaut und verleiht ein festeres Aussehen. Sie bietet eine ästhetische und funktionelle Verbesserung.",
+                "item1": "Entfernung von Bauchschlaffheit",
+                "item2": "Ein flacheres und festeres Bauchaussehen",
+                "item3": "Ausbalancieren der Körperkonturen"
+            },
+            "card5": {
+                "title": "Bruststraffung",
+                "description": "Eine Bruststraffung formt Ihre hängenden Brüste neu und verleiht ein jüngeres und ästhetischeres Aussehen.",
+                "item1": "Brüste erhalten ein jüngeres und ästhetisches Aussehen",
+                "item2": "Beseitigung von Brusthängen",
+                "item3": "Brüste erhalten ein volleres und festeres Aussehen"
+            },
+            "button": "Detaillierte Informationen"
+        },
+        "section2": {
+            "title": "Erleben Sie Den Komfort Ihres Zuhauses Und Die Wärme Ihrer Familie Mit Uns.",
+            "description": "Ihr Komfort und Ihre Zufriedenheit während des Genesungsprozesses sind unsere oberste Priorität. Deshalb bietet das dynamische und energische Team unseres Chirurgen einen Service IN IHRER MUTTERSPRACHE während Ihres Krankenhausaufenthaltes an. Mit diesem speziellen Service, der Sie vor, während und nach der Operation unterstützt, ist sich sicher und wohl zu fühlen garantiert. Sind Sie bereit, Ihre Reise in Frieden zu beginnen? Kontaktieren Sie heute Gesundheit und Wunder und lassen Sie uns Ihnen die Pflege und Unterstützung bieten, die Sie verdienen.",
+            "button": "Über Uns"
+        }
+    },
+    "faq": {
+        "sidebar-quickcontact": {
+            "title": "Schneller Kontakt",
+            "description": "Wenn Sie Fragen haben oder Hilfe benötigen, können Sie unser Team kontaktieren."
+        },
+        "sidebar-workinghours": {
+            "title": "Arbeitszeiten",
+            "weekdays": "Montag - Freitag: 08:00 - 19:00",
+            "saturday": "Samstag: 09:00 - 22:00",
+            "sunday": "Sonntag: 10:00 - 00:00"
+        },
+        "button": "Vereinbaren Sie Einen Termin"
+    },
+    "appointment": {
+        "title": "Machen Sie Den Ersten Schritt Zu Ihrer Gesundheit Mit Dem Antragsformular",
+        "sub-title": "Beginnen Sie Ihre Gesundheitsreise, indem Sie das untenstehende Antragsformular ausfüllen und entdecken Sie, wie wir als Familie Gesundheit&Wunder Ihnen helfen können.",
+        "form": {
+            "title": "Vereinbaren Sie Einen Termin",
+            "description": "Kontaktieren Sie uns für einen Termin. Unsere Ärzte werden Ihnen bei Ihren allgemeinen und medizinischen Fragen behilflich sein.",
+            "sidebar": {
+                "title": "Schnelle Kontakte",
+                "description": "Kontaktieren Sie uns für einen Termin. Unsere Ärzte werden Ihnen bei Ihren allgemeinen und medizinischen Fragen behilflich sein.",
+                "emergency": "Kontaktlinie",
+                "location": "Standort: Söke, Kuşadası",
+                "workinghours": "Montag - Freitag: 08:00 - 19:00"
+            }
+        }
+    },
+    "footer": {
+        "description": "Unsere Klinik ist ein führend in Gewichtsverlustoperationen in der Ägäis. Wir bieten Gesundheit und Glück mit unseren innovativen Behandlungen. Treten Sie dieser Reise bei.",
+        "button": "Erstellen Sie Einen Termin",
+        "quick-links": {
+            "title": "Links",
+            "item1": "Über Uns",
+            "item2": "Dienstleistungen",
+            "item3": "Blog",
+            "item4": "Häufige Fragen",
+            "item5": "Kontaktieren Sie Uns"
+        },
+        "services": {
+            "title": "Unsere Dienstleistungen"
+        },
+        "contact": {
+            "title": "Schneller Kontakt",
+            "description": "Wenn Sie Fragen haben oder Unterstützung benötigen, können Sie unser Team kontaktieren.",
+            "address": "Çeltikçi Viertel, Uludağ Straße Nr.5/A Söke/Aydın/TÜRKEI 09200"
+        },
+        "copyright": {
+            "title": "Alle Rechte Vorbehalten"
+        }
+    }
+}

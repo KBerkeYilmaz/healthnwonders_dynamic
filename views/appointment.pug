@@ -7,12 +7,9 @@ block content
         .container
             .row
                 .col-sm-12.col-md-12.col-lg-12.col-xl-6.offset-xl-3
-                    h1.pagetitle__heading
-                        | Başvuru Formu İle Sağlığınıza İlk Adımı Atın
-                    p.pagetitle__desc
-                        | Sağlık yolculuğunuza başlamak için aşağıdaki başvuru formunu 
-                        | doldurun ve Health&Wonders ailesi olarak size nasıl yardımcı 
-                        | olabileceğimizi keşfedin.
+                    h1.pagetitle__heading= t("appointment.title")
+                    p.pagetitle__desc=t("appointment.sub-title")
+                        
     section.testimonials-layout3.pt-130.bg-overlay.bg-overlay-secondary
         .bg-img
             img(src="assets/images/banners/4.jpg", alt="background")
@@ -61,9 +58,8 @@ block content
                         form.contact-panel__form(method="post", action="assets/php/contact.php", id="contactForm")
                             .row
                                 .col-sm-12
-                                    h4.contact-panel__title Randevu Alın
-                                    p.contact-panel__desc.mb-30
-                                        | Randevu için bizimle iletişime geçin. Genel ve tıbbi sorularınızda doktorlarımız size yardımcı olacaktır.
+                                    h4.contact-panel__title=t("appointment.form.title")
+                                    p.contact-panel__desc.mb-30=t("appointment.sub-title")
                                 .col-sm-6.col-md-6.col-lg-6
                                     .form-group
                                         i.icon-widget.form-group-icon

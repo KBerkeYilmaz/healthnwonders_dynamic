@@ -1,0 +1,133 @@
+{
+  "index": {
+    "services": {
+      "service1": "index.services.service1",
+      "title": "index.services.title",
+      "description": "index.services.description",
+      "service_1": {
+        "title": "index.services.service_1.title",
+        "description": "index.services.service_1.description"
+      },
+      "button2": "index.services.button2",
+      "service_2": {
+        "title": "index.services.service_2.title",
+        "description": "index.services.service_2.description"
+      },
+      "service_3": {
+        "title": "index.services.service_3.title",
+        "description": "index.services.service_3.description"
+      },
+      "button": "index.services.button"
+    },
+    "appointmentForm": {
+      "button_service": "index.appointmentForm.button_service",
+      "button_contact": "index.appointmentForm.button_contact",
+      "grid_item1": "index.appointmentForm.grid_item1",
+      "grid_item2": "index.appointmentForm.grid_item2",
+      "grid_item3": "index.appointmentForm.grid_item3",
+      "grid_item4": "index.appointmentForm.grid_item4",
+      "grid_item5": "index.appointmentForm.grid_item5",
+      "form_title": "index.appointmentForm.form_title",
+      "form_subtitle": "index.appointmentForm.form_subtitle",
+      "form_treatment": "index.appointmentForm.form_treatment",
+      "form_doctor": "index.appointmentForm.form_doctor",
+      "form_name": "index.appointmentForm.form_name",
+      "title": "index.appointmentForm.title",
+      "description": "index.appointmentForm.description",
+      "form-title": "index.appointmentForm.form-title",
+      "form-subtitle": "index.appointmentForm.form-subtitle",
+      "form-treatment": "index.appointmentForm.form-treatment",
+      "form-doctor": "index.appointmentForm.form-doctor",
+      "form-name": "index.appointmentForm.form-name",
+      "form-email": "index.appointmentForm.form-email",
+      "form-phone": "index.appointmentForm.form-phone",
+      "form-gender": "index.appointmentForm.form-gender",
+      "form-gender2": "index.appointmentForm.form-gender2",
+      "form-gender3": "index.appointmentForm.form-gender3",
+      "form-message": "index.appointmentForm.form-message",
+      "form-privacy": "index.appointmentForm.form-privacy",
+      "form-privacy2": "index.appointmentForm.form-privacy2",
+      "form-button": "index.appointmentForm.form-button"
+    },
+    "banner": {
+      "title": "index.banner.title",
+      "description": "index.banner.description",
+      "button1": "index.banner.button1",
+      "button2": "index.banner.button2"
+    },
+    "section1": {
+      "title": "index.section1.title",
+      "sub-title": "index.section1.sub-title",
+      "description": "index.section1.description",
+      "button": "index.section1.button"
+    },
+    "callToAction": {
+      "title": "index.callToAction.title",
+      "description": "index.callToAction.description",
+      "button": "index.callToAction.button",
+      "card1": "index.callToAction.card1",
+      "card2": "index.callToAction.card2",
+      "card3": "index.callToAction.card3",
+      "card4": "index.callToAction.card4",
+      "card5": "index.callToAction.card5",
+      "card6": "index.callToAction.card6",
+      "card7": "index.callToAction.card7",
+      "card8": "index.callToAction.card8"
+    },
+    "certificates": {
+      "title": "index.certificates.title",
+      "description": "index.certificates.description"
+    },
+    "blogLatest": {
+      "title": "index.blogLatest.title",
+      "description": "index.blogLatest.description"
+    },
+    "map": {
+      "title": "index.map.title",
+      "description": "index.map.description",
+      "button": "index.map.button",
+      "list-item1": "index.map.list-item1",
+      "list-item2": "index.map.list-item2",
+      "list-item3": "index.map.list-item3"
+    }
+  },
+  "index.services.service1.title": "index.services.service1.title",
+  "": {
+    "index": {
+      "appointmentForm": {
+        "form-gender1": ".index.appointmentForm.form-gender1"
+      }
+    }
+  },
+  "about-us": {
+    "banner": {
+      "title": "about-us.banner.title"
+    }
+  },
+  "aboutUs": {
+    "banner": {
+      "butto1": "aboutUs.banner.butto1"
+    }
+  },
+  "topbar": {
+    "workingHours": "topbar.workingHours"
+  },
+  "navbar": {
+    "doctors": "navbar.doctors",
+    "treatments": "navbar.treatments"
+  },
+  "footer": {
+    "services": {
+      "title": "footer.services.title"
+    }
+  },
+  "services": {
+    "button": "services.button"
+  },
+  "appointment": {
+    "banner": {
+      "title": "appointment.banner.title"
+    },
+    "description": "appointment.description"
+  }
+}

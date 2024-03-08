@@ -8,19 +8,19 @@ block content
     .slick-carousel.m-slides-0(data-slick='{"slidesToShow": 1, "arrows": true, "dots": false, "speed": 700,"fade": true,"cssEase": "linear"}')
       .slide-item.align-v-h
         .bg-img
-          img(src="/images/page-titles/landingslider_healthandwonder2.webp" alt="slide img")
+          img(src="/images/page-titles/landingslider_healthandwonder2.webp" alt="slide img" eager)
         .container
           .row.align-items-center
             .col-sm-12.col-md-12.col-lg-12.col-xl-7
               .slide__content
-                h1.slide__title Sağlık ve Mucizelerle Dolu Bir Yolculuğa Hazır mısınız?
-                p.slide__desc Uzman doktorlarımız ve modern hastanemizle, sizlere sadece bir tedavi değil, bir deneyim sunuyoruz.
+                h1.slide__title=t('index.banner.title')
+                p.slide__desc=t('index.banner.description')
                 .d-flex.flex-wrap.align-items-center
                   a(href="/appointment" class="btn btn__primary btn__rounded mr-30")
-                    span İletişime Geçin
+                    span= t('index.banner.button1')
                     i.icon-arrow-right
                   a(href="/services" class="btn btn__white btn__rounded")
-                    span Hizmetlerimiz
+                    span= t('index.banner.button2')
                     i.icon-arrow-right
   //- About Layout 1
   section.about-layout1.pb-0
@@ -28,14 +28,14 @@ block content
       .row
         .col-sm-12.col-md-12.col-lg-6
           .heading-layout2
-            h3.heading__title.mb-40 A BETTER LIFE IS POSSIBLE WITH US
+            h3.heading__title.mb-40= t('index.section1.title') 
       .row
         .col-sm-12.col-md-12.col-lg-6
           .about__Text
-            p.mb-30 Health and Wonders olarak, hayatınızın en önemli dönüm noktalarında yanınızda olmanın verdiği sorumlulukla hareket ediyoruz.
-            p.mb-30 Sağlık yolculuğunuzda, dil engellerini aşan, 7/24 ulaşılabilir bir hizmet anlayışı ile konfor ve güvenliğinizi en üst düzeyde tutmayı amaçlıyoruz. Bizimle adım atın, daha sağlıklı bir yaşama birlikte yürüyelim.
+            p.mb-30= t('index.section1.sub-title')
+            p.mb-30= t('index.section1.description')
             .d-flex.align-items-center.mb-30
-              a(href="about-us.html" class="btn btn__primary btn__outlined btn__rounded mr-30") Hakkımızda
+              a(href="about-us" class="btn btn__primary btn__outlined btn__rounded mr-30")= t('index.section1.button')
               img(src="/images/logo/H&W Yatay.png" alt="sub-logo" style="max-width: 130px")
         .col-sm-12.col-md-12.col-lg-6
           .video-banner
@@ -51,12 +51,12 @@ block content
       .row.mb-40
         .col-sm-12.col-md-12.col-lg-5
           .heading__layout2
-            h3.heading__title Bizimle Evinizin Konforunu ve Ailenizin Sıcaklığını Deneyimleyin.
+            h3.heading__title= t('index.callToAction.title')
         .col-sm-12.col-md-12.col-lg-5.offset-lg-1
-          p.heading__desc.font-weight-bold İyileşme sürecinizdeki konforunuz ve memnuniyetiniz bizim için en önemli önceliktir. Bu yüzden cerrahımızın dinamik ve enerjik ekibi, hastane konaklamanız boyunca size özel ANA DİLİNİZDE hizmet sunar. Ameliyat öncesi, sırası ve sonrasında her adımda size destek olan bu özel hizmetle, kendinizi güvende ve rahat hissetmeniz garanti. Huzur içinde yolculuğunuza başlamaya hazır mısınız? Bugün Health and Wonders ile iletişime geçin ve hak ettiğiniz bakımı ve desteği size sağlayalım.
+          p.heading__desc.font-weight-bold=t('index.callToAction.description') 
           .d-flex.flex-wrap.align-items-center.mt-40.mb-30
             a(href="/appointment" class="btn btn__primary btn__rounded mr-30")
-              span Bize Ulaşın
+              span= t('index.callToAction.button')
               i.icon-arrow-right
       //- features layout        
       include ./partials/featured.pug
@@ -67,9 +67,8 @@ block content
       .row
         .col-sm-12.col-md-12.col-lg-6
           .heading-layout1.heading-light.mb-60
-            h3.heading__title Hizmetlerimiz
-            p.heading__desc
-              | Sağlıklı bir kilo verme yolculuğu, estetik bir güzellik dokunuşu ve dengeli vücut hatları için yenilikçi cerrahi çözümlerimizle yanınızdayız.
+            h3.heading__title= t('index.services.title')
+            p.heading__desc= t('index.services.description')              
       .row
         .col-12
           .carousel-container
@@ -79,49 +78,47 @@ block content
                 .service__img
                   img(src="/images/services/1.jpg", alt="img", loading="lazy")
                 .service__content
-                  h4.service__title Kilo Verme Ameliyatı
-                  p.service__desc
-                    | Sağlıklı bir yaşam için özelleştirilmiş kilo verme ameliyatlarıyla kendinizi yeniden keşfedin.
+                  h4.service__title=t('index.services.service_1.title')
+                  p.service__desc=t('index.services.service_1.description')
                   br
                   br
-                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="services.html")
-                    span Okumaya devam et
+                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="/services")
+                    span=t('index.services.button2')
                     i.icon-arrow-right
               // service item #2
               .service-item
                 .service__img
                   img(src="/images/services/2.jpg", alt="img", loading="lazy")
                 .service__content
-                  h4.service__title Kozmetik Cerrahi
-                  p.service__desc
-                    | Güzelliğinizi öne çıkaracak kozmetik çözümlerle doğal ve zarif bir görünüme kavuşun.
+                  h4.service__title=t('index.services.service_2.title')
+                  p.service__desc=t('index.services.service_2.description')
                   br
                   br
                   br
-                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="services.html")
-                    span Okumaya devam et
+                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="/services")
+                    span=t('index.services.button2')
                     i.icon-arrow-right
               // service item #3
               .service-item
                 .service__img
                   img(src="/images/services/3.jpg", alt="img", loading="lazy")
                 .service__content
-                  h4.service__title Göğüs Operasyonu
-                  p.service__desc
-                    | Estetik ve fonksiyonel göğüs operasyonlarıyla vücut hatlarınızı dengeli ve estetik bir şekilde şekillendirin.
+                  h4.service__title=t('index.services.service_3.title')
+                  p.service__desc=t('index.services.service_3.description')
                   br
                   br
-                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="services.html")
-                    span Okumaya devam et
+                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="/services")
+                    span=t('index.services.button2')
                     i.icon-arrow-right
       .row
         .col-12.d-flex.justify-content-end.mt--40
-          a.btn.btn__white.btn__link(href="services.html")
-            span Tedavilerimiz
+          a.btn.btn__white.btn__link(href="/services")
+            span=t('index.services.button')
+              i.icon-arrow-right
             i.icon-arrow-right
   include ./partials/certificates.pug
   //- Testimonials Layout 1
-  include ./partials/testimonials.pug
+  //- include ./partials/testimonials.pug
   include ./partials/blog_grid.pug
   //- Contact Layout 5
   .contact-layout5.bg-overlay.bg-overlay-blue-gradient.pb-60.pt-130
@@ -132,54 +129,52 @@ block content
         .col-sm-12.col-md-12.col-lg-5.d-flex.flex-column.justify-content-start
           div
             .heading.heading-light.mb-30
-              h3.heading__title.mb-30 Global Vizyonumuz: Sağlık Turizminde Yenilik ve Özen
-              p.heading__desc
-                | Global bir marka olma hedefimiz var. Hastalarımıza karar anında ve tedavi sürecinde psikolojik, fiziksel destek sunuyoruz. Sağlık turizminde yenilikçi, özenli yaklaşımla fark yaratmayı amaçlıyoruz.
+              h3.heading__title.mb-30=t('index.appointmentForm.title')
+              p.heading__desc=t('index.appointmentForm.description')
             .d-flex.align-items-center.mb-30
-              a.btn.btn__white.btn__white-style2.btn__rounded.mr-30(href="services.html")
-                span Hizmetlerimiz
+              a.btn.btn__white.btn__white-style2.btn__rounded.mr-30(href="/services")
+                span=t('index.appointmentForm.button_service')
                   i.icon-arrow-right
-              a.btn.btn__white.btn__outlined.btn__rounded(href="contact-us.html") İletişim
+              a.btn.btn__white.btn__outlined.btn__rounded(href="/appointment")= t('index.appointmentForm.button_contact')
           ul.list-items.list-items-layout2.list-items-light.list-horizontal.list-unstyled.mb-50
-            li 1 Yıl Boyunca Ücretsiz 'Aftercare' Hizmeti
-            li Bekleme Listesi Yok
-            li Cerrah ile Yüzyüze Interaktif İletişim ve Toplantı
-            li Hastane Refakatçisi
-            li İlk İlaç Kitinin Ücretsiz Sağlanması
+            li=t("index.appointmentForm.grid_item1")
+            li=t("index.appointmentForm.grid_item2")
+            li=t("index.appointmentForm.grid_item3")
+            li=t("index.appointmentForm.grid_item4")
+            li=t("index.appointmentForm.grid_item5")
         .col-sm-12.col-md-12.col-lg-7
           .contact-panel.mb-50
             form.contact-panel__form(method="post", action="assets/php/contact.php", id="contactForm")
               .row
                 .col-sm-12
-                  h4.contact-panel__title Randevu Alın
-                  p.contact-panel__desc.mb-30
-                    | Randevu için bizimle iletişime geçin. Genel ve tıbbi sorularınızda doktorlarımız size yardımcı olacaktır.
+                  h4.contact-panel__title= t('index.appointmentForm.form-title')
+                  p.contact-panel__desc.mb-30= t('index.appointmentForm.form-subtitle')
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-widget.form-group-icon
                     select.form-control
-                      option(value="0") Tedavinizi seçin
-                      option(value="1") Mide küçültme
-                      option(value="2") Mide büyültme
-                      option(value="3") Mide çektirme
+                        option(value="0")= t('index.appointmentForm.form-treatment')
+                        each treatment in treatments ? treatments : []
+                          option(value=`${index+1}`)= treatment.name
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-user.form-group-icon
                     select.form-control
-                      option(value="0") Doktorunuzu seçin
-                      option(value="1") İsak Taşdemir
+                      option(value="0")= t('index.appointmentForm.form-doctor')
+                      each doctor in doctors ? doctors : []
+                        option(value=`${index+1}`)= doctor.name
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-news.form-group-icon
-                    input.form-control(type="text", placeholder="Adı Soyadı", id="contact-name", name="contact-name", required)
+                    input.form-control(type="text", placeholder=t('index.appointmentForm.form-name'), id="contact-name", name="contact-name", required)
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-email.form-group-icon
-                    input.form-control(type="email", placeholder="E-Posta", id="contact-email", name="contact-email", required)
+                    input.form-control(type="email", placeholder=t('index.appointmentForm.form-email'), id="contact-email", name="contact-email", required)
                 .col-sm-4.col-md-4.col-lg-4
                   .form-group
                     i.icon-phone.form-group-icon
-                    input.form-control(type="text", placeholder="Telefon", id="contact-Phone", name="contact-phone", required)
+                    input.form-control(type="text", placeholder=t('index.appointmentForm.form-phone'), id="contact-Phone", name="contact-phone", required)
                 .col-sm-4.col-md-4.col-lg-4
                   .form-group.form-group-date
                     i.icon-calendar.form-group-icon
@@ -187,23 +182,23 @@ block content
                 .col-sm-4.col-md-4.col-lg-4
                   .form-group
                     select.form-control(id="contact-gender", name="contact-gender", aria-placeholder="Cinsiyet", required)
-                      option(value="") Cinsiyet
-                      option(value="erkek") Erkek
-                      option(value="kadin") Kadın
-                      option(value="belirtmek_istemiyor") Belirtmek İstemiyor
+                      option(value="")=t('index.appointmentForm.form-gender')
+                      option(value="erkek")=t('.index.appointmentForm.form-gender1')
+                      option(value="kadin")=t('index.appointmentForm.form-gender2')
+                      option(value="belirtmek_istemiyor")=t('index.appointmentForm.form-gender3')
                 .col-12
                   .form-group
                     i.icon-note.form-group-icon
-                    textarea.form-control(id="contact-special-requests", name="contact-special-requests", placeholder="Özel talepler", rows="3", required, style="padding: 1rem")
+                    textarea.form-control(id="contact-special-requests", name="contact-special-requests", placeholder=t('index.appointmentForm.form-message'), rows="3", required, style="padding: 1rem")
                   .form-check.form-check-inline(style="margin-bottom: 1rem")
                     input.form-check-input(type="checkbox", id="contact-privacy-agreement", name="contact-privacy-agreement", required)
-                    label.form-check-label(for="contact-privacy-agreement") Gizlilik ve Veri Koruma Onayı
+                    label.form-check-label(for="contact-privacy-agreement")=t('index.appointmentForm.form-privacy')
                   .form-check.form-check-inline(style="margin-bottom: 1rem")
                     input.form-check-input(type="checkbox", id="contact-privacy-policy", name="contact-privacy-policy", required)
-                    label.form-check-label(for="contact-privacy-policy") Kişisel ve sağlık bilgilerinin korunması ile ilgili gizlilik politikası ve şartlarının okudum
+                    label.form-check-label(for="contact-privacy-policy")=t('index.appointmentForm.form-privacy2')
                 .col-12
                   button.btn.btn__primary.btn__rounded.btn__block.btn__xhight.mt-10(type="submit")
-                    span Randevunuzu Oluşturun
+                    span=t('index.appointmentForm.form-button')
                       i.icon-arrow-right
                   .contact-result
   include ./partials/map.pug

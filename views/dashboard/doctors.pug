@@ -7,30 +7,18 @@ block content
       include ../partials/sidebar.pug
       //- Main content with scrollable behavior
       .col-md-9.ml-sm-auto.col-lg-10.px-md-4#mainContent(style='overflow-y: auto;')        
-        #newDoctorForm(style='display: none;')
-          include ../partials/new_doctor.pug
         div.container-fluid
           .row
             .col-md-12
               .d-flex.justify-content-between.align-items-center.mt-4.mb-4
                 h1 Doktorlar
+              .d-flex.justify-content-between.align-items-center.mt-4.mb-4
+                button#toggleBackButton.btn.btn-info(style="display:none;") Geri 
                 button#toggleFormButton.btn.btn-info Yeni Doktor Ekle
-              table#doctorsTable.table.table-striped.table-bordered.table-hover
-                thead
-                  tr
-                    th İsim
-                    th Ana Uzmanlık
-                    th Konum
-                    th İşlemler
-                tbody
-                  each doctor in doctors
-                    tr
-                      td= doctor.name
-                      td= doctor.specialty
-                      td= doctor.location
-                      td
-                        a.btn.btn-primary(href=`/dashboard/doctors/${doctor._id}`) Düzenle
-                        a.btn.btn-danger.delete-btn(href=`/dashboard/doctors/delete/${doctor._id}/delete` data-id=`${doctor._id}`) Sil
+              include ../partials/doctors_table.pug
+        #newDoctorForm(style='display: none;')
+          include ../partials/new_doctor.pug
+
 
 block append scripts
   script(src="/javascripts/dashboard/DoctorsDashboard.js")

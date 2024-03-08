@@ -3,7 +3,7 @@
     .row
       .col-sm-12.col-md-12.col-lg-5
         .heading-layout2
-          h3.heading__title.mb-80 Sağlık Turizminde Kuşadası!
+          h3.heading__title.mb-80= t('index.map.title')
         .map-wrapper.mb-50(style="position: relative")
           img(src="/images/backgrounds/turkey_vector.webp", alt="map")
           .tooltip-box(style="position: absolute; top: 50%; left: 2rem")
@@ -12,13 +12,13 @@
             .tooltip__panel
               p.tooltip__title.mb-0 Söke, Aydın
       .col-sm-12.col-md-12.col-lg-6.offset-lg-1
-        p.heading__desc.color-secondary.font-weight-bold.mb-30 Kuşadası'nın doğa ve tarihle buluşan cennetinde sağlıklı bir yaşama adım atın. Neden Kuşadası? Antik şifa bilgisiyle dolu bu topraklar, tıbbi evrimin yüzyıllarını gördü. Efes, sağlık bilgisinin bir sembolü olarak, modern iyileşme uygulamalarını şekillendiriyor.
+        p.heading__desc.color-secondary.font-weight-bold.mb-30= t('index.map.description')
         .d-flex.align-items-center.mb-60
           a.btn.btn__secondary.btn__rounded.mr-30(href="/appointment")
             i.fas.fa-heart
-            span Tedavine başla
+            span= t('index.map.button')
           a.btn.btn__secondary.btn__outlined.btn__rounded.mr-30(href="/about_us") Hakkımızda
         ul.list-items.list-items-layout3.list-unstyled
-          li Modern tıbbi altyapıya ve uzman hekim kadrosuna sahip firmamız, sağlık turizminde öne çıkmaktadır.
-          li Kuşadası'nda, deniz ve güneşin yanı sıra, termal sular ve doğal şifa kaynakları ile bütünleşik sağlık hizmetlerinin keyfini çıkarın.
-          li Sorunsuz seyahat, üst düzey sağlık hizmetleri, uzman ekip ve zengin kültürel dokusuyla Kuşadası, unutulmaz anlar vaat ediyor.
+          li= t('index.map.list-item1')
+          li= t('index.map.list-item2')
+          li= t('index.map.list-item3')

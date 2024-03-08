@@ -3,8 +3,8 @@ section.blog-grid.pb-50
         .row
             .col-sm-12.col-md-12.col-lg-6.offset-lg-3
                 .heading.text-center.mb-40
-                    h2.heading__subtitle Blog
-                    h3.heading__title Son Makaleler
+                    h2.heading__subtitle=t('index.blogLatest.title')
+                    h3.heading__title=t('index.blogLatest.description')
         .row
             //- Post Items
             each blog in blogs.slice(-3)

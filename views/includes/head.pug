@@ -1,15 +1,28 @@
 head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    meta(http-equiv='X-UA-Compatible' content='ie=edge')
-    meta(name='description' content='We are a team of professionals dedicated to providing the best possible care for our patients, offering a wide range of medical, surgical, and cosmetic treatments.')
-    link(rel="icon" href="/images/favicon/h&wfavicon.svg" type="image/x-icon")
-    title Health and Wonders Official Web App
-    link(rel='preconnect' href='https://fonts.googleapis.com')
-    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin)
-    link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap')
-    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css")
-    link(rel="stylesheet" href="/stylesheets/css/libraries.css")
-    link(rel="stylesheet" href="/stylesheets/css/style.css")
-    // Block for page-specific head content
-    block extraHead
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  meta(name='description' content='We are a team of professionals dedicated to providing the best possible care for our patients, offering a wide range of medical, surgical, and cosmetic treatments.')
+  link(rel="icon" href="/images/favicon/h&wfavicon.svg" type="image/x-icon")
+  title #{title}
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin)
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap')
+  link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css")
+  link(rel="stylesheet" href="/stylesheets/css/libraries.css")
+  link(rel="stylesheet" href="/stylesheets/css/style.css")
+  
+  // Social Media Meta Tags
+  meta(property='og:title' content='Health and Wonders Official Web App')
+  meta(property='og:description' content='We are a team of professionals dedicated to providing the best possible care for our patients, offering a wide range of medical, surgical, and cosmetic treatments.')
+  meta(property='og:image' content='/images/logo/H&W koyu zemin .png')
+  meta(property='og:url' content='https://www.healthandwonders.com')
+  meta(property='og:type' content='website')
+  
+  meta(name='twitter:card' content='summary_large_image')
+  meta(name='twitter:title' content='Health and Wonders Official Web App')
+  meta(name='twitter:description' content='We are a team of professionals dedicated to providing the best possible care for our patients, offering a wide range of medical, surgical, and cosmetic treatments.')
+  meta(name='twitter:image' content='/images/logo/H&W koyu zemin .png')
+  
+  // Block for page-specific head content
+  block extraHead

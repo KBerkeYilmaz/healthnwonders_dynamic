@@ -7,13 +7,13 @@ header.header.header-layout2
                         ul.contact__list.d-flex.flex-wrap.align-items-center.list-unstyled.mb-0
                             li
                                 i.icon-phone
-                                a(href='tel:+905319831396') Acil durum hattı: +90 531 983 1396
+                                a(href='tel:+905319831396')=t("topbar.emergency") + " +90 531 983 1396"
                             li
                                 i.icon-location
-                                span(style='color: white') Konum: Çeltikçi Mahallesi Uludağ Sokak No:5/A Söke/Aydın/TÜRKİYE 09200
+                                span(style='color: white')=t("topbar.location")
                             li
                                 i.icon-clock
-                                span(style='color: white') Pazartesi - Cuma: 8:00 - 19:00
+                                span(style='color: white')=t("topbar.workinghours")
                         .d-flex
                             ul.social-icons.list-unstyled.mb-0.mr-30
                                 li
@@ -34,6 +34,9 @@ header.header.header-layout2
                                 li
                                     a(href='https://www.youtube.com/@HealthandWonders' rel='noopener noreferrer' target='_blank')
                                         i.fab.fa-youtube
+
+
+    
     nav.navbar.navbar-expand-lg.sticky-navbar
         .container-fluid
             a.navbar-brand(href='/')
@@ -44,27 +47,27 @@ header.header.header-layout2
             .collapse.navbar-collapse#mainNavigation
                 ul.navbar-nav.ml-auto
                     li.nav__item
-                        a(href='/' class='nav__item-link') Ana Sayfa
+                        a(href='/' class='nav__item-link')=t("navbar.home")
                     li.nav__item.has-dropdown
-                        a(data-toggle='dropdown' class='dropdown-toggle nav__item-link') Hakkımızda
+                        a(data-toggle='dropdown' class='dropdown-toggle nav__item-link')=t("navbar.about_us.title")
                         ul.dropdown-menu
                             li.nav__item
-                                a(href='/about-us' class='nav__item-link') Biz Kimiz?
+                                a(href='/about-us' class='nav__item-link')=t("navbar.about_us.sub-menu.who-are-we")
                             li.nav__item
-                                a(href='/services' class='nav__item-link') Hizmetlerimiz
+                                a(href='/services' class='nav__item-link')=t("navbar.about_us.sub-menu.services")
                             li.nav__item
-                                a(href='/faq' class='nav__item-link') Sık Sorulan Sorular
+                                a(href='/faq' class='nav__item-link')=t("navbar.about_us.sub-menu.faq")
                     li.nav__item.has-dropdown
-                        a(data-toggle='dropdown' class='dropdown-toggle nav__item-link') Doktorlarımız
+                        a(data-toggle='dropdown' class='dropdown-toggle nav__item-link')=t("navbar.doctors")
                         ul.dropdown-menu
                             each doctor in doctors ? doctors : []
                                 li.nav__item
                                     //- .split(' ').join('-')
                                     a(href=`/doctors/${doctor.name.split(' ').join('-')}` class='nav__item-link')= doctor.name
                     li.nav__item
-                        a(href='/blog' class='nav__item-link') Blog
+                        a(href='/blog' class='nav__item-link')=t("navbar.blog")
                     li.nav__item.has-dropdown
-                        a(data-toggle='dropdown' class='dropdown-toggle nav__item-link') Tedavilerimiz
+                        a(data-toggle='dropdown' class='dropdown-toggle nav__item-link')=t("navbar.treatments")
                         ul.dropdown-menu
                             each treatment in treatments ? treatments : []
                                 li.nav__item
@@ -74,4 +77,17 @@ header.header.header-layout2
             .d-none.d-xl-flex.align-items-center.position-relative.ml-0
                 a(href='/appointment' class='btn btn__primary btn__rounded ml-30')
                     i.icon-calendar
-                    span Bize Ulaşın
+                    span=t("navbar.appointment")
+            //- Language Dropdown
+            - var languages = {en: 'English', tr: 'Türkçe', de: 'Deustch', fr: 'Français'}
+            - var flags = {en: '/images/flags/en.png', tr: '/images/flags/tr.png', de: '/images/flags/gr.png', fr: '/images/flags/fr.png'}
+            .dropdown.dropdown--style2(style='margin-left: 30px;')
+                a.dropdown-toggle(href='#', role='button', id='dropdownLanguage', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    img(src=flags[currentLanguage] alt='flag', style='height: 20px; width: 25px; margin-right: 10px;')
+                ul.dropdown-menu(aria-labelledby='dropdownLanguage')
+                    each val, key in languages
+                        if key != currentLanguage
+                            li
+                                a.dropdown-item(href='/?lng=' + key)
+                                    img(src=flags[key] alt='flag', style='height: 20px; width: 25px; margin-right: 5px;')
+                                    span= val

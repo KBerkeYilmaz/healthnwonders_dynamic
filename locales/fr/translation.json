@@ -1,0 +1,274 @@
+{
+    "route_titles": {
+        "index_page_title": "Santé et Merveilles",
+        "about_us_page_title": "À Propos de Nous",
+        "services_page_title": "Nos Services",
+        "blog_page_title": "Blog",
+        "appointment_page_title": "Contactez-Nous"
+    },
+    "topbar": {
+        "emergency": "Ligne d'urgence :",
+        "location": "Emplacement : Quartier Çeltikçi, Rue Uludağ No:5/A Söke/Aydın/TURQUIE 09200",
+        "workinghours": "Lundi - Vendredi : 08:00 - 19:00"
+    },
+    "navbar": {
+        "home": "Page d'Accueil",
+        "about_us": {
+            "title": "À Propos de Nous",
+            "sub-menu": {
+                "who-are-we": "Qui Sommes-Nous ?",
+                "services": "Nos Services",
+                "faq": "Questions Fréquentes"
+            }
+        },
+        "doctors": "Nos Médecins",
+        "blog": "Blog",
+        "treatments": "Nos Traitements",
+        "appointment": "Contactez-Nous"
+    },
+    "index": {
+        "banner": {
+            "title": "Êtes-vous Prêt pour un Voyage Rempli de Santé et de Merveilles ?",
+            "description": "Avec nos médecins experts et notre hôpital moderne, nous vous offrons non seulement un traitement, mais une expérience.",
+            "button1": "Contactez-Nous",
+            "button2": "Nos Services"
+        },
+        "section1": {
+            "title": "UNE MEILLEURE VIE EST POSSIBLE AVEC NOUS",
+            "sub-title": "En tant que Santé et Merveilles, nous agissons avec la responsabilité d'être à vos côtés dans les moments les plus importants de votre vie.",
+            "description": "Dans votre parcours de santé, nous visons à maintenir votre confort et votre sécurité au plus haut niveau avec une compréhension du service qui surmonte les barrières linguistiques et est accessible 24/7. Faites un pas avec nous, marchons ensemble vers une vie plus saine.",
+            "button": "À Propos de Nous"
+        },
+        "callToAction": {
+            "title": "Expérimentez le Confort de Votre Maison et la Chaleur de Votre Famille Avec Nous.",
+            "description": "Votre confort et votre satisfaction pendant le processus de récupération sont notre priorité absolue. Ainsi, l'équipe dynamique et énergique de notre chirurgien fournit un service DANS VOTRE LANGUE MATERNELLE pendant votre séjour à l'hôpital. Avec ce service spécial qui vous soutient à chaque étape avant, pendant et après l'opération, se sentir en sécurité et à l'aise est garanti. Êtes-vous prêt à commencer votre voyage en paix ? Contactez Santé et Merveilles aujourd'hui et laissez-nous vous fournir les soins et le soutien que vous méritez.",
+            "button": "À Propos de Nous",
+            "card1": "Hébergement à l'Hôtel",
+            "card2": "Soins des Cils et des Ongles",
+            "card3": "Services de Transfert",
+            "card4": "Suivi Post-opératoire Gratuit Pendant Un An",
+            "card5": "Trousse de Médicaments Gratuite",
+            "card6": "Communication en Ligne avec Carrah",
+            "card7": "Accompagnateur Hospitalier",
+            "card8": "Pas de Liste d'Attente, Opération Directe"
+        },
+        "services": {
+            "title": "Nos Services",
+            "description": "Nous sommes à vos côtés avec des solutions chirurgicales innovantes pour un parcours de perte de poids sain, une touche de beauté esthétique et des contours corporels équilibrés.",
+            "service_1": {
+                "title": "Chirurgie de Perte de Poids",
+                "description": "Redécouvrez-vous avec des chirurgies de perte de poids personnalisées pour une vie saine."
+            },
+            "service_2": {
+                "title": "Chirurgie Esthétique",
+                "description": "Obtenez une apparence naturelle et élégante avec des solutions esthétiques qui mettent en valeur votre beauté."
+            },
+            "service_3": {
+                "title": "Chirurgie des Seins",
+                "description": "Façonnez vos contours corporels de manière équilibrée et esthétique avec des opérations esthétiques et fonctionnelles des seins."
+            },
+            "button": "Nos Traitements",
+            "button2": "Lire la Suite"
+        },
+        "certificates": {
+            "title": "Nos Certificats",
+            "description": "Nos certificats représentent nos standards élevés dans les services de santé et notre engagement envers l'amélioration continue, démontrant notre détermination à fournir le meilleur service à nos précieux patients."
+        },
+        "blogLatest": {
+            "title": "Blog",
+            "description": "Derniers Articles"
+        },
+        "appointmentForm": {
+            "title": "Notre Vision Globale : Innovation et Soin dans le Tourisme de Santé",
+            "description": "Nous visons à faire la différence avec notre approche innovante et méticuleuse dans le tourisme de santé dans le cadre de notre objectif de devenir une marque mondiale. Nous fournissons un soutien psychologique et physique à nos patients au stade de la décision et pendant le processus de traitement.",
+            "button_service": "Nos Services",
+            "button_contact": "Contact",
+            "grid_item1": "Service 'Aftercare' Gratuit Pendant Un An",
+            "grid_item2": "Pas de Liste d'Attente",
+            "grid_item3": "Accompagnateur Hospitalier",
+            "grid_item4": "Communication et Rencontre Interactives en Face à Face avec le Chirurgien",
+            "grid_item5": "Fourniture Gratuite du Premier Kit de Médicaments",
+            "form-title": "Contactez-nous",
+            "form-subtitle": "Contactez-nous pour un rendez-vous. Nos médecins vous assisteront avec vos questions générales et médicales.",
+            "form-treatment": "Choisissez Votre Traitement",
+            "form-doctor": "Choisissez Votre Médecin",
+            "form-name": "Nom Prénom",
+            "form-gender": "Genre",
+            "form-gender1": "Masculin",
+            "form-gender2": "Féminin",
+            "form-gender3": "Préfère ne pas le dire",
+            "form-email": "E-Mail",
+            "form-phone": "Téléphone",
+            "form-message": "Demandes Spéciales",
+            "form-button": "Créez Votre Rendez-vous",
+            "form-privacy": "Approbation de la Protection de la Vie Privée et des Données",
+            "form-privacy2": "J'ai lu la politique de confidentialité et les termes concernant la protection des informations personnelles et de santé."
+        },
+        "map": {
+            "title": "Tourisme de Santé à Kuşadası !",
+            "description": "Entamez une vie saine dans le paradis de Kuşadası, où la nature et l'histoire se rencontrent. Pourquoi Kuşadası ? Ces terres, pleines de connaissances ancestrales sur la guérison, ont été témoins de siècles d'évolution médicale. Éphèse, en tant que symbole de connaissance de la santé, façonne les pratiques modernes de guérison.",
+            "button": "Commencez Votre Traitement",
+            "button2": "À Propos de Nous",
+            "list-item1": "Notre entreprise, avec son infrastructure médicale moderne et son personnel médical expert, se distingue dans le tourisme de santé.",
+            "list-item2": "À Kuşadası, profitez des services de santé intégrés avec la mer et le soleil, ainsi que des eaux thermales et des ressources naturelles de guérison.",
+            "list-item3": "Kuşadası promet des moments inoubliables avec un voyage sans souci, des services de santé de haut niveau, une équipe d'experts et une riche texture culturelle."
+        }
+    },
+    "aboutUs": {
+        "banner": {
+            "title": "Santé & Merveilles, Services Innovants en Santé.",
+            "description": "En offrant directement à nos patients notre expérience accumulée au fil des ans, nous visons à fournir notre propre service innovant, sincère et professionnel, en tenant compte du potentiel et des lacunes dans ce domaine.",
+            "button1": "Contactez-Nous",
+            "button2": "Nos Traitements"
+        },
+        "section1": {
+            "title": "Pourquoi Santé Et Merveilles ?",
+            "description": "Transformer notre marque en une marque mondiale est notre plus grand objectif. Notre mission est de fournir tout type de soutien psychologique et physique à nos patients à l'étape de cette décision et par la suite. Nous visons à nous différencier avec une approche plus innovante et méticuleuse dans le tourisme de santé."
+        },
+        "section2": {
+            "title": "Privilèges Que Nous Offrons à Nos Patients",
+            "description": "Nous fournissons un service spécial d'accompagnateur hospitalier (NATIVE career) pour le confort et la satisfaction de nos patients pendant leur processus de récupération. Nous éliminons les problèmes de communication et offrons des options de traitement rapides. De plus, nous soutenons avec un service 'aftercare' gratuit pendant un an après la chirurgie. Nous offrons une option fiable et innovante dans la région Égéenne.",
+            "button": "Contactez-Nous"
+        },
+        "section3": {
+            "pre-title": "Solutions de Santé Personnalisées par Santé&Merveilles",
+            "title": "En tant que Santé&Merveilles, Nous Offrons Une Large Gamme de Méthodes de Traitement Spéciales Pour Répondre aux Besoins de Santé de Vos Membres de la Famille !",
+            "description": "Avec les options innovantes offertes par la médecine moderne, nous appliquons chaque traitement spécifiquement aux besoins individuels, de la Chirurgie de Sleeve Gastrique au Lifting Abdominal.",
+            "grid": {
+                "item1": "Chirurgie de Sleeve Gastrique",
+                "item2": "Ballon Gastrique",
+                "item3": "Botox Gastrique",
+                "item4": "Lifting des Seins",
+                "item5": "Lifting Abdominal"
+            },
+            "card-slider": {
+                "item1": {
+                    "title": "Support d'Accompagnateur Spécial",
+                    "description": "Sentez-vous en sécurité à chaque instant avec notre service d'accompagnateur spécial pendant votre séjour à l'hôpital."
+                },
+                "item2": {
+                    "title": "Accès Direct au Traitement Rapide",
+                    "description": "Retrouvez votre santé dans le plus court délai avec un processus de traitement rapide et efficace sans liste d'attente."
+                },
+                "item3": {
+                    "title": "Possibilité d'Aftercare 24/7",
+                    "description": "Avec notre service d'aftercare, qui sera à vos côtés pendant un an après l'opération, recevez un soutien ininterrompu pendant votre processus de récupération."
+                },
+                "item4": {
+                    "title": "Solutions de Santé Innovantes",
+                    "description": "Retrouvez votre santé avec nos services de santé innovants dans l'Égée et entrez dans une vie heureuse."
+                }
+            }
+        },
+        "section4": {
+            "title": "Privilèges Spéciaux Dans Votre Parcours de Santé",
+            "description": "Nous élevons votre processus de traitement pour qu'il soit non seulement efficace mais aussi confortable et spécial avec nos services, améliorant ainsi votre récupération au niveau supérieur.",
+            "button": "Contactez-Nous"
+        }
+    },
+    "services": {
+        "banner": {
+            "pre-title": "Solutions Expertes Pour Votre Santé",
+            "title": "Options de Traitement Complètes",
+            "description": "En tant que Santé et Merveilles, nous offrons divers services de santé adaptés à vos besoins. Notre objectif est de vous fournir les méthodes de traitement les plus efficaces.",
+            "button": "Prenez un Rendez-vous",
+            "button2": "À Propos de Nous"
+        },
+        "section1": {
+            "pre-title": "Redécouvrez Votre Santé !",
+            "title": "Nos Options de Traitement Spéciales",
+            "card1": {
+                "title": "Chirurgie de Sleeve Gastrique",
+                "description": "La chirurgie de sleeve gastrique vous permet de perdre définitivement l'excès de poids. Cette opération vous aide à vous sentir rassasié plus rapidement en réduisant la taille de votre estomac.",
+                "item1": "Perte de poids à long terme",
+                "item2": "Amélioration du métabolisme",
+                "item3": "Réduction du risque de maladies chroniques comme le diabète"
+            },
+            "card2": {
+                "title": "Ballon Gastrique",
+                "description": "Le ballon gastrique est une solution idéale pour ceux qui ne peuvent pas perdre de poids avec le régime et l'exercice seuls. Ce ballon placé dans l'estomac vous aide à manger moins.",
+                "item1": "Aucune intervention chirurgicale requise",
+                "item2": "Perte de poids rapide",
+                "item3": "Fournit un bon point de départ"
+            },
+            "card3": {
+                "title": "Botox Gastrique",
+                "description": "Le botox gastrique vous aide à perdre du poids en contrôlant votre appétit. Il réduit les contractions de l'estomac, vous permettant de vous sentir rassasié plus longtemps.",
+                "item1": "Récupération rapide après la procédure",
+                "item2": "Efficacité dans le contrôle de l'appétit",
+                "item3": "Une méthode non invasive"
+            },
+            "card4": {
+                "title": "Lifting Abdominal",
+                "description": "Un lifting abdominal resserre la peau abdominale lâche ou tombante, offrant une apparence plus ferme. Il assure une amélioration esthétique et fonctionnelle.",
+                "item1": "Élimination du relâchement abdominal",
+                "item2": "Une apparence abdominale plus plate et plus ferme",
+                "item3": "Équilibrage des contours du corps"
+            },
+            "card5": {
+                "title": "Lifting des Seins",
+                "description": "Un lifting des seins remodèle vos seins tombants, vous offrant une apparence plus jeune et plus esthétique.",
+                "item1": "Les seins obtiennent un aspect plus jeune et esthétique",
+                "item2": "Élimination du relâchement des seins",
+                "item3": "Les seins gagnent une apparence plus pleine et plus ferme"
+            },
+            "button": "Information Détaillée"
+        },
+        "section2": {
+            "title": "Expérimentez le Confort de Votre Maison et la Chaleur de Votre Famille Avec Nous.",
+            "description": "Votre confort et votre satisfaction pendant le processus de récupération sont notre priorité absolue. Ainsi, l'équipe dynamique et énergique de notre chirurgien fournit un service DANS VOTRE LANGUE MATERNELLE pendant votre séjour à l'hôpital. Avec ce service spécial qui vous soutient à chaque étape avant, pendant et après l'opération, se sentir en sécurité et à l'aise est garanti. Êtes-vous prêt à commencer votre voyage en paix ? Contactez Santé et Merveilles aujourd'hui et laissez-nous vous fournir les soins et le soutien que vous méritez.",
+            "button": "À Propos de Nous"
+        }
+    },
+    "faq": {
+        "sidebar-quickcontact": {
+            "title": "Contact Rapide",
+            "description": "Si vous avez des questions ou avez besoin d'aide, vous pouvez contacter notre équipe."
+        },
+        "sidebar-workinghours": {
+            "title": "Heures de Travail",
+            "weekdays": "Lundi - Vendredi : 08:00 - 19:00",
+            "saturday": "Samedi : 09:00 - 22:00",
+            "sunday": "Dimanche : 10:00 - 00:00"
+        },
+        "button": "Prenez un Rendez-vous"
+    },
+    "appointment": {
+        "title": "Faites le Premier Pas Vers Votre Santé avec le Formulaire de Demande",
+        "sub-title": "Commencez votre voyage de santé en remplissant le formulaire de demande ci-dessous et découvrez comment nous, en tant que famille Santé&Merveilles, pouvons vous aider.",
+        "form": {
+            "title": "Prenez un rendez-vous",
+            "description": "Contactez-nous pour un rendez-vous. Nos médecins vous assisteront avec vos questions générales et médicales.",
+            "sidebar": {
+                "title": "Contacts Rapides",
+                "description": "Contactez-nous pour un rendez-vous. Nos médecins vous assisteront avec vos questions générales et médicales.",
+                "emergency": "Ligne de Contact",
+                "location": "Emplacement : Söke, Kuşadası",
+                "workinghours": "Lundi - Vendredi : 08:00 - 19:00"
+            }
+        }
+    },
+    "footer": {
+        "description": "Notre clinique est un leader dans les opérations de perte de poids en Égée. Nous offrons santé et bonheur avec nos traitements innovants. Rejoignez ce voyage.",
+        "button": "Créez un Rendez-vous",
+        "quick-links": {
+            "title": "Liens",
+            "item1": "À Propos de Nous",
+            "item2": "Services",
+            "item3": "Blog",
+            "item4": "FAQs",
+            "item5": "Contactez-Nous"
+        },
+        "services": {
+            "title": "Nos Services"
+        },
+        "contact": {
+            "title": "Contact Rapide",
+            "description": "Si vous avez des questions ou avez besoin d'assistance, vous pouvez contacter notre équipe.",
+            "address": "Quartier Çeltikçi, Rue Uludağ No:5/A Söke/Aydın/TURQUIE 09200"
+        },
+        "copyright": {
+            "title": "Tous Droits Réservés"
+        }
+    }
+}

@@ -3,109 +3,124 @@ document.addEventListener("DOMContentLoaded", () => {
   const addEducationBtn = document.getElementById("addEducationBtn");
   const addInterestBtn = document.getElementById("addInterestBtn");
   const toggleFormButton = document.getElementById("toggleFormButton");
+  const toggleBackButton = document.getElementById("toggleBackButton");
   const newDoctorForm = document.getElementById("newDoctorForm");
+  const doctorsTable = document.querySelector("#doctorsTable");
 
   let experienceItemIndex = 1; // To keep track of the experience items
   let interestsItemIndex = 1; // To keep track of the interest items
   let educationItemIndex = 1; // To keep track of the education items
 
+  // Attach click event to delete buttons
+  document.querySelectorAll(".delete-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      currentDoctorId = this.getAttribute("data-doctorid"); // Get the doctor's ID
+      $("#deleteConfirmationModal").modal("show"); // Show the confirmation modal
+    });
+  });
+
+  // Attach click event to the confirmation button in the modal
+  document
+    .getElementById("confirmDelete")
+    .addEventListener("click", function () {
+      if (currentDoctorId) {
+        fetch(`/api/doctors/${currentDoctorId}`, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data.message); // Log the success message
+            window.location.reload(); // Reload the page to reflect the changes
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    });
+
   addExperienceBtn.addEventListener("click", () => {
     const newPane = document.createElement("div");
     newPane.classList.add(
-      "experience-pane",
-      "d-flex",
-      "flex-row",
-      "align-items-baseline",
-      "mb-2"
+      "form-row",
+      "mb-2",
+      "d-inline-flex",
+      "align-items-center"
     );
     newPane.style.display = "none"; // Hide for fadeIn
     newPane.innerHTML = `
     <div class="form-group col-md-2">
       <label>Başlangıç Yılı:</label>
-      <input class="form-control " style='border-radius:5px;!important' type="text" name="experiences[${experienceItemIndex}][startDate]" required>
+      <input class="form-control " style='border-radius:5px;!important' type="number" name="experiences[${experienceItemIndex}][startDate]" required>
     </div>
     <div class="form-group col-md-2">
       <label>Bitiş Yılı:</label>
-      <input class="form-control " style='border-radius:5px;!important' type="text" name="experiences[${experienceItemIndex}][endDate]" required>
+      <input class="form-control " style='border-radius:5px;!important' type="number" name="experiences[${experienceItemIndex}][endDate]" required>
     </div>
-    <div class="form-group col-md-7">
+    <div class="form-group col-md-8">
       <label>Deneyim Başlığı:</label>
       <input class="form-control" style='border-radius:5px;!important' type="text" name="experiences[${experienceItemIndex}][title]" required>
     </div>
 `;
     experienceItemIndex++;
-    // Insert the new pane before the addExperienceBtn
-    $(newPane).insertBefore(addExperienceBtn).fadeIn("fast");
+    const experienceContainer = document.querySelector(".experience-column");
+    experienceContainer.appendChild(newPane);
   });
 
   addEducationBtn.addEventListener("click", () => {
-    const newPane = document.createElement("div");
-    newPane.classList.add(
-      "education-pane",
-      "d-flex",
-      "flex-column",
+    const newEducationInput = document.createElement("div");
+    newEducationInput.classList.add(
+      "form-row",
       "mb-2",
-      "col-md-8"
+      "d-inline-flex",
+      "align-items-center"
     );
-    newPane.style.display = "none"; // Hide for fadeIn
-    newPane.innerHTML = `
-      <div class="form-group col-md-8">
-        <label for="educationTitle">Eğitim Başlığı:</label>
-        <input class="form-control" type="text" name="education[${educationItemIndex}][title]" required>
-      </div>
+
+    newEducationInput.innerHTML = `
+        <div class="form-group col-md-12">
+            <label for="educationTitle">Eğitim Başlığı:</label>
+            <input class="form-control" style='border-radius:5px;!important' type="text" name="education[${educationItemIndex}][title]" required>
+        </div>
     `;
+
+    const educationContainer = document.querySelector(".education-column");
+    educationContainer.appendChild(newEducationInput);
     educationItemIndex++;
-    // Insert the new pane before the addExperienceBtn
-    $(newPane).insertBefore(addEducationBtn).fadeIn("fast");
   });
 
   addInterestBtn.addEventListener("click", () => {
     const newPane = document.createElement("div");
     newPane.classList.add(
-      "interest-pane",
-      "d-flex",
-      "flex-column",
+      "form-row",
       "mb-2",
-      "col-md-8"
+      "d-inline-flex",
+      "align-items-center"
     );
-    newPane.style.display = "none"; // Hide for fadeIn
     newPane.innerHTML = `
-      <div class="form-group col-md-8">
+      <div class="form-group col-md-12">
         <label for="interestsTitle">Uzmanlık Başlığı:</label>
-        <input class="form-control" type="text" name="interests[${interestsItemIndex}][title]" required>
+        <input class="form-control" style='border-radius:5px;!important' type="text" name="interests[${interestsItemIndex}][title]" required>
       </div>
     `;
     interestsItemIndex++;
+    const interestContainer = document.querySelector(".interest-column");
+
     // Insert the new pane before the addExperienceBtn
-    $(newPane).insertBefore(addInterestBtn).fadeIn("fast");
+    interestContainer.appendChild(newPane);
   });
 
   toggleFormButton.addEventListener("click", () => {
-    // Toggle visibility
-    if (newDoctorForm.style.display === "none") {
-      newDoctorForm.style.display = "block";
-    } else {
-      newDoctorForm.style.display = "none";
-    }
+    // Hide the doctors table and show the new doctor form
+    $(doctorsTable).fadeOut("fast", () => {
+      $(newDoctorForm).fadeIn("fast");
+      toggleBackButton.style.display = "block"; // Show the Geri button
+      toggleFormButton.style.display = "none"; // Hide the Yeni Doktor Ekle button
+    });
   });
 
-  // document.querySelectorAll(".delete-btn").forEach((button) => {
-  //   button.addEventListener("click", function (e) {
-  //     e.preventDefault();
-  //     const doctorId = this.getAttribute("data-id");
-  //     console.log("Deleting doctor with id:", doctorId);
-  //     fetch(`/dashboard/doctors/delete/${doctorId}`, {
-  //       method: "DELETE",
-  //     })
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         console.log("Delete successful", data);
-  //         // Optionally refresh the page or remove the deleted item from the DOM
-  //         window.location.reload();
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error:", error);
-  //       });
-  //   });
-  // });
+  toggleBackButton.addEventListener("click", () => {
+    // Hide the new doctor form and show the doctors table
+    $(newDoctorForm).fadeOut("fast", () => {
+      $(doctorsTable).fadeIn("fast");
+      toggleBackButton.style.display = "none"; // Hide the Geri button
+      toggleFormButton.style.display = "block"; // Show the Yeni Doktor Ekle button
+    });
+  });
 });

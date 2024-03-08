@@ -8,15 +8,15 @@ block content
         .container
             .row
                 .col-sm-12.col-md-12.col-lg-12.col-xl-5
-                    span.pagetitle__subheading Sağlığınız İçin Uzman Çözümler
-                    h1.pagetitle__heading(style="color: white;") Kapsamlı Tedavi Seçenekleri
-                    p.pagetitle__desc(style="color:white") Health and Wonders olarak, ihtiyacınıza uygun çeşitli sağlık hizmetleri sunuyoruz. Amacımız, size en etkili tedavi yöntemlerini sağlamak.
+                    span.pagetitle__subheading=t("services.banner.pre-title")
+                    h1.pagetitle__heading(style="color: white;")= t("services.banner.title")
+                    p.pagetitle__desc(style="color:white")= t("services.banner.description")
                     .d-flex.flex-wrap.align-items-center
                     a.btn.btn__secondary.btn__rounded.mr-30(href="appointment.html")
-                        span Randevu alın
+                        span=t("services.banner.button")
                         i.icon-arrow-right
                     a.btn.btn__secondary.btn__rounded(href="about-us.html")
-                        span Hakkımızda
+                        span=t("services.banner.button2")
     // Services Layout 1
     section.services-layout1.pt-130
         .bg-img
@@ -25,8 +25,8 @@ block content
             .row
                 .col-sm-12.col-md-12.col-lg-6.offset-lg-3
                     .heading.text-center.mb-60
-                        h2.heading__subtitle Sağlığınızı Yeniden Keşfedin!
-                        h3.heading__title Özel Tedavi Seçeneklerimiz
+                        h2.heading__subtitle=t("services.section1.pre-title")
+                        h3.heading__title=t("services.section1.title")
             .row
                 // service item #1
                 .col-sm-12.col-md-6.col-lg-4
@@ -35,14 +35,14 @@ block content
                             i.icon-head
                             i.icon-head
                         .service__content
-                            h4.service__title Tüp Mide Ameliyatı
-                            p.service__desc Tüp Mide Ameliyatı, fazla kilolarınızdan kalıcı bir şekilde kurtulmanızı sağlar. Bu operasyon, mide hacmini azaltarak daha hızlı doymanıza yardımcı olur.
+                            h4.service__title=t("services.section1.card1.title")
+                            p.service__desc=t("services.section1.card1.description")
                             ul.list-items.list-items-layout1.list-unstyled
-                                li Uzun süreli kilo kaybı
-                                li Metabolizmanın iyileştirilmesi
-                                li Diyabet gibi kronik hastalıkların riskinin azaltılması
+                                li=t("services.section1.card1.item1")
+                                li=t("services.section1.card1.item2")
+                                li=t("services.section1.card1.item3")
                             a.btn.btn__secondary.btn__outlined.btn__rounded(href="gastric_sleeve.html")
-                                span Detaylı Bilgi
+                                spant=(t("services.button"))
                                     i.icon-arrow-right
                 // service item #2
                 .col-sm-12.col-md-6.col-lg-4
@@ -51,31 +51,30 @@ block content
                             i.icon-heart
                             i.icon-heart
                         .service__content
-                            h4.service__title Mide Balonu
-                            p.service__desc Mide Balonu, diyet ve egzersizle kilo veremeyenler için ideal bir çözümdür. Mideye yerleştirilen bu balon, daha az yemek yemenize yardımcı olur.
+                            h4.service__title=t("services.section1.card2.title")
+                            p.service__desc=t("services.section1.card2.description")
                             ul.list-items.list-items-layout1.list-unstyled
-                                li Cerrahi bir müdahale gerektirmemesi
-                                li Kısa sürede kilo kaybı
-                                li İyi bir başlangıç noktası sağlaması
+                                li=t("services.section1.card2.item1")
+                                li=t("services.section1.card2.item2")
+                                li=t("services.section1.card2.item3")
                             a.btn.btn__secondary.btn__outlined.btn__rounded(href="gastric_balloon.html")
-                                span Detaylı Bilgi
-                                i.icon-arrow-right
+                                span=t("services.button")
+                                    i.icon-arrow-right
                 // service item #3
                 .col-sm-12.col-md-6.col-lg-4
                     .service-item
                         .service__icon
                             i.icon-microscope
                             i.icon-microscope
-                        .service__content
-                            h4.service__title Mide Botoksu
-                            p.service__desc Mide Botoksu, iştah kontrolünü sağlayarak kilo vermenize yardımcı olur. Midenin kasılmalarını azaltarak daha uzun süre tok kalmanızı sağlar.
+                            h4.service__title=t("services.section1.card3.title")
+                            p.service__desc=t("services.section1.card3.description")
                             ul.list-items.list-items-layout1.list-unstyled
-                                li İşlem sonrası hızlı iyileşme
-                                li İştah kontrolünde etkinlik
-                                li Non-invazif bir yöntem olması
-                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="gastric_botox.html")
-                                span Detaylı Bilgi
-                                i.icon-arrow-right
+                                li=t("services.section1.card3.item1")
+                                li=t("services.section1.card3.item2")
+                                li=t("services.section1.card3.item3")
+                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="gastric_balloon.html")
+                                span=t("services.button")
+                                    i.icon-arrow-right
                 // service item #4
                 .col-sm-12.col-md-6.col-lg-4
                     .service-item
@@ -83,15 +82,15 @@ block content
                             i.icon-dropper
                             i.icon-dropper
                         .service__content
-                            h4.service__title Karın Germe Ameliyatı
-                            p.service__desc Karın Germe Ameliyatı, sarkmış veya gevşemiş karın derisini toparlayarak daha sıkı bir görünüm kazandırır. Estetik ve fonksiyonel bir iyileşme sağlar.
+                            h4.service__title=t("services.section1.card4.title")
+                            p.service__desc=t("services.section1.card4.description")
                             ul.list-items.list-items-layout1.list-unstyled
-                                li Sıkı ve düz bir karın bölgesi
-                                li Vücut konturunun iyileştirilmesi
-                                li Fazla deri ve yağın alınması
-                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="tummy_tuck.html")
-                                span Detaylı Bilgi
-                                i.icon-arrow-right
+                                li=t("services.section1.card4.item1")
+                                li=t("services.section1.card4.item2")
+                                li=t("services.section1.card4.item3")
+                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="gastric_balloon.html")
+                                span=t("services.button")
+                                    i.icon-arrow-right
                 // service item #5
                 .col-sm-12.col-md-6.col-lg-4
                     .service-item
@@ -99,15 +98,15 @@ block content
                             i.icon-heart3
                             i.icon-heart3
                         .service__content
-                            h4.service__title Meme Dikleştirme
-                            p.service__desc Meme Dikleştirme, meme dokusunu yeniden şekillendirerek genç ve estetik bir görünüm sağlar. Bu operasyon, sarkan memelerin daha dik bir forma kavuşmasını sağlar.
+                            h4.service__title=t("services.section1.card5.title")
+                            p.service__desc=t("services.section1.card5.description")
                             ul.list-items.list-items-layout1.list-unstyled
-                                li Daha genç ve estetik bir görünüm
-                                li Giysilerin daha iyi oturması
-                                li Artan özgüven ve memnuniyet
-                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="breast_lift.html")
-                                span Detaylı Bilgi
-                                i.icon-arrow-right
+                                li=t("services.section1.card5.item1")
+                                li=t("services.section1.card5.item2")
+                                li=t("services.section1.card5.item3")
+                            a.btn.btn__secondary.btn__outlined.btn__rounded(href="gastric_balloon.html")
+                                span=t("services.button")
+                                    i.icon-arrow-right
     // Features Layout 2
     section.features-layout2.pt-130.bg-overlay.bg-overlay-primary
         .bg-img
@@ -115,13 +114,13 @@ block content
         .container
             .col-sm-12.col-md-12.col-lg-5
                 .heading__layout2
-                    h3.heading__title(style="color: white") Bizimle Evinizin Konforunu ve Ailenizin Sıcaklığını Deneyimleyin.
+                    h3.heading__title(style="color: white")=t("services.section2.title")
             .row.mb-100
                 .col-sm-3.col-md-3.col-lg-1.offset-lg-5
                     .heading__icon
                         i.icon-insurance
                 .col-sm-9.col-md-9.col-lg-6
-                    p.heading__desc.font-weight-bold.color-white.mb-30 İyileşme sürecinizdeki konforunuz ve memnuniyetiniz bizim için en önemli önceliktir. Bu yüzden cerrahımızın dinamik ve enerjik ekibi, hastane konaklamanız boyunca size özel ANA DİLİNİZDE hizmet sunar. Ameliyat öncesi, sırası ve sonrasında her adımda size destek olan bu özel hizmetle, kendinizi güvende ve rahat hissetmeniz garanti. Huzur içinde yolculuğunuza başlamaya hazır mısınız? Bugün Health and Wonders ile iletişime geçin ve hak ettiğiniz bakımı ve desteği size sağlayalım.
+                    p.heading__desc.font-weight-bold.color-white.mb-30=t("services.section2.description")
             include ./partials/featured.pug
     include ./partials/certificates.pug
     include ./partials/testimonials.pug

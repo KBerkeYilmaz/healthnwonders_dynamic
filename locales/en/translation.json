@@ -1,0 +1,280 @@
+{
+    "route_titles": {
+        "index_page_title": "Health and Wonders",
+        "about_us_page_title": "About Us",
+        "services_page_title": "Our Services",
+        "blog_page_title": "Blog",
+        "appointment_page_title": "Contact Us"
+    },
+    "topbar": {
+        "emergency": "Emergency line:",
+        "location": "Location: Çeltikçi Neighborhood Uludağ Street No:5/A Söke/Aydın/TURKEY 09200",
+        "workinghours": "Monday - Friday: 08:00 - 19:00"
+    },
+    "navbar": {
+        "home": "Home",
+        "about_us": {
+            "title": "About Us",
+            "sub-menu": {
+                "who-are-we": "Who Are We?",
+                "services": "Our Services",
+                "faq": "Frequently Asked Questions"
+            }
+        },
+        "doctors": "Our Doctors",
+        "blog": "Blog",
+        "treatments": "Our Treatments",
+        "appointment": "Contact Us"
+    },
+    "index": {
+        "banner": {
+            "title": "Are You Ready for a Journey Filled with Health and Miracles?",
+            "description": "With our expert doctors and modern hospital, we offer you not just a treatment, but an experience.",
+            "button1": "Contact Us",
+            "button2": "Our Services"
+        },
+        "section1": {
+            "title": "A BETTER LIFE IS POSSIBLE WITH US",
+            "sub-title": "As Health and Wonders, we act with the responsibility of being with you at the most important turning points of your life.",
+            "description": "In your health journey, we aim to keep your comfort and safety at the highest level with a service understanding that overcomes language barriers and is accessible 24/7. Take a step with us, let's walk to a healthier life together.",
+            "button": "About Us"
+        },
+        "callToAction": {
+            "title": "Experience the Comfort of Your Home and the Warmth of Your Family with Us.",
+            "description": "Your comfort and satisfaction during the recovery process are our top priority. Therefore, our surgeon's dynamic and energetic team provides service in YOUR NATIVE LANGUAGE during your hospital stay. With this special service that supports you at every step before, during, and after the surgery, feeling safe and comfortable is guaranteed. Are you ready to start your journey in peace? Contact Health and Wonders today and let us provide you with the care and support you deserve.",
+            "button": "About Us",
+            "card1": "Hotel Accommodation",
+            "card2": "Eyelash and Nail Care",
+            "card3": "Transfer Services",
+            "card4": "Free One Year Aftercare",
+            "card5": "Free Medication Kit",
+            "card6": "Online Communication with Carrah",
+            "card7": "Hospital Companion",
+            "card8": "No Waiting List, Direct Operation"
+        },
+        "services": {
+            "title": "Our Services",
+            "description": "We are by your side with innovative surgical solutions for a healthy weight loss journey, an aesthetic beauty touch, and balanced body contours.",
+            "service_1": {
+                "title": "Weight Loss Surgery",
+                "description": "Rediscover yourself with customized weight loss surgeries for a healthy life."
+            },
+            "service_2": {
+                "title": "Cosmetic Surgery",
+                "description": "Achieve a natural and elegant appearance with cosmetic solutions that highlight your beauty."
+            },
+            "service_3": {
+                "title": "Breast Surgery",
+                "description": "Shape your body contours in a balanced and aesthetic way with aesthetic and functional breast surgeries."
+            },
+            "button": "Our Treatments",
+            "button2": "Read More"
+        },
+        "certificates": {
+            "title": "Our Certificates",
+            "description": "Our certificates represent our high standards in health services and our commitment to continuous improvement, demonstrating our determination to provide the best service to our valued patients."
+        },
+        "blogLatest": {
+            "title": "Blog",
+            "description": "Latest Articles"
+        },
+        "appointmentForm": {
+            "title": "Our Global Vision: Innovation and Care in Health Tourism",
+            "description": "We aim to make a difference with our innovative, meticulous approach in health tourism as part of our goal to become a global brand. We provide psychological and physical support to our patients at the decision stage and during the treatment process.",
+            "button_service": "Our Services",
+           
+
+ "button_contact": "Contact",
+            "grid_item1": "Free 'Aftercare' Service for One Year",
+            "grid_item2": "No Waiting List",
+            "grid_item3": "Hospital Companion",
+            "grid_item4": "Face-to-face Interactive Communication and Meeting with Surgeon",
+            "grid_item5": "Free Provision of the First Medication Kit",
+            "form-title": "Contact us",
+            "form-subtitle": "Contact us for an appointment. Our doctors will assist you with your general and medical questions.",
+            "form-treatment": "Choose Your Treatment",
+            "form-doctor": "Choose Your Doctor",
+            "form-name": "Name Surname",
+            "form-gender": "Gender",
+            "form-gender1": "Male",
+            "form-gender2": "Female",
+            "form-gender3": "Prefer Not to Say",
+            "form-email": "E-Mail",
+            "form-phone": "Phone",
+            "form-message": "Special Requests",
+            "form-button": "Create Your Appointment",
+            "form-privacy": "Privacy and Data Protection Approval",
+            "form-privacy2": "I have read the privacy policy and terms regarding the protection of personal and health information."
+        },
+        "map": {
+            "title": "Health Tourism in Kuşadası!",
+            "description": "Step into a healthy life in the paradise of Kuşadası, where nature and history meet. Why Kuşadası? These lands, full of ancient healing knowledge, have witnessed centuries of medical evolution. Ephesus, as a symbol of health knowledge, shapes modern healing practices.",
+            "button": "Start Your Treatment",
+            "button2": "About Us",
+            "list-item1": "Our company, with its modern medical infrastructure and expert medical staff, stands out in health tourism.",
+            "list-item2": "In Kuşadası, enjoy integrated health services with the sea and sun, as well as thermal waters and natural healing resources.",
+            "list-item3": "Kuşadası promises unforgettable moments with hassle-free travel, top-level health services, an expert team, and a rich cultural texture."
+        }
+    },
+    "aboutUs": {
+        "banner": {
+            "title": "Health & Wonders, Innovative Services in Health.",
+            "description": "By offering our years of accumulated experience directly to our patients, we aim to provide our own innovative, sincere, and professional service, considering the potential and deficiencies in this field.",
+            "button1": "Contact Us",
+            "button2": "Our Treatments"
+        },
+        "section1": {
+            "title": "Why Health And Wonders?",
+            "description": "Turning our brand into a global brand is our biggest goal. Our mission is to provide all kinds of psychological and physical support to our patients at the stage they make this decision and afterwards. We aim to differentiate ourselves with a more innovative and meticulous approach in health tourism."
+        },
+        "section2": {
+            "title": "Privileges We Offer to Our Patients",
+            "description": "We provide special NATIVE career (hospital companion) service for the comfort and satisfaction of our patients during their recovery process. We eliminate communication problems and offer fast treatment options. In addition, we support with a free 'aftercare' service for one year after surgery. We offer a reliable and innovative option in the Aegean region.",
+            "button": "Contact Us"
+        },
+        "section3": {
+            "pre-title": "Personal Health Solutions by Health&Wonders",
+            "title": "As Health&Wonders, We Offer a Wide Range of Special Treatment Methods to Meet the Health Needs of Your Family Members!",
+            "description": "With the innovative options offered by modern medicine, we apply each treatment specifically to the individual's needs, from Gastric Sleeve Surgery to Tummy Tuck.",
+            "grid": {
+                "item1": "Gastric Sleeve Surgery",
+                "item2": "Gastric Balloon",
+                "item3": "Stomach Botox",
+                "item4": "Breast Lift",
+                "item5": "Tummy Tuck"
+            },
+            "card-slider": {
+                "item1": {
+                    "title": "Special Companion Support",
+                    "description": "Feel safe at every moment with our special companion service during your hospital stay."
+                },
+                "item2": {
+                    "title": "Direct Access to Fast Treatment",
+                    "description": "Achieve your health in the shortest time with a fast and effective treatment process without a waiting list."
+                },
+                "item3": {
+                    "title": "24/7 Aftercare Possibility",
+                    "description": "With our aftercare service, which will be with you for a year after the operation, receive uninterrupted support during your recovery process."
+                },
+                "item4": {
+                    "title":
+
+ "Innovative Health Solutions",
+                    "description": "Regain your health with our innovative health services in the Aegean and step into a happy life."
+                }
+            }
+        },
+        "section4": {
+            "title": "Special Privileges in Your Health Journey",
+            "description": "We elevate your treatment process not only to be effective but also comfortable and special with our services, enhancing your recovery to the next level.",
+            "button": "Contact Us"
+        }
+    },
+    "services": {
+        "banner": {
+            "pre-title": "Expert Solutions for Your Health",
+            "title": "Comprehensive Treatment Options",
+            "description": "As Health and Wonders, we offer various health services suitable for your needs. Our goal is to provide you with the most effective treatment methods.",
+            "button": "Make an Appointment",
+            "button2": "About Us"
+        },
+        "section1": {
+            "pre-title": "Rediscover Your Health!",
+            "title": "Our Special Treatment Options",
+            "card1": {
+                "title": "Gastric Sleeve Surgery",
+                "description": "Gastric Sleeve Surgery allows you to permanently lose excess weight. This operation helps you feel fuller quicker by reducing the size of your stomach.",
+                "item1": "Long-term weight loss",
+                "item2": "Improvement of metabolism",
+                "item3": "Reduced risk of chronic diseases like diabetes"
+            },
+            "card2": {
+                "title": "Gastric Balloon",
+                "description": "The Gastric Balloon is an ideal solution for those who cannot lose weight through diet and exercise alone. This balloon placed in the stomach helps you eat less.",
+                "item1": "No surgical intervention required",
+                "item2": "Rapid weight loss",
+                "item3": "Provides a good starting point"
+            },
+            "card3": {
+                "title": "Stomach Botox",
+                "description": "Stomach Botox helps you lose weight by controlling your appetite. It reduces the contractions of the stomach, making you feel fuller for longer.",
+                "item1": "Quick recovery after the procedure",
+                "item2": "Effective in appetite control",
+                "item3": "A non-invasive method"
+            },
+            "card4": {
+                "title": "Tummy Tuck",
+                "description": "A Tummy Tuck tightens sagging or loose abdominal skin, giving a firmer appearance. It provides aesthetic and functional improvement.",
+                "item1": "Removal of abdominal sagging",
+                "item2": "A flatter and firmer abdominal appearance",
+                "item3": "Balancing body contours"
+            },
+            "card5": {
+                "title": "Breast Lift",
+                "description": "A Breast Lift reshapes your sagging breasts, giving a younger and more aesthetic appearance.",
+                "item1": "Breasts obtain a younger and aesthetic look",
+                "item2": "Elimination of breast sagging",
+                "item3": "Breasts gain a fuller and firmer appearance"
+            },
+            "button": "Detailed Information"
+        },
+        "section2": {
+            "title": "Experience the Comfort of Your Home and the Warmth of Your Family with Us.",
+            "description": "Your comfort and satisfaction during the recovery process are our top priority. Therefore, our surgeon's dynamic and energetic team provides service in YOUR NATIVE LANGUAGE during your hospital stay. With this special service that supports you at every step before, during, and after the surgery, feeling safe and comfortable is guaranteed. Are you ready to start your journey in peace? Contact Health and Wonders today and let us provide you with the care and support you deserve.",
+            "button": "About Us"
+        }
+    },
+    "faq": {
+        "sidebar-quickcontact": {
+            "title": "Quick Contact",
+            "description": "If you have questions or need help, you can contact our team."
+        },
+        "sidebar-workinghours": {
+            "title": "Working Hours",
+            "weekdays": "Monday - Friday: 08:00 - 19:00",
+            "saturday": "Saturday: 09:00 - 22:00",
+            "sunday": "Sunday: 10:00 - 00:00"
+        },
+        "button": "Make an Appointment"
+    },
+    "appointment": {
+        "title": "Take the First Step to Your Health with the Application Form",
+        "sub-title": "Start your health journey by filling out the application form below and discover how we, as the Health&Wonders family, can help you.",
+        "form": {
+            "title": "Make an appointment",
+            "description": "Contact us for an appointment. Our doctors will assist you with your general and medical questions.",
+            "sidebar":
+
+ {
+                "title": "Quick Contacts",
+                "description": "Contact us for an appointment. Our doctors will assist you with your general and medical questions.",
+                "emergency": "Contact Line",
+                "location": "Location: Söke, Kuşadası",
+                "workinghours": "Monday - Friday: 08:00 - 19:00"
+            }
+        }
+    },
+    "footer": {
+        "description": "Our clinic is a leader in weight loss operations in the Aegean. We offer health and happiness with our innovative treatments. Join this journey.",
+        "button": "Create an Appointment",
+        "quick-links": {
+            "title": "Links",
+            "item1": "About Us",
+            "item2": "Services",
+            "item3": "Blog",
+            "item4": "FAQs",
+            "item5": "Contact Us"
+        },
+        "services": {
+            "title": "Our Services"
+        },
+        "contact": {
+            "title": "Quick Contact",
+            "description": "If you have questions or need assistance, you can contact our team.",
+            "address": "Çeltikçi Neighborhood Uludağ Street No:5/A Söke/Aydın/TURKEY 09200"
+        },
+        "copyright": {
+            "title": "All Rights Reserved"
+        }
+    }
+}

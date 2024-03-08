@@ -13,11 +13,12 @@ const doctorSchema = new mongoose.Schema(
     experiences: [
       {
         title: String, // E.g., "Residency"
-        startDate: String,
-        endDate: String,
+        startDate: Number,
+        endDate: Number,
         description: String, // Optional: additional details about the experience
       },
     ],
+    // profilePic: String,
   },
   {
     timestamps: true,

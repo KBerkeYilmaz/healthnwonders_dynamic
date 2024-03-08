@@ -8,14 +8,14 @@ block content
         .container
             .row
                 .col-sm-12.col-md-12.col-lg-12.col-xl-5
-                    h1.pagetitle__heading Health & Wonders, Sağlıkta Yenilikçi Hizmet.
-                    p.pagetitle__desc Yıllarca birikmiş tecrübemizi hastalarımıza birebir sunarak, bu alandaki potansiyeli ve eksiklikleri göz önünde bulundurarak kendi yenilikçi, samimi ve profesyonel hizmetimizi sunmayı amaçlıyoruz.
+                    h1.pagetitle__heading= t("aboutUs.banner.title")
+                    p.pagetitle__desc=t("aboutUs.banner.description")
                         .d-flex.flex-wrap.align-items-center
                             a.btn.btn__primary.btn__rounded.mr-30(href="/appointment")
-                                span Bize ulaşın
+                                span=t("aboutUs.banner.button1")
                                     i.icon-arrow-right
                             a.btn.btn__white.btn__rounded(href="/services")
-                                span Tedavilerimiz
+                                span=t("aboutUs.banner.button2")
                                     i.icon-arrow-right
     // About Layout 1
     section.about-layout1.pb-0
@@ -23,11 +23,11 @@ block content
             .row
                 .col-sm-12.col-md-12.col-lg-6
                     .heading-layout2
-                        h3.heading__title.mb-40 Neden Health And Wonders?
+                        h3.heading__title.mb-40=t("aboutUs.section1.title")
             .row
                 .col-sm-12.col-md-12.col-lg-6
                     .about__Text
-                        p.mb-30 Markamızı global bir marka haline getirmek bizim en büyük hedefimiz. Misyonumuz hastalarımıza bu kararı aldıkları aşamada ve sonrasında her türlü psikolojik ve fiziksel desteği sunmak.Sağlık turizminde daha yenilikçi ve titiz bir yaklaşımla farkımızı ortaya koymayı hedefliyoruz.
+                        p.mb-30= t("aboutUs.section1.description")
                 .col-sm-12.col-md-12.col-lg-6
                     .video-banner
                         img(src="/images/about/youtube_thumbnail_health.png" alt="about")
@@ -41,13 +41,13 @@ block content
             .row.mb-40
                 .col-sm-12.col-md-12.col-lg-5
                     .heading__layout2
-                        h3.heading__title Hastalarımıza Sunduğumuz Ayrıcalıklar
+                        h3.heading__title=t("aboutUs.section2.title")
                 .col-sm-12.col-md-12.col-lg-5.offset-lg-1
-                    p.heading__desc.font-weight-bold Hastalarımızın konforu ve iyileşme sürecindeki memnuniyeti için özel NATIVE career (hastane refakatçisi) hizmeti sunuyoruz. İletişim sorununu ortadan kaldırıyoruz ve hızlı tedavi imkanı sunuyoruz. Ayrıca, ameliyat sonrası 1 yıl boyunca ücretsiz 'aftercare' hizmeti ile destek sağlıyoruz. Ege bölgesinde güvenilir ve yenilikçi bir seçenek sunuyoruz.
+                    p.heading__desc.font-weight-bold=t("aboutUs.section2.description")
                     .d-flex.flex-wrap.align-items-center.mt-40.mb-30
                         a(href="/appointment" class="btn btn__primary btn__rounded mr-30")
-                            span Bize Ulaşın
-                            i.icon-arrow-right
+                            span=t("aboutUs.section2.button")
+                                i.icon-arrow-right
                 //- features layout        
                 include ./partials/featured.pug
     // Work Process
@@ -57,17 +57,17 @@ block content
         .container
             .row.heading-layout2
                 .col-12
-                    h2.heading__subtitle.color-primary Sağlıkta Kişisel Çözümler Sunan Health&Wonders
+                    h2.heading__subtitle.color-primary=t("aboutUs.section3.pre-title")
                 .col-sm-12.col-md-12.col-lg-6.col-xl-5
-                    h3.heading__title.color-white Health&Wonders olarak, aile bireylerinizin sağlık ihtiyaçlarını karşılamak için geniş bir yelpazede özel tedavi yöntemleri sunuyoruz!
+                    h3.heading__title.color-white=t("aboutUs.section3.title")
                 .col-sm-12.col-md-12.col-lg-6.col-xl-6.offset-xl-1
-                    p.heading__desc.font-weight-bold.color-gray.mb-40 Modern tıbbın sunduğu yenilikçi seçeneklerle, Tüp Mide Ameliyatından Karın Germe Ameliyatına kadar her bir tedaviyi kişinin kendi ihtiyaçlarına özel olarak uyguluyoruz
+                    p.heading__desc.font-weight-bold.color-gray.mb-40=t("aboutUs.section3.description")
                     ul.list-items.list-items-layout2.list-items-light.list-horizontal.list-unstyled
-                        li Tüp Mide Ameliyatı
-                        li Mide Balonu
-                        li Mide Botoksu
-                        li Karın Germe Ameliyatı
-                        li Meme Dikleştirme
+                        li=t("aboutUs.section3.grid.item1")
+                        li=t("aboutUs.section3.grid.item2")
+                        li=t("aboutUs.section3.grid.item3")
+                        li=t("aboutUs.section3.grid.item4")
+                        li=t("aboutUs.section3.grid.item5")
             .row
                 .col-12
                     .carousel-container.mt-90
@@ -77,42 +77,42 @@ block content
                                 span.process__number 01
                                 .process__icon
                                     i.icon-health-report
-                                h4.process__title Özel Refakatçi Desteği
-                                p.process__desc Hastane süreciniz boyunca yanınızda olan özel refakatçi hizmetimizle kendinizi her an güvende hissedin.
+                                h4.process__title= t("aboutUs.section3.card-slider.item1.title")
+                                p.process__desc= t("aboutUs.section3.card-slider.item1.description")
                             // Process item #2
                             div.process-item
                                 span.process__number 02
                                 .process__icon
                                     i.icon-dna
-                                h4.process__title Hızlı Tedaviye Direkt Erişim
-                                p.process__desc Bekleme listesi olmadan hızlı ve etkin tedavi süreciyle sağlığınıza en kısa zamanda kavuşun.
+                                h4.process__title= t("aboutUs.section3.card-slider.item2.title")
+                                p.process__desc= t("aboutUs.section3.card-slider.item2.description")
                             // Process item #3
                             div.process-item
                                 span.process__number 03
                                 .process__icon
                                     i.icon-medicine
-                                h4.process__title 7/24 Aftercare İmkanı
-                                p.process__desc Operasyon sonrası bir yıl boyunca sürekli yanınızda olacak aftercare hizmetimizle, iyileşme sürecinizde kesintisiz destek alın.
+                                h4.process__title= t("aboutUs.section3.card-slider.item3.title")
+                                p.process__desc= t("aboutUs.section3.card-slider.item3.description")
                             // Process item #4
                             div.process-item
                                 span.process__number 04
                                 .process__icon
                                     i.icon-stethoscope
-                                h4.process__title Yenilikçi Sağlık Çözümleri
-                                p.process__desc Ege'nin yenilikçi sağlık hizmetlerimizle sağlığınızı yeniden kazanın ve mutlu bir yaşama adım atın.
+                                h4.process__title= t("aboutUs.section3.card-slider.item4.title")    
+                                p.process__desc= t("aboutUs.section3.card-slider.item4.description")
         .cta.bg-primary
             .container
                 .row.align-items-center
                     .col-sm-12.col-md-2.col-lg-2
                         img.cta__img(src="/images/icons/alert.png", alt="alert")
                     .col-sm-12.col-md-7.col-lg-7
-                        h4.cta__title Sağlık Yolculuğunuzda Özel Ayrıcalıklar
-                        p.cta__desc Tedavi sürecinizi sadece etkili değil, aynı zamanda konforlu ve özel kılan hizmetlerimizle, iyileşmenizi bir üst seviyeye taşıyoruz.
+                        h4.cta__title= t("aboutUs.section4.title")
+                        p.cta__desc= t("aboutUs.section4.description")
                     .col-sm-12.col-md-3.col-lg-3
                         a.btn.btn__secondary.btn__secondary-style2.btn__rounded.mr-30(href="appointment")
-                            span Bize ulaşın
+                            span= t("aboutUs.section4.button")
                             i.icon-arrow-right
     include ./partials/certificates.pug
-    include ./partials/testimonials.pug
+    //- include ./partials/testimonials.pug
     include ./partials/blog_grid.pug
     include ./partials/map.pug

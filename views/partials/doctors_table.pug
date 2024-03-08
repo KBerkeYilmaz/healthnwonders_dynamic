@@ -1,0 +1,29 @@
+table#doctorsTable.table.table-striped.table-bordered.table-hover
+    thead
+        tr
+        th İsim
+        th Ana Uzmanlık
+        th Konum
+        th İşlemler
+    tbody
+        each doctor in doctors
+            tr
+                td= doctor.name
+                td= doctor.specialty
+                td= doctor.location
+                td
+                    .d-flex.justify-content-start.align-items-center(style="gap: 10px;")
+                        a.btn.btn-primary(href=`/dashboard/doctors/${doctor._id}`) Düzenle
+                        button.btn.btn-danger.delete-btn(type='button', data-toggle='modal', data-target='#exampleModalCenter', data-doctorid=doctor._id) Sil 
+                //- Example Modal for Deletion Confirmation
+                .modal.fade#deleteConfirmationModal(tabindex='-1', role='dialog')
+                    .modal-dialog.modal-dialog-centered(role='document')
+                        .modal-content
+                            .modal-header
+                                h5.modal-title#exampleModalLongTitle Emin misiniz?
+                                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                    span(aria-hidden='true') ×
+                            .modal-body Bu kaydı silmek istediğinize emin misiniz? 
+                            .modal-footer.d-flex.justify-content-between.align-items-center
+                                button.btn.btn-primary(type='button', id='confirmDelete') Evet
+                                button.btn.btn-danger(type='button', data-dismiss='modal') Hayır
