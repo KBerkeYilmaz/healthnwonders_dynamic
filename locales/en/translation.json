@@ -82,9 +82,7 @@
             "title": "Our Global Vision: Innovation and Care in Health Tourism",
             "description": "We aim to make a difference with our innovative, meticulous approach in health tourism as part of our goal to become a global brand. We provide psychological and physical support to our patients at the decision stage and during the treatment process.",
             "button_service": "Our Services",
-           
-
- "button_contact": "Contact",
+            "button_contact": "Contact",
             "grid_item1": "Free 'Aftercare' Service for One Year",
             "grid_item2": "No Waiting List",
             "grid_item3": "Hospital Companion",
@@ -157,9 +155,7 @@
                     "description": "With our aftercare service, which will be with you for a year after the operation, receive uninterrupted support during your recovery process."
                 },
                 "item4": {
-                    "title":
-
- "Innovative Health Solutions",
+                    "title": "Innovative Health Solutions",
                     "description": "Regain your health with our innovative health services in the Aegean and step into a happy life."
                 }
             }
@@ -243,9 +239,7 @@
         "form": {
             "title": "Make an appointment",
             "description": "Contact us for an appointment. Our doctors will assist you with your general and medical questions.",
-            "sidebar":
-
- {
+            "sidebar": {
                 "title": "Quick Contacts",
                 "description": "Contact us for an appointment. Our doctors will assist you with your general and medical questions.",
                 "emergency": "Contact Line",
@@ -275,6 +269,38 @@
         },
         "copyright": {
             "title": "All Rights Reserved"
+        }
+    },
+    "doctors": {
+        "bio": "Biography",
+        "education": "Education",
+        "experience": "Experience",
+        "specialty": "Specialties",
+        "location": "Office"
+    },
+    "treatments": {
+        "services": {
+            "title": "Special Privileges for Our Patients",
+            "description": "Our clinic aims to make a difference in medical tourism by offering our patients a comprehensive experience not only during the treatment process but also before and after treatment. Our carefully prepared special privileges, focusing on the comfort, satisfaction, and speedy recovery of each of our patients, promise to turn your treatment process into a first-class service journey.",
+            "item1": "Hotel Accommodation",
+            "item2": "Lash and Nail Care",
+            "item3": "Transfer Services",
+            "item4": "One Year of Free Aftercare",
+            "item5": "Free Medication Kit",
+            "item6": "Online Communication with Carrahla",
+            "item7": "Hospital Companion"
+        },
+        "privilege": {
+            "title": "Special Privileges on Your Health Journey",
+            "description": "With our services that make your treatment process not only effective but also comfortable and special, we elevate your recovery to a higher level.",
+            "item1": {
+                "title": "Personal Companion Support",
+                "description": "Feel safe at all times during your hospital stay with our personal companion service."
+            },
+            "item2": {
+                "title": "Direct Access to Fast Treatment",
+                "description": "Get quick and effective access to treatment without waiting lists."
+            }
         }
     }
 }

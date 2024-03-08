@@ -129,5 +129,14 @@
       "title": "appointment.banner.title"
     },
     "description": "appointment.description"
+  },
+  "doctors": {
+    "biography": "doctors.biography",
+    "experience": "doctors.experience",
+    "specialty": "doctors.specialty",
+    "location": "doctors.location"
+  },
+  "blogLatest": {
+    "description": "blogLatest.description"
   }
 }

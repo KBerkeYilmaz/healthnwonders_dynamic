@@ -8,9 +8,9 @@ block content
                 nav
                 ol.breadcrumb.mb-0
                     li.breadcrumb-item
-                        a(href="/") Ana Sayfa
+                        a(href="/")=t("navbar.home")
                     li.breadcrumb-item
-                        a(href="/blog") Blog
+                        a(href="/blog")=t("navbar.blog")
                     li.breadcrumb-item.active(aria-current="page")= blog.name
                     
     section.blog.blog-single.pt-0.pb-80
@@ -33,7 +33,7 @@ block content
                 .col-sm-12.col-md-12.col-lg-4
                     aside.sidebar
                         .widget.widget-posts
-                            h5.widget__title Son Yazılanlar
+                            h5.widget__title=t("index.blogLatest.description")
                             .widget__content
                                 each blog in blogs
                                     .widget-post-item.d-flex.align-items-center

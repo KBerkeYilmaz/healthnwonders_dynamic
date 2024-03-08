@@ -270,5 +270,36 @@
         "copyright": {
             "title": "Tous Droits Réservés"
         }
+    },
+    "doctors": {
+        "bio": "Biographie",
+        "education": "Éducation",
+        "experience": "Expérience",
+        "specialty": "Spécialités",
+        "location": "Bureau"
+    },"treatments": {
+        "services": {
+            "title": "Privilèges Spéciaux pour nos Patients",
+            "description": "Notre clinique vise à faire la différence dans le tourisme médical en offrant à nos patients une expérience complète non seulement pendant le processus de traitement, mais également avant et après le traitement. Nos privilèges spécialement préparés, axés sur le confort, la satisfaction et la récupération rapide de chacun de nos patients, promettent de transformer votre processus de traitement en un voyage de service de première classe.",
+            "item1": "Hébergement à l'Hôtel",
+            "item2": "Soin des Cils et des Ongles",
+            "item3": "Services de Transfert",
+            "item4": "Un an de Suivi Gratuit",
+            "item5": "Trousse de Médicaments Gratuite",
+            "item6": "Communication en Ligne avec Carrahla",
+            "item7": "Accompagnant à l'Hôpital"
+        },
+        "privilege": {
+            "title": "Privilèges Spéciaux lors de votre Voyage de Santé",
+            "description": "Avec nos services qui rendent votre processus de traitement non seulement efficace, mais aussi confortable et spécial, nous élevons votre rétablissement à un niveau supérieur.",
+            "item1": {
+                "title": "Support d'Accompagnant Personnel",
+                "description": "Sentez-vous en sécurité à tout moment pendant votre séjour à l'hôpital avec notre service d'accompagnement personnel."
+            },
+            "item2": {
+                "title": "Accès Direct au Traitement Rapide",
+                "description": "Accédez rapidement et efficacement au traitement sans liste d'attente."
+            }
+        }
     }
 }

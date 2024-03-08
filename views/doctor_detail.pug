@@ -1,9 +1,6 @@
 
 extends layout
 
-block title
-  | #{doctor.name} | Doktorlarımız
-
 block content
     //- ===========================
     //- page title 
@@ -19,9 +16,9 @@ block content
             nav
               ol.breadcrumb.mb-0
                 li.breadcrumb-item
-                  a(href="/") Ana Sayfa
+                  a(href="/")=t("navbar.home")
                 li.breadcrumb-item
-                  a(href="#") Doktorumuz
+                  a(href="#")=t("navbar.doctors")
                 li.breadcrumb-item.active(aria-current="page")= doctor.name
     //- ===========================
     //- content
@@ -47,8 +44,8 @@ block content
                 .widget-content
                   .widget__icon
                     i.icon-call3
-                  h4.widget__title Hızlı İletişim
-                  p.widget__desc Sorularınız varsa veya yardıma ihtiyacınız varsa, ekibimizle iletişime geçebilirsiniz.
+                  h4.widget__title=t("faq.sidebar-quickcontact.title")
+                  p.widget__desc=t("faq.sidebar-quickcontact.description")
                   a(href="tel:+905319831396", class="phone__number")
                     i.icon-phone
                     span +90 531 983 1396
@@ -56,29 +53,24 @@ block content
                 .widget-content
                 .widget__icon
                     i.icon-charity2
-                h4.widget__title Çalışma Saatleri
+                h4.widget__title=t("faq.sidebar-workinghours.title")
                 ul.time__list.list-unstyled.mb-0
-                    li
-                    span Pazartesi - Cuma
-                    span 8.00 - 19:00
-                    li
-                    span Cumartesi
-                    span 9.00 - 22:00
-                    li
-                    span Pazar
-                    span 10.00 - 00:00
+                    li= t("faq.sidebar-workinghours.weekdays")
+                    li= t("faq.sidebar-workinghours.saturday")
+                    li= t("faq.sidebar-workinghours.sunday")
+
               .widget.widget-reports
                 a(href="appointment.html", class="btn btn__primary btn__block")
-                  span Randevu Oluşturun
+                  span=t("faq.button")
           .col-sm-12.col-md-12.col-lg-8
             //- Biography
             .text-block.mb-50
-              h5.text-block__title Biografi
+              h5.text-block__title= t("doctors.bio")
               p.text-block__desc.mb-20.font-weight-bold.color-secondary= doctor.bio 
 
             //- Experience Section (Commented Out)
             .text-block.mb-40
-              h5.text-block__title Deneyim
+              h5.text-block__title= t("doctors.experience")
               //- p.text-block__desc.mb-20 She then went to LSU Medical School in New Orleans where she...
 
             //- Timeline Wrapper
@@ -93,17 +85,17 @@ block content
             //- Expertise List
             ul.details-list.list-unstyled.mb-60
               li
-                h5.details__title Uzmanlık Alanları
+                h5.details__title= t("doctors.specialty")
                 .details__content
                   ul.list-items.list-items-layout2.list-unstyled.mb-0
                     each interest in doctor.interests
                       li= interest.title
               li
-                h5.details__title Ofis
+                h5.details__title= t("doctors.location")
                 .details__content
                   p.mb-0= doctor.location
               li
-                h5.details__title Eğitim
+                h5.details__title= t("doctors.experience")
                 .details__content.d-flex.flex-column
                   each education in doctor.education
                     p.mb-0= education.title

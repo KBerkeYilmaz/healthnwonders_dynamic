@@ -12,8 +12,8 @@ block content
                     nav
                         ol.breadcrumb.mb-0
                             li.breadcrumb-item
-                                a(href="/") Ana Sayfa
-                            li.breadcrumb-item.active(aria-current="page") Blog
+                                a(href="/")=t("navbar.home")
+                            li.breadcrumb-item.active(aria-current="page")=t("navbar.blog")
 
     //- Blog Grid
     section.blog-grid.pb-50
@@ -21,8 +21,8 @@ block content
             .row
                 .col-sm-12.col-md-12.col-lg-6.offset-lg-3
                     .heading.text-center.mb-40
-                        h2.heading__subtitle Blog
-                        h3.heading__title Son Makaleler
+                        h2.heading__subtitle=t("index.blogLatest.title")
+                        h3.heading__title=t("index.blogLatest.description")
             .row
                 //- Post Items
                 each blog in blogs
@@ -40,6 +40,6 @@ block content
                                         a(href=`/blog/${blog.name.split(' ').join('-')}`)= blog.name
                                     .post__desc= blog.thumbnailDescription
                                     a(href=`/blog/${blog.name.split(' ').join('-')}`, class="btn btn__secondary btn__link btn__rounded")
-                                        span Devamını oku
+                                        span=t("index.services.button2")
                                         i.icon-arrow-right
 

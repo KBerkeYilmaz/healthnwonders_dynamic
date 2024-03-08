@@ -270,5 +270,37 @@
         "copyright": {
             "title": "Alle Rechte Vorbehalten"
         }
+    },
+    "doctors": {
+        "bio": "Biografie",
+        "education": "Ausbildung",
+        "experience": "Erfahrung",
+        "specialty": "Fachgebiete",
+        "location": "Ort"
+    },
+    "treatments": {
+        "services": {
+            "title": "Sonderleistungen für unsere Patienten",
+            "description": "Unsere Klinik strebt danach, einen Unterschied im Gesundheitstourismus zu machen, indem sie unseren Patienten nicht nur während des Behandlungsprozesses, sondern auch vor und nach der Behandlung ein umfassendes Erlebnis bietet. Unsere sorgfältig vorbereiteten Sonderleistungen, die auf den Komfort, die Zufriedenheit und die schnelle Genesung eines jeden unserer Patienten abzielen, versprechen, Ihre Behandlung zu einer erstklassigen Serviceerfahrung zu machen.",
+            "item1": "Hotelunterkunft",
+            "item2": "Wimpern- und Nagelpflege",
+            "item3": "Transferdienste",
+            "item4": "Ein Jahr kostenlose Nachsorge",
+            "item5": "Kostenloses Medikamentenkit",
+            "item6": "Carrahla Online-Kommunikation",
+            "item7": "Krankenhaus-Begleitperson"
+        },
+        "privilege": {
+            "title": "Besondere Privilegien auf Ihrer Gesundheitsreise",
+            "description": "Mit unseren Dienstleistungen, die Ihre Behandlung nicht nur effektiv, sondern auch komfortabel und besonders machen, bringen wir Ihre Genesung auf ein höheres Niveau.",
+            "item1": {
+                "title": "Persönliche Begleitperson",
+                "description": "Fühlen Sie sich während des Krankenhausaufenthalts mit unserem persönlichen Begleitservice jederzeit sicher."
+            },
+            "item2": {
+                "title": "Direkter Zugang zur schnellen Behandlung",
+                "description": "Erhalten Sie schnell und effektiv Zugang zur Behandlung ohne Wartezeiten."
+            }
+        }
     }
 }

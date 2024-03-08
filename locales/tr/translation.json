@@ -270,5 +270,37 @@
         "copyright": {
             "title": "Tüm Hakları Saklıdır"
         }
+    },
+    "doctors": {
+        "bio": "Biyografi",
+        "education": "Eğitim",
+        "experience": "Deneyim",
+        "specialty": "Uzmanlık Alanları",
+        "location": "Ofis"
+    },
+    "treatments": {
+        "services": {
+            "title": "Hastalarımıza Özel Ayrıcalıklar",
+            "description": "Sağlık turizminde fark yaratmayı amaçlayan kliniğimiz, hastalarımıza sadece tedavi süreçlerinde değil, tedavi öncesinde ve sonrasında da eksiksiz bir deneyim sunmaktadır. Her bir hastamızın konforu, memnuniyeti ve hızlı iyileşmesi için özenle hazırlanmış özel ayrıcalıklarımız, tedavi sürecinizi birinci sınıf bir hizmet yolculuğuna dönüştürmeyi vaat ediyor.",
+            "item1": "Otel Konaklaması",
+            "item2": "Kirpik Ve Tırnak Bakımı",
+            "item3": "Transfer Hizmetleriz",
+            "item4": "Ücretsiz Bir Yıl Aftercare",
+            "item5": "Ücretsiz İlaç Kiti",
+            "item6": "Carrahla Online İletişim",
+            "item7": "Hastane Refakatçisi"
+        },
+        "privilege": {
+            "title": "Sağlık Yolculuğunuzda Özel Ayrıcalıklar",
+            "description": "Tedavi sürecinizi sadece etkili değil, aynı zamanda konforlu ve özel kılan hizmetlerimizle, iyileşmenizi bir üst seviyeye taşıyoruz.",
+            "item1": {
+                "title": "Özel Refakatçi Desteği",
+                "description": "Hastane süreciniz boyunca yanınızda olan özel refakatçi hizmetimizle kendinizi her an güvende hissedin."
+            },
+            "item2": {
+                "title": "Hızlı Tedaviye Direkt Erişim",
+                "description": "Bekleme listesi olmadan hızlı ve etkin tedavi süreciyle sağlığınıza en kısa zamanda kavuşun."
+            }
+        }
     }
 }

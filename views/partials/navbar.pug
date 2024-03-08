@@ -36,7 +36,7 @@ header.header.header-layout2
                                         i.fab.fa-youtube
 
 
-    
+
     nav.navbar.navbar-expand-lg.sticky-navbar
         .container-fluid
             a.navbar-brand(href='/')
@@ -72,22 +72,19 @@ header.header.header-layout2
                             each treatment in treatments ? treatments : []
                                 li.nav__item
                                     a(href=`/treatments/${treatment.name.split(' ').join('-')}` class='nav__item-link')= treatment.name
-                    //- li.nav__item
-                    //-     a(href='contact-us.html' class='nav__item-link') Bize Ulaşın
+                    li.nav__item.has-dropdown
+                        - var languages = {en: 'English', tr: 'Türkçe', de: 'Deustch', fr: 'Français'}
+                        - var flags = {en: '/images/flags/en.png', tr: '/images/flags/tr.png', de: '/images/flags/gr.png', fr: '/images/flags/fr.png'}
+                        a.nav__item-link.dropdown-toggle(href='#' role='button' id='dropdownLanguage' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                            img(src=flags[currentLanguage] alt='flag' style='height: 20px; width: 25px; margin-right: 10px;')
+                        ul.dropdown-menu(aria-labelledby='dropdownLanguage')
+                            each val, key in languages
+                                if key != currentLanguage
+                                    li
+                                        a.dropdown-item(href='/?lng=' + key)(style='max-width:fit-content;')
+                                            img(src=flags[key] alt='flag' style='height: 20px; width: 25px; margin-right: 5px;')
+                                            span= val
             .d-none.d-xl-flex.align-items-center.position-relative.ml-0
                 a(href='/appointment' class='btn btn__primary btn__rounded ml-30')
                     i.icon-calendar
                     span=t("navbar.appointment")
-            //- Language Dropdown
-            - var languages = {en: 'English', tr: 'Türkçe', de: 'Deustch', fr: 'Français'}
-            - var flags = {en: '/images/flags/en.png', tr: '/images/flags/tr.png', de: '/images/flags/gr.png', fr: '/images/flags/fr.png'}
-            .dropdown.dropdown--style2(style='margin-left: 30px;')
-                a.dropdown-toggle(href='#', role='button', id='dropdownLanguage', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                    img(src=flags[currentLanguage] alt='flag', style='height: 20px; width: 25px; margin-right: 10px;')
-                ul.dropdown-menu(aria-labelledby='dropdownLanguage')
-                    each val, key in languages
-                        if key != currentLanguage
-                            li
-                                a.dropdown-item(href='/?lng=' + key)
-                                    img(src=flags[key] alt='flag', style='height: 20px; width: 25px; margin-right: 5px;')
-                                    span= val
