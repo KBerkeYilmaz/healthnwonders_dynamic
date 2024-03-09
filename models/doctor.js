@@ -18,7 +18,7 @@ const doctorSchema = new mongoose.Schema(
         description: String, // Optional: additional details about the experience
       },
     ],
-    // profilePic: String,
+    profilePic: String,
   },
   {
     timestamps: true,

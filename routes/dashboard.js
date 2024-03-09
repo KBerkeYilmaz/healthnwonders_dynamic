@@ -3,9 +3,13 @@ var router = express.Router();
 const Doctor = require("../models/doctor");
 const Treatment = require("../models/treatment");
 const Blog = require("../models/blog");
+const isAuthenticated = require('../middlewares/auth');
+
+
+
 
 /* GET dashboard page. */
-router.get("/", function (req, res, next) {
+router.get("/", isAuthenticated, (req, res, next) => {
   const currentLanguage = req.language; // This should reflect the current language used in rendering
 
   res.render("dashboard", {
@@ -13,6 +17,20 @@ router.get("/", function (req, res, next) {
     currentLanguage: currentLanguage,
   });
 });
+
+
+router.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.redirect('/dashboard');
+    }
+    res.clearCookie('connect.sid', { path: '/', secure: false });
+    res.redirect('/login');
+  });
+});
+
+
+
 
 /* GET doctors page. */
 router.get("/doctors", function (req, res, next) {

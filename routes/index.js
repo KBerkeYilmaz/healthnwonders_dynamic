@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-// var { upload } = require('../middlewares/multer');
+var { upload } = require('../middlewares/multer');
 
 const cache = require("../helpers/cache");
 const Blog = require("../models/blog");
@@ -45,12 +45,11 @@ router.post("/api/blog", async (req, res) => {
 
 //------------------------ API DOCTORS ----------------
 // POST
-router.post("/api/doctors", async (req, res) => {
-  const { name, specialty, location, bio, interests, education, experiences } =
-    req.body;
-  // const profilePic = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
+router.post("/api/doctors", upload.single('profilePic'), async (req, res) => {
+  const { name, specialty, location, bio, interests, education, experiences } =req.body;
+  const profilePic = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
   
-  console.log("hello from api " + req.body);
+
   try {
     const newDoctor = new Doctor({
       name,
@@ -60,7 +59,7 @@ router.post("/api/doctors", async (req, res) => {
       interests,
       education,
       experiences,
-      // profilePic
+      profilePic
     });
 
     await newDoctor.save();
@@ -75,6 +74,7 @@ router.post("/api/doctors", async (req, res) => {
       .json({ message: "Error adding new doctor", error: error.message });
   }
 });
+
 
 // DELETE
 router.delete("/api/doctors/:id", async (req, res) => {

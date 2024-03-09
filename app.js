@@ -8,6 +8,8 @@ var logger = require("morgan");
 var compression = require("compression");
 const connectDB = require("./lib/database");
 const cache = require("./helpers/cache");
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
 
 // ROUTES
@@ -21,6 +23,7 @@ var blogRouter = require("./routes/blog");
 var servicesRouter = require("./routes/services");
 var faqRouter = require("./routes/faq");
 var appointmentRouter = require("./routes/appointment");
+var loginRouter = require("./routes/login");
 
 const i18next = require("i18next");
 const Backend = require("i18next-fs-backend");
@@ -65,22 +68,22 @@ let cacheInitialized = false;
 async function initializeCaches() {
   if (cacheInitialized) return;
 
-  console.log("Initializing caches...");
+  // console.log("Initializing caches...");
   try {
     const doctorsList = await Doctor.find({}).lean();
-    console.log("Doctors list:", doctorsList);
+    // console.log("Doctors list:", doctorsList);
     cache.setDoctorsCache(doctorsList);
 
     const treatmentList = await Treatment.find({}).lean();
     cache.setTreatmentsCache(treatmentList);
 
     const blogList = await Blog.find({}).lean();
-    console.log("Blog list:", blogList);
+    // console.log("Blog list:", blogList);
     cache.setBlogsCache(blogList);
 
     cacheInitialized = true; // Prevent further initialization
   } catch (error) {
-    console.error("Error initializing caches:", error);
+    // console.error("Error initializing caches:", error);
   }
 }
 
@@ -92,11 +95,11 @@ initializeCaches().then(() => {
 // Adjust your middleware to simply attach the cache to res.locals without checking or initializing
 app.use((req, res, next) => {
   res.locals.doctors = cache.getDoctorsCache();
-  console.log("Doctors:", res.locals.doctors);
+  // console.log("Doctors:", res.locals.doctors);
   res.locals.treatments = cache.getTreatmentsCache();
-  console.log("Treatments:", res.locals.treatments);
+  // console.log("Treatments:", res.locals.treatments);
   res.locals.blogs = cache.getBlogsCache();
-  console.log("Blogs:", res.locals.blogs);
+  // console.log("Blogs:", res.locals.blogs);
   next();
 });
 
@@ -122,14 +125,26 @@ i18next
     saveMissing: true,
   });
 
-app.use((req, res, next) => {
-  console.log("Detected language:", req.language);
-  next();
-});
+//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
 
 
+
+
+// MIDDLEWARES
 app.use(i18nextMiddleware.handle(i18next));
 
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+  cookie: { secure: true, maxAge: 1000 * 60 * 60 } // Example: 1 hour
+}));
+
+
+
+
+// ROUTE HANDLER 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/about-us", aboutUsRouter);
@@ -140,6 +155,9 @@ app.use("/blog", blogRouter);
 app.use("/services", servicesRouter);
 app.use("/faq", faqRouter);
 app.use("/appointment", appointmentRouter);
+app.use("/login", loginRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

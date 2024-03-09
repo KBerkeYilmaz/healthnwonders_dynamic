@@ -40,7 +40,7 @@ header.header.header-layout2
     nav.navbar.navbar-expand-lg.sticky-navbar
         .container-fluid
             a.navbar-brand(href='/')
-                img(src='/images/logo/H&W ikincil.png' alt='logo-brand' style='height: auto; width: 160px')
+                img(src='/images/logo/H&W ikincil.png' alt='logo-brand' style='height: auto; width: 150px')
             button.navbar-toggler(type='button')
                 span.menu-lines
                     span 
@@ -81,7 +81,7 @@ header.header.header-layout2
                             each val, key in languages
                                 if key != currentLanguage
                                     li
-                                        a.dropdown-item(href='/?lng=' + key)(style='max-width:fit-content;')
+                                        a.dropdown-item(href='/?lng=' + key, style='max-width:fit-content;')
                                             img(src=flags[key] alt='flag' style='height: 20px; width: 25px; margin-right: 5px;')
                                             span= val
             .d-none.d-xl-flex.align-items-center.position-relative.ml-0

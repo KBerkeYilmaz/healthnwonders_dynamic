@@ -8,12 +8,12 @@ block content
         .container
             .row
                 .col-12.d-flex.justify-content-between.flex-wrap.align-items-center
-                    h1.pagetitle__heading.my-3 Sık Sorulan Sorular
+                    h1.pagetitle__heading.my-3=t("navbar.about_us.sub-menu.faq")
                         nav
                         ol.breadcrumb.my-3
-                            li.breadcrumb-item: a(href="/") Ana Sayfa
-                            li.breadcrumb-item: a(href="/about-us") Hakkımızda
-                            li.breadcrumb-item.active(aria-current="page") Sık Sorulan Sorular
+                            li.breadcrumb-item: a(href="/")=t("navbar.home")
+                            li.breadcrumb-item: a(href="/about-us")=t("navbar.about_us.title")
+                            li.breadcrumb-item.active(aria-current="page")=t("navbar.about_us.sub-menu.faq")
     // FAQ
     section.faq.pt-120.pb-70
         .container

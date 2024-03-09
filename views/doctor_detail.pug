@@ -32,7 +32,7 @@ block content
               .widget.widget-member
                 .member.mb-0
                   .member__img
-                    img(src="/images/team/isaktasdemir-1.webp", alt="member img")
+                    img(src=`${doctor.profilePic.replace('public', '')}`, alt="member img")
                   .member__info
                     h5.member__name
                       a(href="#")= doctor.name
