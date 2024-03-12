@@ -75,10 +75,11 @@ async function initializeCaches() {
     cache.setDoctorsCache(doctorsList);
 
     const treatmentList = await Treatment.find({}).lean();
+    console.log("Treatment list:", treatmentList);
     cache.setTreatmentsCache(treatmentList);
 
     const blogList = await Blog.find({}).lean();
-    // console.log("Blog list:", blogList);
+    console.log("Blog list:", blogList);
     cache.setBlogsCache(blogList);
 
     cacheInitialized = true; // Prevent further initialization
@@ -136,9 +137,9 @@ app.use(i18nextMiddleware.handle(i18next));
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-  cookie: { secure: true, maxAge: 1000 * 60 * 60 } // Example: 1 hour
+  cookie: { secure: false, maxAge: 1000 * 60 * 60 } // Example: 1 hour
 }));
 
 
@@ -157,6 +158,10 @@ app.use("/faq", faqRouter);
 app.use("/appointment", appointmentRouter);
 app.use("/login", loginRouter);
 
+app.use((req, res, next) => {
+  res.locals.currentLanguage = req.language; 
+  next();
+});
 
 
 // catch 404 and forward to error handler

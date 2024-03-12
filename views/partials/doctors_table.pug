@@ -1,15 +1,15 @@
 table#doctorsTable.table.table-striped.table-bordered.table-hover
     thead
         tr
-        th İsim
-        th Ana Uzmanlık
-        th Konum
-        th İşlemler
+            th İsim
+            th Ana Uzmanlık
+            th Konum
+            th İşlemler
     tbody
         each doctor in doctors
             tr
                 td= doctor.name
-                td= doctor.specialty
+                td= doctor.specialty[tr]
                 td= doctor.location
                 td
                     .d-flex.justify-content-start.align-items-center(style="gap: 10px;")

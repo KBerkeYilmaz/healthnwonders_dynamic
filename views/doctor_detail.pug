@@ -36,7 +36,7 @@ block content
                   .member__info
                     h5.member__name
                       a(href="#")= doctor.name
-                    p.member__job= doctor.specialty
+                    p.member__job= doctor.specialty[currentLanguage]
                     //- p.member__desc Brian specializes in treating skin, hair, nail, and mucous membrane. He also address cosmetic issues, helping to revitalize the appearance of the skin
               .widget.widget-help.bg-overlay.bg-overlay-primary-gradient
                 .bg-img
@@ -66,7 +66,7 @@ block content
             //- Biography
             .text-block.mb-50
               h5.text-block__title= t("doctors.bio")
-              p.text-block__desc.mb-20.font-weight-bold.color-secondary= doctor.bio 
+              p.text-block__desc.mb-20.font-weight-bold.color-secondary= doctor.bio[currentLanguage] 
 
             //- Experience Section (Commented Out)
             .text-block.mb-40
@@ -77,11 +77,11 @@ block content
             .timeline-wrapper.mb-60
               each experience in doctor.experiences
                 .timeline-item.d-flex
-                  span.timeline__year #{experience.startDate}/#{experience.endDate.toString().slice(2,4)} 
+                  span.timeline__year #{experience.startDate ? experience.startDate + '/' : ''}#{experience.endDate ? experience.endDate.toString().slice(2,4) : ''}
                   .timeline__body
-                    h4.timeline__title #{experience.title}
+                    h4.timeline__title #{experience.title[currentLanguage]}
                     if experience.description
-                      p.timeline__desc #{experience.description}
+                      p.timeline__desc #{experience.description[currentLanguage]}
             //- Expertise List
             ul.details-list.list-unstyled.mb-60
               li
@@ -89,7 +89,7 @@ block content
                 .details__content
                   ul.list-items.list-items-layout2.list-unstyled.mb-0
                     each interest in doctor.interests
-                      li= interest.title
+                      li= interest.title[currentLanguage]
               li
                 h5.details__title= t("doctors.location")
                 .details__content
@@ -98,6 +98,6 @@ block content
                 h5.details__title= t("doctors.experience")
                 .details__content.d-flex.flex-column
                   each education in doctor.education
-                    p.mb-0= education.title
+                    p.mb-0= education.title[currentLanguage]
                     
                   

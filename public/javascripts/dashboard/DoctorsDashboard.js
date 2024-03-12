@@ -38,26 +38,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addExperienceBtn.addEventListener("click", () => {
     const newPane = document.createElement("div");
-    newPane.classList.add(
-      "form-row",
-      "mb-2",
-      "d-inline-flex",
-      "align-items-center"
-    );
-    newPane.style.display = "none"; // Hide for fadeIn
+    newPane.classList.add("d-flex", "flex-column");
     newPane.innerHTML = `
-    <div class="form-group col-md-2">
-      <label>Başlangıç Yılı:</label>
-      <input class="form-control " style='border-radius:5px;!important' type="number" name="experiences[${experienceItemIndex}][startDate]" required>
+    <div class="form-row mb-2 d-inline-flex align-items-center"> 
+      <div class="form-group col-md-1">
+        <label>Başlangıç Yılı:</label>
+        <input class="form-control " style='border-radius:5px;!important' type="number" name="experiences[${experienceItemIndex}][startDate]" required>
+      </div>
+      <div class="form-group col-md-1">
+        <label>Bitiş Yılı:</label>
+        <input class="form-control " style='border-radius:5px;!important' type="number" name="experiences[${experienceItemIndex}][endDate]">
+      </div>
     </div>
-    <div class="form-group col-md-2">
-      <label>Bitiş Yılı:</label>
-      <input class="form-control " style='border-radius:5px;!important' type="number" name="experiences[${experienceItemIndex}][endDate]" required>
-    </div>
-    <div class="form-group col-md-8">
-      <label>Deneyim Başlığı:</label>
-      <input class="form-control" style='border-radius:5px;!important' type="text" name="experiences[${experienceItemIndex}][title]" required>
-    </div>
+    <div class="form-row mb-2 d-inline-flex align-items-center"> 
+      <div class="form-group col-md-3">
+        <label>Deneyim Başlığı (TR):</label>
+        <input class="form-control" type="text" name="experiences[${experienceItemIndex}][title][tr]" required style='border-radius:5px;!important'>
+      </div>
+      <div class="form-group col-md-3">
+        <label>Deneyim Başlığı (EN):</label>
+        <input class="form-control" type="text" name="experiences[${experienceItemIndex}][title][en]" required style='border-radius:5px;!important'>
+      </div>
+      <div class="form-group col-md-3">
+        <label>Deneyim Başlığı (FR):</label>
+        <input class="form-control" type="text" name="experiences[${experienceItemIndex}][title][fr]" required style='border-radius:5px;!important'>
+      </div>
+      <div class="form-group col-md-3">
+        <label>Deneyim Başlığı (DE):</label>
+        <input class="form-control" type="text" name="experiences[${experienceItemIndex}][title][de]" required style='border-radius:5px;!important'>
+      </div>
+  </div>
+
+
+
 `;
     experienceItemIndex++;
     const experienceContainer = document.querySelector(".experience-column");
@@ -74,9 +87,21 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     newEducationInput.innerHTML = `
-        <div class="form-group col-md-12">
-            <label for="educationTitle">Eğitim Başlığı:</label>
-            <input class="form-control" style='border-radius:5px;!important' type="text" name="education[${educationItemIndex}][title]" required>
+        <div class="form-group col-md-3">
+            <label for="educationTitle">Eğitim Başlığı (TR):</label>
+            <input class="form-control" style='border-radius:5px;!important' type="text" name="education[${educationItemIndex}][title][tr]" required>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="educationTitle">Eğitim Başlığı (EN):</label>
+          <input class="form-control" style='border-radius:5px;!important' type="text" name="education[${educationItemIndex}][title][en]" required>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="educationTitle">Eğitim Başlığı (FR):</label>
+          <input class="form-control" style='border-radius:5px;!important' type="text" name="education[${educationItemIndex}][title][fr]" required>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="educationTitle">Eğitim Başlığı (DE):</label>
+          <input class="form-control" style='border-radius:5px;!important' type="text" name="education[${educationItemIndex}][title][de]" required>
         </div>
     `;
 
@@ -94,9 +119,21 @@ document.addEventListener("DOMContentLoaded", () => {
       "align-items-center"
     );
     newPane.innerHTML = `
-      <div class="form-group col-md-12">
-        <label for="interestsTitle">Uzmanlık Başlığı:</label>
-        <input class="form-control" style='border-radius:5px;!important' type="text" name="interests[${interestsItemIndex}][title]" required>
+      <div class="form-group col-md-3">
+        <label for="interestsTitle">Uzmanlık Başlığı (TR):</label>
+        <input class="form-control" style='border-radius:5px;!important' type="text" name="interests[${interestsItemIndex}][title][tr]" required>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="interestsTitle">Uzmanlık Başlığı (EN):</label>
+        <input class="form-control" style='border-radius:5px;!important' type="text" name="interests[${interestsItemIndex}][title][en]" required>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="interestsTitle">Uzmanlık Başlığı (FR):</label>
+        <input class="form-control" style='border-radius:5px;!important' type="text" name="interests[${interestsItemIndex}][title][fr]" required>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="interestsTitle">Uzmanlık Başlığı (DE):</label>
+        <input class="form-control" style='border-radius:5px;!important' type="text" name="interests[${interestsItemIndex}][title][de]" required>
       </div>
     `;
     interestsItemIndex++;

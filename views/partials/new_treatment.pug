@@ -1,20 +1,88 @@
-.container(style='margin-top: 20px;')
+//- .container(style='margin-top: 20px;')
+//-     h1 Yeni Bir Tedavi Ekleyin
+//-     form(method="POST" action="/api/treatments")#newTreatmentForm
+//-         .form-row
+//-             .form-group.col-md-4
+//-                 label(for="name") İsim:
+//-                 input#name.form-control.form-control-sm(type="text" name="name", required=true style='border-radius:5px;!important')
+//-         .form-group.mb-2
+//-             label(for="subTitle") Alt Başlık:
+//-             textarea#subTitle.form-control(name="subTitle", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+//-         .form-group.mb-2
+//-             label(for="abstract") Özet:
+//-             textarea#abstract.form-control(name="abstract", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+//-         //- Dynamic Paragraph Section
+//-         .form-group.mb-2
+//-             label(for="description") İçerik:
+//-             textarea#description.form-control(name="description[0][title]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+//-         button.btn.btn-primary.col-md-12(type="button" id="addParagraphBtn" style="margin-bottom:5rem;") Paragraf Ekle
+
+//-         button.mb-20.col-12(type="submit" style="background-color: blue; padding: 15px 0; border-radius:5px") Ekle
+.col-md-12(style='margin-top: 20px;')
     h1 Yeni Bir Tedavi Ekleyin
     form(method="POST" action="/api/treatments")#newTreatmentForm
         .form-row
-            .form-group.col-md-4
-                label(for="name") İsim:
-                input#name.form-control.form-control-sm(type="text" name="name", required=true style='border-radius:5px;!important')
-        .form-group.mb-2
-            label(for="subTitle") Alt Başlık:
-            textarea#subTitle.form-control(name="subTitle", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-        .form-group.mb-2
-            label(for="abstract") Özet:
-            textarea#abstract.form-control(name="abstract", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-        //- Dynamic Paragraph Section
-        .form-group.mb-2
-            label(for="description") İçerik:
-            textarea#description.form-control(name="description[0][title]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-        button.btn.btn-primary.col-md-12(type="button" id="addParagraphBtn" style="margin-bottom:5rem;") Paragraf Ekle
+            .form-group.col-md-3
+                label(for="name") Tedavi İsmi (TR):
+                input#name.form-control(type="text" name="name[tr]", required=true style='border-radius:5px;!important, padding-left: 0;!important')
+            .form-group.col-md-3
+                label(for="name") Tedavi İsmi (EN):
+                input#name.form-control(type="text" name="name[en]", required=true style='border-radius:5px;!important, padding-left: 0;!important')
+            .form-group.col-md-3
+                label(for="name") Tedavi İsmi (FR):
+                input#name.form-control(type="text" name="name[fr]", required=true style='border-radius:5px;!important, padding-left: 0;!important')
+            .form-group.col-md-3
+                label(for="name") Tedavi İsmi (DE):
+                input#name.form-control(type="text" name="name[de]", required=true style='border-radius:5px;!important, padding-left: 0;!important')
+        .form-row
+            .form-group.col-md-3
+                label(for="subTitle") Alt Başlık (TR):
+                textarea#subTitle.form-control.form-control-sm(type="text" name="subTitle[tr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+            .form-group.col-md-3
+                label(for="subTitle") Alt Başlık (EN):
+                textarea#subTitle.form-control.form-control-sm(type="text" name="subTitle[en]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+            .form-group.col-md-3
+                label(for="subTitle") Alt Başlık (FR):
+                textarea#subTitle.form-control.form-control-sm(type="text" name="subTitle[fr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+            .form-group.col-md-3
+                label(for="subTitle") Alt Başlık (DE):
+                textarea#subTitle.form-control.form-control-sm(type="text" name="subTitle[de]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+        .form-row
+            .form-group.col-md-12
+                label(for="youtubeLink") Youtube Linki (Opsiyonel):
+                input#youtubeLink.form-control(type="text", name="youtubeLink", style='border-radius:5px;!important padding: 1px 1px;!important', required=false)        
+        .form-row 
+            .form-group.col-md-3
+                label(for="abstract") Giriş Paragrafı (TR):
+                textarea#abstract.form-control.form-control-sm(type="text" name="abstract[tr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+            .form-group.col-md-3
+                label(for="abstract") Giriş Paragrafı (EN):
+                textarea#abstract.form-control.form-control-sm(type="text" name="abstract[en]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+            .form-group.col-md-3
+                label(for="abstract") Giriş Paragrafı (FR):
+                textarea#abstract.form-control.form-control-sm(type="text" name="abstract[fr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+            .form-group.col-md-3
+                label(for="abstract") Giriş Paragrafı (DE):
+                textarea#abstract.form-control.form-control-sm(type="text" name="abstract[de]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
 
-        button.mb-20.col-12(type="submit" style="background-color: blue; padding: 15px 0; border-radius:5px") Ekle
+        //- Biyografi Section with Multilanguage Support
+        .d-flex.justify-content-between.align-items-center.mb-2
+            h3 Paragraf Düzeni
+            .d-flex(style="gap: 10px;")
+                button.btn.btn-primary.col-md-1(type="button" id="addParagraphBtn") Yeni Paragraf Ekle
+                button.btn.btn-danger.col-md-1(type="button" id="removeParagraphBtn") Paragraf Çıkar
+        .paragraph-column#paragraph-column   
+            .form-row.mb-20
+                .form-group.mb-2.col-md-3
+                    label(for="description") Paragraf Detay (TR):
+                    textarea#description.form-control(name="description[0][tr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+                .form-group.mb-2.col-md-3
+                    label(for="description") Paragraf Detay (EN):
+                    textarea#description.form-control(name="description[0][en]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+                .form-group.mb-2.col-md-3
+                    label(for="description") Paragraf Detay (FR):
+                    textarea#description.form-control(name="description[0][fr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+                .form-group.mb-2.col-md-3
+                    label(for="description") Paragraf Detay (DE):
+                    textarea#description.form-control(name="description[0][de]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+        button.mb-20.col-12(type="submit" style="background-color: blue; padding: 15px 0; border-radius:5px; color: white; ") Yeni Tedavi Ekle

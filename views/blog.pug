@@ -33,9 +33,10 @@ block content
                                         img(src="/images/blog/grid/kilo_verme_yolculugu.png", alt="post image", loading="lazy")
                                 .post__body
                                     .post__meta-cat(style="opacity: 0")
-                                        a(href="#") Tüp Mide Ameliyatı
+                                        a(href="#") Tüp Mide Ameliyatı    
                                     .post__meta.d-flex
-                                        span.post__meta-date 30 Ocak 2022
+                                        - const createdAtDate = new Date(blog.createdAt)
+                                        span.post__meta-date= `${createdAtDate.getDate()}.${createdAtDate.getMonth() + 1}.${createdAtDate.getFullYear()}`
                                     h4.post__title
                                         a(href=`/blog/${blog.name.split(' ').join('-')}`)= blog.name
                                     .post__desc= blog.thumbnailDescription

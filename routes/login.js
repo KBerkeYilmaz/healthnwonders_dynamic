@@ -5,6 +5,7 @@ const User = require("../models/user");
 /* GET login page. */
 router.get("/", function (req, res, next) {
   const currentLanguage = req.language; // This should reflect the current language used in rendering
+  if(req.session.user) return res.redirect("/dashboard");
   res.render("login", {
     t: req.t,
     currentLanguage: currentLanguage,
@@ -14,37 +15,36 @@ router.get("/", function (req, res, next) {
 
 // Login route
 router.post("/", async (req, res) => {
-  const { userMail, password } = req.body;
-
-  try {
-    // Find the user by their email
-    const user = await User.findOne({ userMail });
-    if (!user) {
-      // User not found
-      return res.status(401).send("Authentication failed. User not found.");
+    const { userMail, password } = req.body;
+      try {
+      const user = await User.findOne({ userMail });
+  
+      // Log the result of the user search
+      if (!user) {
+        return res.status(401).send("Authentication failed. User not found.");
+      } 
+      const isMatch = await user.comparePassword(password);
+  
+      if (isMatch) {  
+        // Set user information in session
+        req.session.user = {
+          id: user._id,
+          userMail: user.userMail,
+        };
+  
+        // Save the session and redirect
+        req.session.save((err) => {
+          if (err) {
+            return res.status(500).send("Internal server error.");
+          }
+          res.redirect("http://localhost:3000/dashboard");
+        });
+      } else {
+        res.status(401).send("Authentication failed. Wrong password.");
+      }
+    } catch (error) {
+      res.status(500).send("Internal server error.");
     }
-
-    // Compare submitted password with the hashed password in the database
-    const isMatch = await user.comparePassword(password);
-    console.log("isMatch", isMatch);
-    if (isMatch) {
-      console.log("user", user._id);
-      // Passwords match
-      // Set user information in session
-      req.session.user = {
-        id: user._id,
-        userMail: user.userMail,
-      };
-      // Redirect to dashboard
-      res.redirect(`/dashboard`);
-    } else {
-      // Passwords do not match
-      res.status(401).send("Authentication failed. Wrong password.");
-    }
-  } catch (error) {
-    console.error("Authentication error:", error);
-    res.status(500).send("Internal server error.");
-  }
-});
-
+  });
+  
 module.exports = router;

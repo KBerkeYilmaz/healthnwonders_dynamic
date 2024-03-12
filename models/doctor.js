@@ -1,21 +1,22 @@
 const mongoose = require("mongoose");
+const TranslationSchema = require("./translation");
 
 const doctorSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    specialty: { type: String, required: true },
+    specialty: TranslationSchema, // Updated to use TranslationSchema
     location: { type: String, required: true },
-    bio: String,
-    interests: [{ title: String }],
+    bio: TranslationSchema, // Updated to use TranslationSchema
+    interests: [{ title: TranslationSchema }], // Updated to use TranslationSchema
     education: [
-      { title: String }, // E.g., "Medical School"
+      { title: TranslationSchema }, // Updated to use TranslationSchema
     ],
     experiences: [
       {
-        title: String, // E.g., "Residency"
+        title: TranslationSchema, // Updated to use TranslationSchema
         startDate: Number,
         endDate: Number,
-        description: String, // Optional: additional details about the experience
+        description: TranslationSchema, // Assuming you also want this to be multilanguage
       },
     ],
     profilePic: String,

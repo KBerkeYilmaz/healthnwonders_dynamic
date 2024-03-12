@@ -6,26 +6,19 @@ block content
       //- Sidebar with full viewport height and sticky behavior
       include ../partials/sidebar.pug
       //- Main content with scrollable behavior
-      .col-md-9.ml-sm-auto.col-lg-10.px-md-4#mainContent(style='overflow-y: auto;')
-        #newTreatmentForm(style='display: none;')
-          include ../partials/new_treatment.pug
+      .col-md-9.ml-sm-auto.col-lg-10.px-md-4#mainContent(style='overflow-y: auto;')        
         div.container-fluid
           .row
             .col-md-12
               .d-flex.justify-content-between.align-items-center.mt-4.mb-4
                 h1 Tedaviler
+              .d-flex.justify-content-between.align-items-center.mt-4.mb-4
+                button#toggleBackButton.btn.btn-info(style="display:none;") Geri 
                 button#toggleFormButton.btn.btn-info Yeni Tedavi Ekle
-              table#doctorsTable.table.table-striped.table-bordered.table-hover
-                thead
-                  tr
-                    th İsim
-                tbody
-                  each treatment in treatments
-                    tr
-                      td= treatment.name
-                      td
-                        a.btn.btn-primary Düzenle
-                        a.btn.btn-danger.delete-btn Sil
+              include ../partials/treatment_table.pug
+        #newTreatmentForm(style='display: none;')
+          include ../partials/new_treatment.pug
+
 
 block append scripts
   script(src="/javascripts/dashboard/treatmentDashboard.js")

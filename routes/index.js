@@ -43,6 +43,9 @@ router.post("/api/blog", async (req, res) => {
   }
 });
 
+
+
+
 //------------------------ API DOCTORS ----------------
 // POST
 router.post("/api/doctors", upload.single('profilePic'), async (req, res) => {
@@ -98,10 +101,12 @@ router.delete("/api/doctors/:id", async (req, res) => {
   }
 });
 
+
+
 //-------------- API TREATMENTS ----------------
 // POST
 router.post("/api/treatments", async (req, res) => {
-  const { name, subTitle, abstract, description } = req.body;
+  const { name, subTitle, abstract, description, youtubeLink } = req.body;
   console.log(req.body);
   try {
     const newTreatment = new Treatment({
@@ -109,15 +114,16 @@ router.post("/api/treatments", async (req, res) => {
       subTitle,
       description,
       abstract,
+      youtubeLink
     });
 
     await newTreatment.save();
     res.status(201).redirect("/dashboard");
   } catch (error) {
-    console.error("Failed to add new treeament:", error);
+    console.error("Failed to add new treatment:", error);
     res
       .status(500)
-      .json({ message: "Error adding new treeament", error: error.message });
+      .json({ message: "Error adding new treatment", error: error.message });
   }
 });
 

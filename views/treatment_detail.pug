@@ -11,8 +11,8 @@ block content
             .col-sm-12.col-md-12.col-lg-12.col-xl-8.offset-xl-2
                 .pagetitle__icon
                     i.icon-microscope
-                h1.pagetitle__heading= treatment.name
-                p.pagetitle__desc.mb-30= treatment.subTitle
+                h1.pagetitle__heading= treatment.name[currentLanguage]
+                p.pagetitle__desc.mb-30= treatment.subTitle[currentLanguage]
                 a(href="#content" class="scroll-down")
                     i.fas.fa-long-arrow-alt-down
 
@@ -23,15 +23,15 @@ block content
                 .col-sm-12.col-md-12.col-lg-8
                     //- Text block section
                     .text-block.mb-50
-                        p.text-block__desc.mb-20.font-weight-bold.color-secondary= treatment.abstract
+                        p.text-block__desc.mb-20.font-weight-bold.color-secondary= treatment.abstract[currentLanguage]
                     //- Video banner section
                     .video-banner-layout3.bg-overlay.mb-50
                         img(src="/images/banners/7.jpg" alt="banner")
-                        a(href="https://www.youtube.com/watch?v=nrJtHemSPW4" class="video__btn video__btn-white popup-video")
+                        a(href="https://www.youtube.com/watch?v=FSxXVrV1XrQ&ab_channel=Prof.Dr.FahriYETİŞİR" class="video__btn video__btn-white popup-video")
                             .video__player
                                 i.fa.fa-play
                     each item in treatment.description
-                        p.text-block__desc.mb-20= item.title
+                        p.text-block__desc.mb-20= item[currentLanguage]
                     
                     //- Additional sections such as "widget-plan", "fancybox-layout1", and sidebar content would follow the same pattern of indentation and element conversion to Pug syntax.
                     //- Widget Plan
@@ -111,7 +111,8 @@ block content
                                 ul.list-unstyled.mb-0
                                     each treatment in treatments
                                         li
-                                            a(href=`/treatments/${treatment.name.split(' ').join('-')}` class='nav__item-link')= treatment.name
+                                            //- Assuming 'currentLanguage' is available and holds a value like 'en', 'tr', etc.
+                                            a(href=`/treatments/${treatment._id}`) #{treatment.name[currentLanguage] || treatment.name['en']}
                         .widget.widget-help.bg-overlay.bg-overlay-secondary-gradient
                             .bg-img
                                 img(src="assets/images/banners/5.jpg" alt="background")
