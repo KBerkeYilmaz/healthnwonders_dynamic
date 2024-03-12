@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
           if (err) {
             return res.status(500).send("Internal server error.");
           }
-          res.redirect("http://localhost:3000/dashboard");
+          res.redirect("/dashboard");
         });
       } else {
         res.status(401).send("Authentication failed. Wrong password.");
