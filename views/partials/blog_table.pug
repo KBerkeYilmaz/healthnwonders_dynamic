@@ -1,0 +1,23 @@
+table#blogsTable.table.table-striped.table-bordered.table-hover
+    thead
+        tr
+            th İsim
+    tbody
+        each blog in blogs
+            tr
+                td= blog.name
+                    td
+                        a.btn.btn-primary Düzenle
+                        a.btn.btn-danger.delete-btn Sil
+                //- Example Modal for Deletion Confirmation
+                .modal.fade#deleteConfirmationModal(tabindex='-1', role='dialog')
+                    .modal-dialog.modal-dialog-centered(role='document')
+                        .modal-content
+                            .modal-header
+                                h5.modal-title#exampleModalLongTitle Emin misiniz?
+                                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                    span(aria-hidden='true') ×
+                            .modal-body Bu kaydı silmek istediğinize emin misiniz? 
+                            .modal-footer.d-flex.justify-content-between.align-items-center
+                                button.btn.btn-primary(type='button', id='confirmDelete') Evet
+                                button.btn.btn-danger(type='button', data-dismiss='modal') Hayır

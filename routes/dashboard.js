@@ -21,10 +21,6 @@ router.get("/logout", (req, res) => {
   });
 });
 
-
-
-
-
 /* GET doctors page. */
 router.get("/doctors", function (req, res, next) {
   res.render("dashboard/doctors", { title: "Doktorlar" });
@@ -32,22 +28,12 @@ router.get("/doctors", function (req, res, next) {
 
 /* GET treatments page. */
 router.get("/treatments", async (req, res, next) => {
-  try {
-    const treatments = await Treatment.find({});
-    res.render("dashboard/treatments", { title: "Tedaviler", treatments });
-  } catch (error) {
-    next(error); // Forward to the error handling middleware
-  }
+    res.render("dashboard/treatments", { title: "Tedaviler"});
 });
 
 /************* GET blog page. *********************/
 router.get("/blog", async (req, res, next) => {
-  try {
-    const treatments = await Blog.find({});
-    res.render("dashboard/blog", { title: "Admin", treatments });
-  } catch (error) {
-    next(error); // Forward to the error handling middleware
-  }
+  res.render("dashboard/blog", { title: "Blog" });
 });
 
 module.exports = router;

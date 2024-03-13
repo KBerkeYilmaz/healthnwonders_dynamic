@@ -11,7 +11,7 @@ block content
                         a(href="/")=t("navbar.home")
                     li.breadcrumb-item
                         a(href="/blog")=t("navbar.blog")
-                    li.breadcrumb-item.active(aria-current="page")= blog.name
+                    li.breadcrumb-item.active(aria-current="page")= blog.name[currentLanguage]
                     
     section.blog.blog-single.pt-0.pb-80
         .container
@@ -26,10 +26,11 @@ block content
                                 a(href="#") Consulting
                                 a(href="#") Sales
                             .post__meta.d-flex.align-items-center.mb-20
-                                span.post__meta-date Ocak 20, 2022
-                            h1.post__title.mb-30=blog.name
+                                - const createdAtDate = new Date(blog.createdAt)
+                                span.post__meta-date= `${createdAtDate.getDate()}.${createdAtDate.getMonth() + 1}.${createdAtDate.getFullYear()}`
+                            h1.post__title.mb-30=blog.name[currentLanguage]
                             each item in blog.description
-                                p.post__desc.mb-20= item.title
+                                p.post__desc.mb-20= item[currentLanguage]
                 .col-sm-12.col-md-12.col-lg-4
                     aside.sidebar
                         .widget.widget-posts
@@ -38,9 +39,9 @@ block content
                                 each blog in blogs
                                     .widget-post-item.d-flex.align-items-center
                                         .widget-post__img
-                                            a(href=`/blog/${blog.name.split(' ').join('-')}`)
+                                            a(href=`/blog/${blog.name[currentLanguage]}`)
                                                 img(src="/images/blog/grid/kilo_verme_yolculugu.png" alt="thumb")
                                         .widget-post__content
                                             h4.widget-post__title
-                                                a(href=`/blog/${blog.name.split(' ').join('-')}`)= blog.name
+                                                a(href=`/blog/${blog.name[currentLanguage]}`)= blog.name[currentLanguage]
 

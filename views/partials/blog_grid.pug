@@ -11,7 +11,7 @@ section.blog-grid.pb-50
                 .col-sm-12.col-md-6.col-lg-4
                         .post-item
                             .post__img
-                                a(href=`/blog/${blog.name.split(' ').join('-')}`)
+                                a(href=`/blog/${blog.name[currentLanguage]}`)
                                     img(src="/images/blog/grid/kilo_verme_yolculugu.png", alt="post image", loading="lazy")
                             .post__body
                                 .post__meta-cat(style="opacity: 0")
@@ -20,8 +20,8 @@ section.blog-grid.pb-50
                                     - const createdAtDate = new Date(blog.createdAt)
                                     span.post__meta-date= `${createdAtDate.getDate()}.${createdAtDate.getMonth() + 1}.${createdAtDate.getFullYear()}`
                                 h4.post__title
-                                    a(href=`/blog/${blog.name.split(' ').join('-')}`)= blog.name
-                                .post__desc= blog.thumbnailDescription
-                                a(href=`/blog/${blog.name.split(' ').join('-')}`, class="btn btn__secondary btn__link btn__rounded")
+                                    a(href=`/blog/${blog.name[currentLanguage]}`)= blog.name[currentLanguage]
+                                .post__desc= blog.thumbnailDescription[currentLanguage]
+                                a(href=`/blog/${blog.name[currentLanguage]}`, class="btn btn__secondary btn__link btn__rounded")
                                     span=t("index.services.button2")
                                     i.icon-arrow-right

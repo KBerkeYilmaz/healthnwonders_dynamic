@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleFormButton = document.getElementById("toggleFormButton");
   const newTreatmentForm = document.getElementById("newTreatmentForm");
   const treatmentsTable = document.getElementById("treatmentsTable");
-  const paragraphColumn = document.getElementById("paragraph-column");
   const removeParagraphBtn = document.getElementById("removeParagraphBtn");
+  const paragraphColumn = document.getElementById("paragraph-column");
 
   let descriptionItemIndex = 1; // To keep track of the description items
 

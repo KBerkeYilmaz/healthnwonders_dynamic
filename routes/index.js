@@ -22,27 +22,27 @@ router.get("/", function (req, res, next) {
 
 
 //------------------------ API BLOG ----------------
-router.post("/api/blog", async (req, res) => {
-  const { name, description, thumbnailDescription, thumbnailName } = req.body;
-  console.log(req.body);
+router.post("/api/blog", upload.single('picture'), async (req, res) => {
+  const { name, thumbnailDescription, description } = req.body; // Removed description, thumbnailName as it seems to be not used in this scope
+  const picture = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
+
   try {
     const newBlog = new Blog({
       name,
       description,
       thumbnailDescription,
-      thumbnailName,
+      image: picture, // Assuming 'image' is the field in your Blog model for storing the picture path
     });
 
     await newBlog.save();
     res.status(201).redirect("/dashboard/blog");
   } catch (error) {
-    console.error("Failed to add new post:", error);
+    console.error("Failed to add new blog post:", error);
     res
       .status(500)
-      .json({ message: "Error adding new post", error: error.message });
+      .json({ message: "Error adding new blog post", error: error.message });
   }
 });
-
 
 
 

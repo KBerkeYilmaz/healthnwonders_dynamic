@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
+const TranslationSchema = require("./translation");
 
 const blogSchema = new mongoose.Schema(
   {
     image: { type: String, required: false },
-    name: { type: String, required: true },
-    thumbnailName: { type: String, required: true },
-    thumbnailDescription: { type: String, required: true },
-    description: [{ title: String }],
+    name: TranslationSchema, 
+    thumbnailDescription: TranslationSchema, 
+    description: [TranslationSchema], 
   },
   {
     timestamps: true,
