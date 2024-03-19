@@ -30,7 +30,7 @@ block content
                         a(href="https://www.youtube.com/watch?v=FSxXVrV1XrQ&ab_channel=Prof.Dr.FahriYETİŞİR" class="video__btn video__btn-white popup-video")
                             .video__player
                                 i.fa.fa-play
-                    each item in treatment.description.slice(1)
+                    each item in treatment.description
                         p.text-block__desc.mb-20= item[currentLanguage]
                     
                     //- Additional sections such as "widget-plan", "fancybox-layout1", and sidebar content would follow the same pattern of indentation and element conversion to Pug syntax.
