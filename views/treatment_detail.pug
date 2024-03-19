@@ -111,9 +111,7 @@ block content
                                 ul.list-unstyled.mb-0
                                     each treatment in treatments ? treatments : []
                                         li
-                                            - let treatmentNameForUrl = treatment.name[currentLanguage] || treatment.name['en']; // Fallback to English if current language name is missing
-                                            - let treatmentUrlSlug = treatmentNameForUrl.replace(/\s+/g, '-').toLowerCase(); // Create a URL-friendly slug
-                                            a(href=`/treatments/${treatmentUrlSlug}` class='nav__item-link')= treatmentNameForUrl
+                                            a(href=`/treatments/${treatment.slugs[currentLanguage]}` class='nav__item-link')= treatment.name[currentLanguage]
                         .widget.widget-help.bg-overlay.bg-overlay-secondary-gradient
                             .bg-img
                                 img(src="assets/images/banners/5.jpg" alt="background")
