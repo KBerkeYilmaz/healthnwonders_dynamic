@@ -23,7 +23,7 @@ router.get("/", function (req, res, next) {
 //------------------------ API BLOG ----------------
 router.post("/api/blog", upload.single("picture"), async (req, res) => {
   const { name, thumbnailDescription, description } = req.body; // Removed description, thumbnailName as it seems to be not used in this scope
-  const picture = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
+  let picture = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
   picture = picture.replace(/^public\//, "");
 
   try {
@@ -35,7 +35,10 @@ router.post("/api/blog", upload.single("picture"), async (req, res) => {
     });
 
     await newBlog.save();
-    res.status(201).redirect("/dashboard/blog");
+    if (newBlog) {
+      cache.addBlogToCache(newBlog);
+      res.status(201).redirect("/dashboard/blog");
+    }
   } catch (error) {
     console.error("Failed to add new blog post:", error);
     res

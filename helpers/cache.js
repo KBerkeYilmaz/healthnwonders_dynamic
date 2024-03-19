@@ -48,4 +48,8 @@ module.exports = {
     if (!blogsCache) return;
     blogsCache = blogsCache.filter((blog) => blog._id.toString() !== blogId);
   },
+  addBlogToCache: (newBlog) => {
+    if (!blogsCache) return;
+    blogsCache.push(newBlog);
+  },
 };
