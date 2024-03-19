@@ -40,7 +40,7 @@ block content
                                     .widget-post-item.d-flex.align-items-center
                                         .widget-post__img
                                             a(href=`/blog/${blog.slugs[currentLanguage]}`)
-                                                img(src="/images/blog/grid/kilo_verme_yolculugu.png" alt="thumb")
+                                                img(src=`/${blog.image}` alt="thumb")
                                         .widget-post__content
                                             h4.widget-post__title
                                                 a(href=`/blog/${blog.slugs[currentLanguage]}`)= blog.name[currentLanguage]
