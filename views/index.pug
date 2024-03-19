@@ -1,7 +1,7 @@
 extends layout
 
 block head
-    link(fetchpriority="high", rel="preload", as="image" href="/images/page-titles/landingslider_healthandwonder2.webp", type="image/webp")
+  link(fetchpriority="high" rel="preload" as="image" href="/images/page-titles/landingslider_healthandwonder2.webp" type="image/webp")
 block content
   //- Slider
   section.slider
@@ -16,12 +16,38 @@ block content
                 h1.slide__title=t('index.banner.title')
                 p.slide__desc=t('index.banner.description')
                 .d-flex.flex-wrap.align-items-center
-                  a(href="/appointment" class="btn btn__primary btn__rounded mr-30")
-                    span= t('index.banner.button1')
-                    i.icon-arrow-right
-                  a(href="/services" class="btn btn__white btn__rounded")
-                    span= t('index.banner.button2')
-                    i.icon-arrow-right
+                  if currentLanguage == 'en'
+                    a(href="/contact-us" class="btn btn__primary btn__rounded mr-30")
+                      span= t('index.banner.button1')
+                      i.icon-arrow-right
+                  if currentLanguage == 'fr'
+                    a(href="/contactez-nous" class="btn btn__primary btn__rounded mr-30")
+                      span= t('index.banner.button1')
+                      i.icon-arrow-right
+                  if currentLanguage == 'de'
+                    a(href="/kontaktiere-uns" class="btn btn__primary btn__rounded mr-30")
+                      span= t('index.banner.button1')
+                      i.icon-arrow-right
+                  if currentLanguage == 'tr'
+                    a(href="/bize-ulasin" class="btn btn__primary btn__rounded mr-30")
+                      span= t('index.banner.button1')
+                      i.icon-arrow-right
+                  if currentLanguage == 'en'  
+                    a(href="/our-services" class="btn btn__white btn__rounded")
+                      span= t('index.banner.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'tr'  
+                    a(href="/hizmetlerimiz" class="btn btn__white btn__rounded")
+                      span= t('index.banner.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'fr'  
+                    a(href="/services" class="btn btn__white btn__rounded")
+                      span= t('index.banner.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'de'  
+                    a(href="/dienstleistungen" class="btn btn__white btn__rounded")
+                      span= t('index.banner.button2')
+                      i.icon-arrow-right
   //- About Layout 1
   section.about-layout1.pb-0
     .container
@@ -35,7 +61,14 @@ block content
             p.mb-30= t('index.section1.sub-title')
             p.mb-30= t('index.section1.description')
             .d-flex.align-items-center.mb-30
-              a(href="about-us" class="btn btn__primary btn__outlined btn__rounded mr-30")= t('index.section1.button')
+              if currentLanguage == 'en'
+                a(href="/about-us" class="btn btn__primary btn__outlined btn__rounded mr-30")= t('index.section1.button')
+              if currentLanguage == 'tr'
+                a(href="/hakkimizda" class="btn btn__primary btn__outlined btn__rounded mr-30")= t('index.section1.button')
+              if currentLanguage == 'de'
+                a(href="/uber-uns" class="btn btn__primary btn__outlined btn__rounded mr-30")= t('index.section1.button')
+              if currentLanguage == 'fr'
+                a(href="/a-propos-de-nous" class="btn btn__primary btn__outlined btn__rounded mr-30")= t('index.section1.button')
               img(src="/images/logo/H&W Yatay.png" alt="sub-logo" style="max-width: 130px")
         .col-sm-12.col-md-12.col-lg-6
           .video-banner
@@ -55,14 +88,27 @@ block content
         .col-sm-12.col-md-12.col-lg-5.offset-lg-1
           p.heading__desc.font-weight-bold=t('index.callToAction.description') 
           .d-flex.flex-wrap.align-items-center.mt-40.mb-30
-            a(href="/appointment" class="btn btn__primary btn__rounded mr-30")
-              span= t('index.callToAction.button')
-              i.icon-arrow-right
+            if currentLanguage == 'en'
+              a(href="/contact-us" class="btn btn__primary btn__rounded mr-30")
+                span= t('index.callToAction.button')
+                i.icon-arrow-right
+            if currentLanguage == 'fr'
+              a(href="/contactez-nous" class="btn btn__primary btn__rounded mr-30")
+                span= t('index.callToAction.button')
+                i.icon-arrow-right
+            if currentLanguage == 'tr'
+              a(href="/bize-ulasin" class="btn btn__primary btn__rounded mr-30")
+                span= t('index.callToAction.button')
+                i.icon-arrow-right
+            if currentLanguage == 'de'
+              a(href="/kontaktiere-uns" class="btn btn__primary btn__rounded mr-30")
+                span= t('index.callToAction.button')
+                i.icon-arrow-right
       //- features layout        
       include ./partials/featured.pug
   section.services-layout2.services-carousel.bg-overlay.bg-overlay-primary.pt-130
     .bg-img
-      img(src="/images/banners/1.jpg", alt="background")
+      img(src="/images/banners/1.jpg" alt="background")
     .container
       .row
         .col-sm-12.col-md-12.col-lg-6
@@ -76,46 +122,102 @@ block content
               // service item #1
               .service-item
                 .service__img
-                  img(src="/images/services/1.jpg", alt="img", loading="lazy")
+                  img(src="/images/services/1.jpg" alt="img" loading="lazy")
                 .service__content
                   h4.service__title=t('index.services.service_1.title')
                   p.service__desc=t('index.services.service_1.description')
                   br
                   br
-                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="/services")
-                    span=t('index.services.button2')
-                    i.icon-arrow-right
+                  if currentLanguage == 'en'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/our-services")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'tr'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/hizmetlerimiz")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'fr'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/services")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'de'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/dienstleistungen")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
               // service item #2
               .service-item
                 .service__img
-                  img(src="/images/services/2.jpg", alt="img", loading="lazy")
+                  img(src="/images/services/2.jpg" alt="img" loading="lazy")
                 .service__content
                   h4.service__title=t('index.services.service_2.title')
                   p.service__desc=t('index.services.service_2.description')
                   br
                   br
                   br
-                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="/services")
-                    span=t('index.services.button2')
-                    i.icon-arrow-right
+                  if currentLanguage == 'en'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/our-services")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'tr'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/hizmetlerimiz")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'fr'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/services")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'de'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/dienstleistungen")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
               // service item #3
               .service-item
                 .service__img
-                  img(src="/images/services/3.jpg", alt="img", loading="lazy")
+                  img(src="/images/services/3.jpg" alt="img" loading="lazy")
                 .service__content
                   h4.service__title=t('index.services.service_3.title')
                   p.service__desc=t('index.services.service_3.description')
                   br
                   br
-                  a.btn.btn__secondary.btn__outlined.btn__rounded(href="/services")
-                    span=t('index.services.button2')
-                    i.icon-arrow-right
+                  if currentLanguage == 'en'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/our-services")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'tr'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/hizmetlerimiz")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'fr'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/services")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
+                  if currentLanguage == 'de'
+                    a.btn.btn__secondary.btn__outlined.btn__rounded(href="/dienstleistungen")
+                      span=t('index.services.button2')
+                      i.icon-arrow-right
       .row
         .col-12.d-flex.justify-content-end.mt--40
-          a.btn.btn__white.btn__link(href="/services")
-            span=t('index.services.button')
+          if currentLanguage == 'en'
+            a.btn.btn__white.btn__link(href="/our-services")
+              span=t('index.services.button')
+                i.icon-arrow-right
               i.icon-arrow-right
-            i.icon-arrow-right
+          if currentLanguage == 'tr'
+            a.btn.btn__white.btn__link(href="/hizmetlerimiz")
+              span=t('index.services.button')
+                i.icon-arrow-right
+              i.icon-arrow-right
+          if currentLanguage == 'fr'
+            a.btn.btn__white.btn__link(href="/services")
+              span=t('index.services.button')
+                i.icon-arrow-right
+              i.icon-arrow-right
+          if currentLanguage == 'de'
+            a.btn.btn__white.btn__link(href="/dienstleistungen")
+              span=t('index.services.button')
+                i.icon-arrow-right
+              i.icon-arrow-right
+
   include ./partials/certificates.pug
   //- Testimonials Layout 1
   //- include ./partials/testimonials.pug
@@ -123,7 +225,7 @@ block content
   //- Contact Layout 5
   .contact-layout5.bg-overlay.bg-overlay-blue-gradient.pb-60.pt-130
     .bg-img
-      img(src="/images/banners/3.jpg", alt="banner")
+      img(src="/images/banners/3.jpg" alt="banner")
     .container
       .row
         .col-sm-12.col-md-12.col-lg-5.d-flex.flex-column.justify-content-start
@@ -132,10 +234,30 @@ block content
               h3.heading__title.mb-30=t('index.appointmentForm.title')
               p.heading__desc=t('index.appointmentForm.description')
             .d-flex.align-items-center.mb-30
-              a.btn.btn__white.btn__white-style2.btn__rounded.mr-30(href="/services")
-                span=t('index.appointmentForm.button_service')
-                  i.icon-arrow-right
-              a.btn.btn__white.btn__outlined.btn__rounded(href="/appointment")= t('index.appointmentForm.button_contact')
+              if currentLanguage == 'en'
+                a.btn.btn__white.btn__white-style2.btn__rounded.mr-30(href="/our-services")
+                  span=t('index.appointmentForm.button_service')
+                    i.icon-arrow-right
+              if currentLanguage == 'tr'
+                a.btn.btn__white.btn__white-style2.btn__rounded.mr-30(href="/hizmetlerimiz")
+                  span=t('index.appointmentForm.button_service')
+                    i.icon-arrow-right
+              if currentLanguage == 'fr'
+                a.btn.btn__white.btn__white-style2.btn__rounded.mr-30(href="/services")
+                  span=t('index.appointmentForm.button_service')
+                    i.icon-arrow-right
+              if currentLanguage == 'de'
+                a.btn.btn__white.btn__white-style2.btn__rounded.mr-30(href="/dienstleistungen")
+                  span=t('index.appointmentForm.button_service')
+                    i.icon-arrow-right
+              if currentLanguage == 'en'      
+                a.btn.btn__white.btn__outlined.btn__rounded(href="/contact-us")= t('index.appointmentForm.button_contact')
+              if currentLanguage == 'tr'      
+                a.btn.btn__white.btn__outlined.btn__rounded(href="/bize-ulasin")= t('index.appointmentForm.button_contact')
+              if currentLanguage == 'de'      
+                a.btn.btn__white.btn__outlined.btn__rounded(href="/kontaktiere-uns")= t('index.appointmentForm.button_contact')
+              if currentLanguage == 'fr'      
+                a.btn.btn__white.btn__outlined.btn__rounded(href="/contactez-nous")= t('index.appointmentForm.button_contact')
           ul.list-items.list-items-layout2.list-items-light.list-horizontal.list-unstyled.mb-50
             li=t("index.appointmentForm.grid_item1")
             li=t("index.appointmentForm.grid_item2")
@@ -144,7 +266,7 @@ block content
             li=t("index.appointmentForm.grid_item5")
         .col-sm-12.col-md-12.col-lg-7
           .contact-panel.mb-50
-            form.contact-panel__form(method="post", action="assets/php/contact.php", id="contactForm")
+            form.contact-panel__form(method="post" action="assets/php/contact.php" id="contactForm")
               .row
                 .col-sm-12
                   h4.contact-panel__title= t('index.appointmentForm.form-title')
@@ -153,9 +275,9 @@ block content
                   .form-group
                     i.icon-widget.form-group-icon
                     select.form-control
-                        option(value="0")= t('index.appointmentForm.form-treatment')
-                        each treatment in treatments ? treatments : []
-                          option(value=`${index+1}`)= treatment.name
+                      option(value="0")= t('index.appointmentForm.form-treatment')
+                      each treatment in treatments ? treatments : []
+                        option(value=`${index+1}`)= treatment.name[currentLanguage]
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-user.form-group-icon
@@ -166,35 +288,35 @@ block content
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-news.form-group-icon
-                    input.form-control(type="text", placeholder=t('index.appointmentForm.form-name'), id="contact-name", name="contact-name", required)
+                    input.form-control(type="text", placeholder=t('index.appointmentForm.form-name'), id="contact-name" name="contact-name", required)
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-email.form-group-icon
-                    input.form-control(type="email", placeholder=t('index.appointmentForm.form-email'), id="contact-email", name="contact-email", required)
+                    input.form-control(type="email", placeholder=t('index.appointmentForm.form-email'), id="contact-email" name="contact-email", required)
                 .col-sm-4.col-md-4.col-lg-4
                   .form-group
                     i.icon-phone.form-group-icon
-                    input.form-control(type="text", placeholder=t('index.appointmentForm.form-phone'), id="contact-Phone", name="contact-phone", required)
+                    input.form-control(type="text", placeholder=t('index.appointmentForm.form-phone'), id="contact-Phone" name="contact-phone", required)
                 .col-sm-4.col-md-4.col-lg-4
                   .form-group.form-group-date
                     i.icon-calendar.form-group-icon
-                    input.form-control(type="date", id="contact-date", name="contact-date", placeholder="Tedavi Tarihi", required)
+                    input.form-control(type="date" id="contact-date" name="contact-date" placeholder="Tedavi Tarihi", required)
                 .col-sm-4.col-md-4.col-lg-4
                   .form-group
-                    select.form-control(id="contact-gender", name="contact-gender", aria-placeholder="Cinsiyet", required)
+                    select.form-control(id="contact-gender" name="contact-gender" aria-placeholder="Cinsiyet", required)
                       option(value="")=t('index.appointmentForm.form-gender')
-                      option(value="erkek")=t('.index.appointmentForm.form-gender1')
+                      option(value="erkek")=t('index.appointmentForm.form-gender1')
                       option(value="kadin")=t('index.appointmentForm.form-gender2')
                       option(value="belirtmek_istemiyor")=t('index.appointmentForm.form-gender3')
                 .col-12
                   .form-group
                     i.icon-note.form-group-icon
-                    textarea.form-control(id="contact-special-requests", name="contact-special-requests", placeholder=t('index.appointmentForm.form-message'), rows="3", required, style="padding: 1rem")
+                    textarea.form-control(id="contact-special-requests" name="contact-special-requests", placeholder=t('index.appointmentForm.form-message'), rows="3", required, style="padding: 1rem")
                   .form-check.form-check-inline(style="margin-bottom: 1rem")
-                    input.form-check-input(type="checkbox", id="contact-privacy-agreement", name="contact-privacy-agreement", required)
+                    input.form-check-input(type="checkbox" id="contact-privacy-agreement" name="contact-privacy-agreement", required)
                     label.form-check-label(for="contact-privacy-agreement")=t('index.appointmentForm.form-privacy')
                   .form-check.form-check-inline(style="margin-bottom: 1rem")
-                    input.form-check-input(type="checkbox", id="contact-privacy-policy", name="contact-privacy-policy", required)
+                    input.form-check-input(type="checkbox" id="contact-privacy-policy" name="contact-privacy-policy", required)
                     label.form-check-label(for="contact-privacy-policy")=t('index.appointmentForm.form-privacy2')
                 .col-12
                   button.btn.btn__primary.btn__rounded.btn__block.btn__xhight.mt-10(type="submit")

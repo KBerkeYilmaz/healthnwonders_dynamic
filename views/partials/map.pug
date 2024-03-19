@@ -14,10 +14,30 @@
       .col-sm-12.col-md-12.col-lg-6.offset-lg-1
         p.heading__desc.color-secondary.font-weight-bold.mb-30= t('index.map.description')
         .d-flex.align-items-center.mb-60
-          a.btn.btn__secondary.btn__rounded.mr-30(href="/appointment")
-            i.fas.fa-heart
-            span= t('index.map.button')
-          a.btn.btn__secondary.btn__outlined.btn__rounded.mr-30(href="/about_us") Hakkımızda
+          if currentLanguage === 'tr'
+            a.btn.btn__secondary.btn__rounded.mr-30(href="/bize-ulasin")
+              i.fas.fa-heart
+              span= t('index.map.button')
+          if currentLanguage === 'en'
+            a.btn.btn__secondary.btn__rounded.mr-30(href="/contact-us")
+              i.fas.fa-heart
+              span= t('index.map.button')
+          if currentLanguage === 'fr'
+            a.btn.btn__secondary.btn__rounded.mr-30(href="/contactez-nous")
+              i.fas.fa-heart
+              span= t('index.map.button')
+          if currentLanguage === 'de'
+            a.btn.btn__secondary.btn__rounded.mr-30(href="/kontaktiere-uns")
+              i.fas.fa-heart
+              span= t('index.map.button')
+          if currentLanguage === 'tr'
+            a.btn.btn__secondary.btn__outlined.btn__rounded.mr-30(href="/hakkimizda")= t('route_titles.about_us_page_title')  
+          if currentLanguage === 'en'
+            a.btn.btn__secondary.btn__outlined.btn__rounded.mr-30(href="/about_us")= t('route_titles.about_us_page_title')  
+          if currentLanguage === 'de'
+            a.btn.btn__secondary.btn__outlined.btn__rounded.mr-30(href="/uber-uns")= t('route_titles.about_us_page_title')  
+          if currentLanguage === 'fr'
+            a.btn.btn__secondary.btn__outlined.btn__rounded.mr-30(href="/a-propos-de-nous")= t('route_titles.about_us_page_title')  
         ul.list-items.list-items-layout3.list-unstyled
           li= t('index.map.list-item1')
           li= t('index.map.list-item2')

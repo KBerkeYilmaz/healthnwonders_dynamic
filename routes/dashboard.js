@@ -22,18 +22,32 @@ router.get("/logout", (req, res) => {
 });
 
 /* GET doctors page. */
-router.get("/doctors", function (req, res, next) {
-  res.render("dashboard/doctors", { title: "Doktorlar" });
+router.get("/doctors", isAuthenticated, function (req, res, next) {
+  const currentLanguage = req.language; // This should reflect the current language used in rendering
+  res.render("dashboard/doctors", {
+    title: "Doktorlar",
+    currentLanguage: currentLanguage,
+  });
 });
 
 /* GET treatments page. */
-router.get("/treatments", async (req, res, next) => {
-    res.render("dashboard/treatments", { title: "Tedaviler"});
+router.get("/treatments", isAuthenticated, async (req, res, next) => {
+  const currentLanguage = req.language; // This should reflect the current language used in rendering
+
+  res.render("dashboard/treatments", {
+    title: "Tedaviler",
+    currentLanguage: currentLanguage,
+  });
 });
 
 /************* GET blog page. *********************/
-router.get("/blog", async (req, res, next) => {
-  res.render("dashboard/blog", { title: "Blog" });
+router.get("/blog", isAuthenticated, async (req, res, next) => {
+  const currentLanguage = req.language; // This should reflect the current language used in rendering
+
+  res.render("dashboard/blog", {
+    title: "Blog",
+    currentLanguage: currentLanguage,
+  });
 });
 
 module.exports = router;

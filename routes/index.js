@@ -1,12 +1,12 @@
 var express = require("express");
 var router = express.Router();
-var { upload } = require('../middlewares/multer');
+var { upload } = require("../middlewares/multer");
 
 const cache = require("../helpers/cache");
 const Blog = require("../models/blog");
 const Doctor = require("../models/doctor");
 const Treatment = require("../models/treatment");
-
+const User = require("../models/user");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -15,16 +15,16 @@ router.get("/", function (req, res, next) {
 
   res.render("index", {
     t: req.t,
-    currentLanguage:currentLanguage,
-    title: req.t('route_titles.index_page_title')
+    currentLanguage: currentLanguage,
+    title: req.t("route_titles.index_page_title"),
   });
 });
 
-
 //------------------------ API BLOG ----------------
-router.post("/api/blog", upload.single('picture'), async (req, res) => {
+router.post("/api/blog", upload.single("picture"), async (req, res) => {
   const { name, thumbnailDescription, description } = req.body; // Removed description, thumbnailName as it seems to be not used in this scope
   const picture = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
+  picture = picture.replace(/^public\//, "");
 
   try {
     const newBlog = new Blog({
@@ -44,14 +44,12 @@ router.post("/api/blog", upload.single('picture'), async (req, res) => {
   }
 });
 
-
-
 //------------------------ API DOCTORS ----------------
 // POST
-router.post("/api/doctors", upload.single('profilePic'), async (req, res) => {
-  const { name, specialty, location, bio, interests, education, experiences } =req.body;
+router.post("/api/doctors", upload.single("profilePic"), async (req, res) => {
+  const { name, specialty, location, bio, interests, education, experiences } =
+    req.body;
   const profilePic = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
-  
 
   try {
     const newDoctor = new Doctor({
@@ -62,7 +60,7 @@ router.post("/api/doctors", upload.single('profilePic'), async (req, res) => {
       interests,
       education,
       experiences,
-      profilePic
+      profilePic,
     });
 
     await newDoctor.save();
@@ -77,7 +75,6 @@ router.post("/api/doctors", upload.single('profilePic'), async (req, res) => {
       .json({ message: "Error adding new doctor", error: error.message });
   }
 });
-
 
 // DELETE
 router.delete("/api/doctors/:id", async (req, res) => {
@@ -101,8 +98,6 @@ router.delete("/api/doctors/:id", async (req, res) => {
   }
 });
 
-
-
 //-------------- API TREATMENTS ----------------
 // POST
 router.post("/api/treatments", async (req, res) => {
@@ -114,11 +109,14 @@ router.post("/api/treatments", async (req, res) => {
       subTitle,
       description,
       abstract,
-      youtubeLink
+      youtubeLink,
     });
 
     await newTreatment.save();
-    res.status(201).redirect("/dashboard");
+    if (newTreatment) {
+      cache.addTreatmentToCache(newTreatment);
+      res.status(201).redirect("/dashboard");
+    }
   } catch (error) {
     console.error("Failed to add new treatment:", error);
     res
@@ -150,18 +148,56 @@ router.delete("/api/treatments/:id", async (req, res) => {
   }
 });
 
-
-router.get('/change-lang/:lang', (req, res) => {
+router.get("/change-lang/:lang", (req, res) => {
   const newLang = req.params.lang;
   req.i18n.changeLanguage(newLang, (err) => {
-    if (err) console.error('Language change error:', err);
-    res.redirect('back');
+    if (err) console.error("Language change error:", err);
+    res.redirect("back");
+  });
+});
+
+// -------------------------- Dynamic Route Handlers --------------------------
+
+
+// -------ABOUT US--------
+router.get(["/about-us", "/hakkimizda", "/uber-uns", "/a-propos-de-nous" ], function (req, res, next) {
+
+  const currentLanguage = req.language; // This should reflect the current language used in rendering
+  res.render("about", {
+    currentLanguage: currentLanguage,
+    title: req.t("route_titles.about_us_page_title"),
+  });
+});
+
+// -------FAQ--------
+router.get(["/faq", "/sik-sorulan-sorular", "/oft-gestellte-fragen", "/questions-frequemment-posees"],  function (req, res, next) {
+  const currentLanguage = req.language; 
+  res.render("faq", { title: "FAQ", currentLanguage: currentLanguage });
+});
+
+
+// ----------SERVICES----------
+router.get(["/services", "/our-services", "/hizmetlerimiz", "/dienstleistungen"], function (req, res, next) {
+  const currentLanguage = req.language; // This should reflect the current language used in rendering
+
+  res.render("services", {
+    title: req.t('route_titles.services_page_title'),
+    currentLanguage: currentLanguage,
+  });
+});
+
+
+
+// ----------CONTACT US----------
+router.get(["/contact-us", "/bize-ulasin", "/kontaktiere-uns", "/contactez-nous"], function (req, res, next) {
+  const currentLanguage = req.language; // This should reflect the current language used in rendering
+
+  res.render("appointment", {
+    title: req.t('route_titles.appointment_page_title'),
+    currentLanguage: currentLanguage,
   });
 });
 
 
 
 module.exports = router;
-
-
-

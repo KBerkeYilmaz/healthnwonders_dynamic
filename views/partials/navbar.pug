@@ -52,11 +52,32 @@ header.header.header-layout2
                         a(data-toggle='dropdown' class='dropdown-toggle nav__item-link')=t("navbar.about_us.title")
                         ul.dropdown-menu
                             li.nav__item
-                                a(href='/about-us' class='nav__item-link')=t("navbar.about_us.sub-menu.who-are-we")
+                                if currentLanguage == 'en'
+                                    a(href='/about-us' class='nav__item-link')=t("navbar.about_us.sub-menu.who-are-we")
+                                if currentLanguage == 'tr'
+                                    a(href='/hakkimizda' class='nav__item-link')=t("navbar.about_us.sub-menu.who-are-we")
+                                if currentLanguage == 'de'
+                                    a(href='/uber-uns' class='nav__item-link')=t("navbar.about_us.sub-menu.who-are-we") 
+                                if currentLanguage == 'fr'
+                                    a(href='/a-propos-de-nous' class='nav__item-link')=t("navbar.about_us.sub-menu.who-are-we")
                             li.nav__item
-                                a(href='/services' class='nav__item-link')=t("navbar.about_us.sub-menu.services")
+                                if currentLanguage == 'en'
+                                    a(href='/our-services' class='nav__item-link')=t("navbar.about_us.sub-menu.services")
+                                if currentLanguage == 'tr'
+                                    a(href='/hizmetlerimiz' class='nav__item-link')=t("navbar.about_us.sub-menu.services")
+                                if currentLanguage == 'de'
+                                    a(href='/dienstleistungen' class='nav__item-link')=t("navbar.about_us.sub-menu.services")
+                                if currentLanguage == 'fr'
+                                    a(href='/services' class='nav__item-link')=t("navbar.about_us.sub-menu.services")
                             li.nav__item
-                                a(href='/faq' class='nav__item-link')=t("navbar.about_us.sub-menu.faq")
+                                if currentLanguage == 'en'
+                                    a(href='/faq' class='nav__item-link')=t("navbar.about_us.sub-menu.faq")
+                                if currentLanguage == 'tr'
+                                    a(href='/sik-sorulan-sorular' class='nav__item-link')=t("navbar.about_us.sub-menu.faq")
+                                if currentLanguage == 'de'
+                                    a(href='/oft-gestellte-fragen' class='nav__item-link')=t("navbar.about_us.sub-menu.faq")
+                                if currentLanguage == 'fr'
+                                    a(href='/questions-frequemment-posees' class='nav__item-link')=t("navbar.about_us.sub-menu.faq")
                     li.nav__item.has-dropdown
                         a(data-toggle='dropdown' class='dropdown-toggle nav__item-link')=t("navbar.doctors")
                         ul.dropdown-menu
@@ -73,7 +94,7 @@ header.header.header-layout2
                                 li.nav__item
                                     - let treatmentNameForUrl = treatment.name[currentLanguage] || treatment.name['en']; // Fallback to English if current language name is missing
                                     - let treatmentUrlSlug = treatmentNameForUrl.replace(/\s+/g, '-').toLowerCase(); // Create a URL-friendly slug
-                                    a(href=`/treatments/${treatmentUrlSlug}` class='nav__item-link')= treatmentNameForUrl
+                                    a(href=`/treatments/${treatmentUrlSlug}` class='nav__item-link')= treatment.name[currentLanguage]
                     li.nav__item.has-dropdown
                         - var languages = {en: 'English', tr: 'Türkçe', de: 'Deustch', fr: 'Français'}
                         - var flags = {en: '/images/flags/en.png', tr: '/images/flags/tr.png', de: '/images/flags/gr.png', fr: '/images/flags/fr.png'}
@@ -87,6 +108,19 @@ header.header.header-layout2
                                             img(src=flags[key] alt='flag' style='height: 20px; width: 25px; margin-right: 5px;')
                                             span= val
             .d-none.d-xl-flex.align-items-center.position-relative.ml-0
-                a(href='/appointment' class='btn btn__primary btn__rounded ml-30')
-                    i.icon-calendar
-                    span=t("navbar.appointment")
+                if currentLanguage == 'en'    
+                    a(href='/contact-us' class='btn btn__primary btn__rounded ml-30')
+                        i.icon-calendar
+                        span=t("navbar.appointment")
+                if currentLanguage == 'tr'    
+                    a(href='/bize-ulasin' class='btn btn__primary btn__rounded ml-30')
+                        i.icon-calendar
+                        span=t("navbar.appointment")
+                if currentLanguage == 'de'    
+                    a(href='/kontaktiere-uns' class='btn btn__primary btn__rounded ml-30')
+                        i.icon-calendar
+                        span=t("navbar.appointment")
+                if currentLanguage == 'fr'    
+                    a(href='/contactez-nous' class='btn btn__primary btn__rounded ml-30')
+                        i.icon-calendar
+                        span=t("navbar.appointment")

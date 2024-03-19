@@ -5,7 +5,7 @@ table#blogsTable.table.table-striped.table-bordered.table-hover
     tbody
         each blog in blogs
             tr
-                td= blog.name
+                td= blog.name[currentLanguage]
                     td
                         a.btn.btn-primary Düzenle
                         a.btn.btn-danger.delete-btn Sil

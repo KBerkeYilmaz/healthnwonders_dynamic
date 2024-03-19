@@ -23,14 +23,14 @@ block content
                 .col-sm-12.col-md-12.col-lg-8
                     //- Text block section
                     .text-block.mb-50
-                        p.text-block__desc.mb-20.font-weight-bold.color-secondary= treatment.abstract[currentLanguage]
+                        p.text-block__desc.mb-20.font-weight-bold.color-secondary= treatment.description[0][currentLanguage]
                     //- Video banner section
                     .video-banner-layout3.bg-overlay.mb-50
                         img(src="/images/banners/7.jpg" alt="banner")
                         a(href="https://www.youtube.com/watch?v=FSxXVrV1XrQ&ab_channel=Prof.Dr.FahriYETİŞİR" class="video__btn video__btn-white popup-video")
                             .video__player
                                 i.fa.fa-play
-                    each item in treatment.description
+                    each item in treatment.description.slice(1)
                         p.text-block__desc.mb-20= item[currentLanguage]
                     
                     //- Additional sections such as "widget-plan", "fancybox-layout1", and sidebar content would follow the same pattern of indentation and element conversion to Pug syntax.
@@ -126,6 +126,16 @@ block content
                                     i.icon-phone 
                                     span +90 531 983 1396
                         .widget.widget-reports
-                            a.btn.btn__primary.btn__block(href="appointment.html")
-                                span=t("faq.button")
+                            if currentLanguage == 'en'
+                                a.btn.btn__primary.btn__block(href="/contact-us")
+                                    span=t("faq.button")
+                            if currentLanguage == 'fr'
+                                a.btn.btn__primary.btn__block(href="/contactez-nous")
+                                    span=t("faq.button")
+                            if currentLanguage == 'de'
+                                a.btn.btn__primary.btn__block(href="/kontaktiere-uns")
+                                    span=t("faq.button")
+                            if currentLanguage == 'tr'
+                                a.btn.btn__primary.btn__block(href="/bize-ulasin")
+                                    span=t("faq.button")
 

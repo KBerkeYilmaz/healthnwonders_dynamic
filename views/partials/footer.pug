@@ -13,9 +13,22 @@ footer.footer
                     .footer-widget-about
                         img(src="/images/logo/H&W koyu zemin .png" alt="logo" class="mb-30")
                         p.color-gray=t("footer.description")
-                        a(href="appointment.html" class="btn btn__primary btn__primary-style2 btn__link")
-                            span= t("footer.button")
-                            i.icon-arrow-right
+                        if currentLanguage === 'tr'
+                            a(href="/bize-ulasin" class="btn btn__primary btn__primary-style2 btn__link")
+                                span= t("footer.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'en'
+                            a(href="/contact-us" class="btn btn__primary btn__primary-style2 btn__link")
+                                span= t("footer.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'fr'
+                            a(href="/contactez-nous" class="btn btn__primary btn__primary-style2 btn__link")
+                                span= t("footer.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'de'
+                            a(href="/kontaktiere-uns" class="btn btn__primary btn__primary-style2 btn__link")
+                                span= t("footer.button")
+                                i.icon-arrow-right
                 .col-sm-6.col-md-6.col-lg-2.offset-lg-1
                     .footer-widget-nav
                         h6.footer-widget__title=t("footer.services.title")
@@ -31,16 +44,44 @@ footer.footer
                         h6.footer-widget__title=t("footer.quick-links.title")
                         nav
                             ul.list-unstyled
+                                li  
+                                    if currentLanguage === 'tr'
+                                        a(href="/hakkimizda")=t("footer.quick-links.item1")
+                                    if currentLanguage === 'en'
+                                        a(href="/about-us")=t("footer.quick-links.item1")
+                                    if currentLanguage === 'fr'
+                                        a(href="/a-propos-de-nous")=t("footer.quick-links.item1")
+                                    if currentLanguage === 'de'
+                                        a(href="/uber-uns")=t("footer.quick-links.item1")
                                 li
-                                    a(href="/about-us")=t("footer.quick-links.item1") 
-                                li
-                                    a(href="/services")=t("footer.quick-links.item2")
+                                    if currentLanguage === 'tr'
+                                        a(href="/hizmetlerimiz")=t("footer.quick-links.item2")
+                                    if currentLanguage === 'en'
+                                        a(href="/our-services")=t("footer.quick-links.item2")
+                                    if currentLanguage === 'fr'    
+                                        a(href="/services")=t("footer.quick-links.item2")
+                                    if currentLanguage === 'de'
+                                        a(href="/dienstleistungen")=t("footer.quick-links.item2")
                                 li
                                     a(href="/blog")=t("footer.quick-links.item3")
                                 li
-                                    a(href="/faq")=t("footer.quick-links.item4")
-                                li
-                                    a(href="/appointment")=t("footer.quick-links.item5")
+                                    if currentLanguage === 'tr'
+                                        a(href="/sik-sorulan-sorular")=t("footer.quick-links.item4")
+                                    if currentLanguage === 'en'
+                                        a(href="/faq")=t("footer.quick-links.item4")
+                                    if currentLanguage === 'fr'
+                                        a(href="/questions-frequemment-posees")=t("footer.quick-links.item4")
+                                    if currentLanguage === 'de'
+                                        a(href="/oft-gestellte-fragen")=t("footer.quick-links.item4")
+                                li  
+                                    if currentLanguage === 'tr'
+                                        a(href="/bize-ulasin")=t("footer.quick-links.item5")
+                                    if currentLanguage === 'en'
+                                        a(href="/contact-us")=t("footer.quick-links.item5")
+                                    if currentLanguage === 'fr'
+                                        a(href="/contactez-nous")=t("footer.quick-links.item5")
+                                    if currentLanguage === 'de'
+                                        a(href="/kontaktiere-uns")=t("footer.quick-links.item5")
                 .col-sm-12.col-md-6.col-lg-4
                     .footer-widget-contact
                         h6.footer-widget__title.color-heading=t("footer.contact.title")
@@ -54,7 +95,7 @@ footer.footer
                         .d-flex.align-items-center
                             ul.social-icons.list-unstyled.mb-0
                                 li
-                                    a(href="https://www.facebook.com/healthnwonders")
+                                    a(href="https://www.facebook.com/healthnwonders" rel="noopener noreferrer" target="_blank")
                                         i.fab.fa-facebook-f
                                 li
                                     a(href="https://www.instagram.com/healthandwonders/" rel="noopener noreferrer" target="_blank")

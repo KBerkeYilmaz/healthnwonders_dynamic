@@ -5,24 +5,28 @@ const cache = require("../helpers/cache");
 
 /* GET blogs page. */
 router.get("/", function (req, res, next) {
-  const currentLanguage = req.language; // This should reflect the current language used in rendering
+  const currentLanguage = req.language;
+  const blogs = cache.getBlogsCache().map(blog => ({
+    ...blog,
+    slug: slugify(blog.name[currentLanguage] || blog.name["en"], { lower: true, strict: true })
+  }));
+  
   res.render("blog", {
-    title: "Blog Yazıları",
-    currentLanguage: currentLanguage,
+    title: req.t("route_titles.blog_page_title"),
+    blogs, 
+    currentLanguage,
   });
 });
 
 router.get("/:blogSlug", async (req, res, next) => {
-  const currentLanguage = req.language; // Determine the current language
-  const blogSlug = req.params.blogSlug; // The slug from the URL
+  const currentLanguage = req.language;
+  const blogSlug = req.params.blogSlug;
 
   // Use the cached blogs
-  const blogs = cache.getBlogsCache(); // Assume this fetches your blogs
-  const blog = blogs.find((blog) => {
-    // Dynamically generate a slug for each blog based on its name in the current language or fallback to English
-    const nameForSlug = blog.name[currentLanguage] || blog.name["en"];
-    const generatedSlug = slugify(nameForSlug, { lower: true, strict: true });
-    return generatedSlug === blogSlug;
+  const blogs = cache.getBlogsCache(); 
+  const blog = blogs.find(blog => {
+    // Check if the slug in the current language matches the requested slug
+    return blog.slugs[currentLanguage] === blogSlug;
   });
 
   if (!blog) {
@@ -30,7 +34,7 @@ router.get("/:blogSlug", async (req, res, next) => {
   }
 
   res.render("blog/blog_detail", {
-    title: blog.name[currentLanguage] || blog.name["en"], // Fallback to English if necessary
+    title: blog.name[currentLanguage] || blog.name["tr"], // Fallback to Turkish if necessary
     blog,
     currentLanguage,
   });

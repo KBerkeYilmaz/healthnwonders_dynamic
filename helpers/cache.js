@@ -33,6 +33,11 @@ module.exports = {
       (treatment) => treatment._id.toString() !== treatmentId
     );
   },
+  addTreatmentToCache: (newTreatment) => {
+    if (!treatmentsCache) return;
+    treatmentsCache.push(newTreatment);
+  },
+
 
   // Blogs Cache
   getBlogsCache: () => blogsCache,

@@ -11,12 +11,38 @@ block content
                     h1.pagetitle__heading= t("aboutUs.banner.title")
                     p.pagetitle__desc=t("aboutUs.banner.description")
                         .d-flex.flex-wrap.align-items-center
-                            a.btn.btn__primary.btn__rounded.mr-30(href="/appointment")
-                                span=t("aboutUs.banner.button1")
-                                    i.icon-arrow-right
-                            a.btn.btn__white.btn__rounded(href="/services")
-                                span=t("aboutUs.banner.button2")
-                                    i.icon-arrow-right
+                            if currentLanguage === 'tr'
+                                a.btn.btn__primary.btn__rounded.mr-30(href="/bize-ulasin")
+                                    span= t("aboutUs.banner.button1")
+                                        i.icon-arrow-right
+                            if currentLanguage === 'en'
+                                a.btn.btn__primary.btn__rounded.mr-30(href="/contact-us")
+                                    span= t("aboutUs.banner.button1")
+                                        i.icon-arrow-right
+                            if currentLanguage === 'fr'
+                                a.btn.btn__primary.btn__rounded.mr-30(href="/contactez-nous")
+                                    span= t("aboutUs.banner.button1")
+                                        i.icon-arrow-right
+                            if currentLanguage === 'de'
+                                a.btn.btn__primary.btn__rounded.mr-30(href="/kontaktiere-uns")
+                                    span= t("aboutUs.banner.button1")
+                                        i.icon-arrow-right
+                            if currentLanguage === 'tr'
+                                a.btn.btn__white.btn__rounded(href="/hizmetlerimiz")
+                                    span=t("aboutUs.banner.button2")
+                                        i.icon-arrow-right
+                            if currentLanguage === 'en'
+                                a.btn.btn__white.btn__rounded(href="/our-services")
+                                    span=t("aboutUs.banner.button2")
+                                        i.icon-arrow-right
+                            if currentLanguage === 'fr'
+                                a.btn.btn__white.btn__rounded(href="/services")
+                                    span=t("aboutUs.banner.button2")
+                                        i.icon-arrow-right
+                            if currentLanguage === 'de'
+                                a.btn.btn__white.btn__rounded(href="/dienstleistungen")
+                                    span=t("aboutUs.banner.button2")
+                                        i.icon-arrow-right
     // About Layout 1
     section.about-layout1.pb-0
         .container
@@ -45,8 +71,21 @@ block content
                 .col-sm-12.col-md-12.col-lg-5.offset-lg-1
                     p.heading__desc.font-weight-bold=t("aboutUs.section2.description")
                     .d-flex.flex-wrap.align-items-center.mt-40.mb-30
-                        a(href="/appointment" class="btn btn__primary btn__rounded mr-30")
-                            span=t("aboutUs.section2.button")
+                        if currentLanguage == 'en'
+                            a(href="/contact-us" class="btn btn__primary btn__rounded mr-30")
+                                span= t('index.callToAction.button')
+                                i.icon-arrow-right
+                        if currentLanguage == 'fr'
+                            a(href="/contactez-nous" class="btn btn__primary btn__rounded mr-30")
+                                span= t('index.callToAction.button')
+                                i.icon-arrow-right
+                        if currentLanguage == 'tr'
+                            a(href="/bize-ulasin" class="btn btn__primary btn__rounded mr-30")
+                                span= t('index.callToAction.button')
+                                i.icon-arrow-right
+                        if currentLanguage == 'de'
+                            a(href="/kontaktiere-uns" class="btn btn__primary btn__rounded mr-30")
+                                span= t('index.callToAction.button')
                                 i.icon-arrow-right
                 //- features layout        
                 include ./partials/featured.pug
@@ -109,9 +148,22 @@ block content
                         h4.cta__title= t("aboutUs.section4.title")
                         p.cta__desc= t("aboutUs.section4.description")
                     .col-sm-12.col-md-3.col-lg-3
-                        a.btn.btn__secondary.btn__secondary-style2.btn__rounded.mr-30(href="appointment")
-                            span= t("aboutUs.section4.button")
-                            i.icon-arrow-right
+                        if currentLanguage === 'tr'
+                            a.btn.btn__secondary.btn__secondary-style2.btn__rounded.mr-30(href="/bize-ulasin")
+                                span= t("aboutUs.section4.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'en'
+                            a.btn.btn__secondary.btn__secondary-style2.btn__rounded.mr-30(href="/contact-us")
+                                span= t("aboutUs.section4.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'fr'
+                            a.btn.btn__secondary.btn__secondary-style2.btn__rounded.mr-30(href="/contactez-nous")
+                                span= t("aboutUs.section4.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'de'
+                            a.btn.btn__secondary.btn__secondary-style2.btn__rounded.mr-30(href="/kontaktiere-uns")
+                                span= t("aboutUs.section4.button")
+                                i.icon-arrow-right
     include ./partials/certificates.pug
     //- include ./partials/testimonials.pug
     include ./partials/blog_grid.pug

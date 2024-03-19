@@ -8,22 +8,19 @@ var logger = require("morgan");
 var compression = require("compression");
 const connectDB = require("./lib/database");
 const cache = require("./helpers/cache");
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
-
+const session = require("express-session");
+const slugify = require("slugify");
+const MongoStore = require("connect-mongo");
 
 // ROUTES
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var aboutUsRouter = require("./routes/about-us");
 var dashboardRouter = require("./routes/dashboard");
 var doctorsRouter = require("./routes/doctors");
 var treatmentsRouter = require("./routes/treatments");
 var blogRouter = require("./routes/blog");
-var servicesRouter = require("./routes/services");
-var faqRouter = require("./routes/faq");
-var appointmentRouter = require("./routes/appointment");
 var loginRouter = require("./routes/login");
+
 
 const i18next = require("i18next");
 const Backend = require("i18next-fs-backend");
@@ -70,21 +67,47 @@ async function initializeCaches() {
 
   // console.log("Initializing caches...");
   try {
+    const supportedLanguages = ["en", "fr", "de", "tr"]; // Set of supported languages
+
     const doctorsList = await Doctor.find({}).lean();
     // console.log("Doctors list:", doctorsList);
     cache.setDoctorsCache(doctorsList);
 
     const treatmentList = await Treatment.find({}).lean();
-    console.log("Treatment list:", treatmentList);
-    cache.setTreatmentsCache(treatmentList);
+
+    const slugifiedTreatmentList = treatmentList.map((treatment) => ({
+      ...treatment,
+      slugs: supportedLanguages.reduce((acc, lang) => {
+        acc[lang] = slugify(treatment.name[lang] || treatment.name["tr"], {
+          lower: true,
+          strict: true,
+        }); // Fallback to Turkish if specific language name is not available
+        return acc;
+      }, {}),
+    }));
+
+
+    console.log("Treatment list:", slugifiedTreatmentList);
+    cache.setTreatmentsCache(slugifiedTreatmentList);
 
     const blogList = await Blog.find({}).lean();
-    console.log("Blog list:", blogList);
-    cache.setBlogsCache(blogList);
 
+    const slugifiedBlogList = blogList.map((blog) => ({
+      ...blog,
+      slugs: supportedLanguages.reduce((acc, lang) => {
+        acc[lang] = slugify(blog.name[lang] || blog.name["tr"], {
+          lower: true,
+          strict: true,
+        }); // Fallback to Turkish if specific language name is not available
+        return acc;
+      }, {}),
+    }));
+
+    console.log("Blog list with slugs:", slugifiedBlogList);
+    cache.setBlogsCache(slugifiedBlogList)
     cacheInitialized = true; // Prevent further initialization
   } catch (error) {
-    // console.error("Error initializing caches:", error);
+    console.error("Error initializing caches:", error);
   }
 }
 
@@ -120,7 +143,7 @@ i18next
       // order: ["path", "cookie"],
       caches: ["cookie"],
     },
-    lng:"tr",
+    lng: "tr",
     fallbackLng: "tr",
     preload: ["tr", "en", "de", "fr"],
     saveMissing: true,
@@ -128,41 +151,32 @@ i18next
 
 //---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
 
-
-
-
 // MIDDLEWARES
 app.use(i18nextMiddleware.handle(i18next));
 
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-  cookie: { secure: false, maxAge: 1000 * 60 * 60 } // Example: 1 hour
-}));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+    cookie: { secure: false, maxAge: 1000 * 60 * 60 }, // Example: 1 hour
+  })
+);
 
-
-
-
-// ROUTE HANDLER 
+// ROUTE HANDLER
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/about-us", aboutUsRouter);
 app.use("/dashboard", dashboardRouter);
 app.use("/doctors", doctorsRouter);
 app.use("/treatments", treatmentsRouter);
 app.use("/blog", blogRouter);
-app.use("/services", servicesRouter);
-app.use("/faq", faqRouter);
-app.use("/appointment", appointmentRouter);
 app.use("/login", loginRouter);
 
-app.use((req, res, next) => {
-  res.locals.currentLanguage = req.language; 
-  next();
-});
-
+// app.use((req, res, next) => {
+//   res.locals.currentLanguage = req.language;
+//   next();
+// });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -179,6 +193,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
 
 module.exports = app;

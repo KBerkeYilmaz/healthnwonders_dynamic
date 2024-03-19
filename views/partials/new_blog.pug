@@ -1,55 +1,67 @@
-.container(style='margin-top: 20px;')
-    h3 Yeni Bir Blog Yazısı Ekleyin
+.col-md-12(style='margin-top: 20px; margin-bottom: 120px')
+    h2 Yeni Bir Blog Yazısı Ekleyin
     form(method="POST" action="/api/blog" enctype="multipart/form-data")#newBlogForm
         .form-row
-            .form-group.col-md-2
+            .col-md-2
                 label(for="picture") Resim:
-                input#picture.form-control(type="file", name="picture", style='border-radius:5px;!important padding: 1px 1px;!important', required=false)
+                input#picture(type="file", name="picture", style='border-radius:5px;!important padding: 1px 1px;!important', required=false)
+            // New Treatment Language Select
+        //- include ./language_bar.pug
+        // New Treatment Form
+        include ./BlogForm/BlogContentTR.pug
+        include ./BlogForm/BlogContentEN.pug
+        include ./BlogForm/BlogContentDE.pug
+        include ./BlogForm/BlogContentFR.pug
 
-        .form-row
-            .form-group.col-md-3
-                label(for="name") Başlık (TR):
-                input#name.form-control.form-control-sm(type="text" name="name[tr]", required=true style='border-radius:5px;!important')
-            .form-group.col-md-3
-                label(for="name") Başlık (EN):
-                input#name.form-control.form-control-sm(type="text" name="name[en]", required=true style='border-radius:5px;!important')
-            .form-group.col-md-3
-                label(for="name") Başlık (FR):
-                input#name.form-control.form-control-sm(type="text" name="name[fr]", required=true style='border-radius:5px;!important')
-            .form-group.col-md-3
-                label(for="name") Başlık (DE):
-                input#name.form-control.form-control-sm(type="text" name="name[de]", required=true style='border-radius:5px;!important')
-        .form-row    
-            .form-group.col-md-3 
-                label(for="thumbnailDescription") Önizleme İçerik (TR):
-                textarea#thumbnail-description.form-control(name="thumbnailDescription[tr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-            .form-group.col-md-3 
-                label(for="thumbnailDescription") Önizleme İçerik (EN):
-                textarea#thumbnail-description.form-control(name="thumbnailDescription[en]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-            .form-group.col-md-3 
-                label(for="thumbnailDescription") Önizleme İçerik (FR):
-                textarea#thumbnail-description.form-control(name="thumbnailDescription[fr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-            .form-group.col-md-3 
-                label(for="thumbnailDescription") Önizleme İçerik (DE):
-                textarea#thumbnail-description.form-control(name="thumbnailDescription[de]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-        .d-flex.justify-content-between.align-items-center.mb-2
-            h3 Paragraf Düzeni
-            .d-flex(style="gap: 10px;")
-                button.btn.btn-primary.col-md-1(type="button" id="addParagraphBtn") Yeni Paragraf Ekle
-                button.btn.btn-danger.col-md-1(type="button" id="removeParagraphBtn") Paragraf Çıkar
-        .paragraph-column#paragraph-column   
-            .form-row.mb-20
-                .form-group.mb-2.col-md-3
-                    label(for="description") Paragraf Detay (TR):
-                    textarea#description.form-control(name="description[0][tr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-                .form-group.mb-2.col-md-3
-                    label(for="description") Paragraf Detay (EN):
-                    textarea#description.form-control(name="description[0][en]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-                .form-group.mb-2.col-md-3
-                    label(for="description") Paragraf Detay (FR):
-                    textarea#description.form-control(name="description[0][fr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
-                .form-group.mb-2.col-md-3
-                    label(for="description") Paragraf Detay (DE):
-                    textarea#description.form-control(name="description[0][de]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
 
-        button.mb-20.col-12(type="submit" style="background-color: blue; padding: 15px 0; border-radius:5px") Blog Ekle
+    //- .container(style='margin-top: 20px;')
+    //- h3 Yeni Bir Blog Yazısı Ekleyin
+    //- form(method="POST" action="/api/blog" enctype="multipart/form-data")#newBlogForm
+
+    //-     .form-row
+    //-         .form-group.col-md-3
+    //-             label(for="name") Başlık (TR):
+    //-             input#name.form-control.form-control-sm(type="text" name="name[tr]", required=true style='border-radius:5px;!important')
+    //-         .form-group.col-md-3
+    //-             label(for="name") Başlık (EN):
+    //-             input#name.form-control.form-control-sm(type="text" name="name[en]", required=true style='border-radius:5px;!important')
+    //-         .form-group.col-md-3
+    //-             label(for="name") Başlık (FR):
+    //-             input#name.form-control.form-control-sm(type="text" name="name[fr]", required=true style='border-radius:5px;!important')
+    //-         .form-group.col-md-3
+    //-             label(for="name") Başlık (DE):
+    //-             input#name.form-control.form-control-sm(type="text" name="name[de]", required=true style='border-radius:5px;!important')
+    //-     .form-row    
+    //-         .form-group.col-md-3 
+    //-             label(for="thumbnailDescription") Önizleme İçerik (TR):
+    //-             textarea#thumbnail-description.form-control(name="thumbnailDescription[tr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+    //-         .form-group.col-md-3 
+    //-             label(for="thumbnailDescription") Önizleme İçerik (EN):
+    //-             textarea#thumbnail-description.form-control(name="thumbnailDescription[en]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+    //-         .form-group.col-md-3 
+    //-             label(for="thumbnailDescription") Önizleme İçerik (FR):
+    //-             textarea#thumbnail-description.form-control(name="thumbnailDescription[fr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+    //-         .form-group.col-md-3 
+    //-             label(for="thumbnailDescription") Önizleme İçerik (DE):
+    //-             textarea#thumbnail-description.form-control(name="thumbnailDescription[de]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+    //-     .d-flex.justify-content-between.align-items-center.mb-2
+    //-         h3 Paragraf Düzeni
+    //-         .d-flex(style="gap: 10px;")
+    //-             button.btn.btn-primary.col-md-1(type="button" id="addParagraphBtn") Yeni Paragraf Ekle
+    //-             button.btn.btn-danger.col-md-1(type="button" id="removeParagraphBtn") Paragraf Çıkar
+    //-     .paragraph-column#paragraph-column   
+    //-         .form-row.mb-20
+    //-             .form-group.mb-2.col-md-3
+    //-                 label(for="description") Paragraf Detay (TR):
+    //-                 textarea#description.form-control(name="description[0][tr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+    //-             .form-group.mb-2.col-md-3
+    //-                 label(for="description") Paragraf Detay (EN):
+    //-                 textarea#description.form-control(name="description[0][en]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+    //-             .form-group.mb-2.col-md-3
+    //-                 label(for="description") Paragraf Detay (FR):
+    //-                 textarea#description.form-control(name="description[0][fr]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+    //-             .form-group.mb-2.col-md-3
+    //-                 label(for="description") Paragraf Detay (DE):
+    //-                 textarea#description.form-control(name="description[0][de]", required=true style='border-radius:5px;!important padding: 1px 1px;!important')
+
+    //-     button.mb-20.col-12(type="submit" style="background-color: blue; padding: 15px 0; border-radius:5px") Blog Ekle

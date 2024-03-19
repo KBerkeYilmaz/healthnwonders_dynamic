@@ -14,14 +14,14 @@
     "navbar": {
         "home": "Home",
         "about_us": {
-            "title": "About Us",
+            "title": "Contact Us",
             "sub-menu": {
                 "who-are-we": "Who Are We?",
                 "services": "Our Services",
                 "faq": "Frequently Asked Questions"
             }
         },
-        "doctors": "Our Doctors",
+        "doctors": "Doctors",
         "blog": "Blog",
         "treatments": "Our Treatments",
         "appointment": "Contact Us"
@@ -76,7 +76,8 @@
         },
         "blogLatest": {
             "title": "Blog",
-            "description": "Latest Articles"
+            "description": "Latest Articles",
+            "noBlog": "No posts available."
         },
         "appointmentForm": {
             "title": "Our Global Vision: Innovation and Care in Health Tourism",

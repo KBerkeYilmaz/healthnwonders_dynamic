@@ -80,7 +80,8 @@
     },
     "blogLatest": {
       "title": "index.blogLatest.title",
-      "description": "index.blogLatest.description"
+      "description": "index.blogLatest.description",
+      "noBlog": "index.blogLatest.noBlog"
     },
     "map": {
       "title": "index.map.title",
@@ -88,7 +89,8 @@
       "button": "index.map.button",
       "list-item1": "index.map.list-item1",
       "list-item2": "index.map.list-item2",
-      "list-item3": "index.map.list-item3"
+      "list-item3": "index.map.list-item3",
+      "about-us": "index.map.about-us"
     }
   },
   "index.services.service1.title": "index.services.service1.title",

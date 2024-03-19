@@ -42,7 +42,7 @@
         "callToAction": {
             "title": "Bizimle Evinizin Konforunu Ve Ailenizin Sıcaklığını Deneyimleyin.",
             "description": "İyileşme sürecinizdeki konforunuz ve memnuniyetiniz bizim için en önemli önceliktir. Bu yüzden cerrahımızın dinamik ve enerjik ekibi, hastane konaklamanız boyunca size özel ANA DİLİNİZDE hizmet sunar. Ameliyat öncesi, sırası ve sonrasında her adımda size destek olan bu özel hizmetle, kendinizi güvende ve rahat hissetmeniz garanti. Huzur içinde yolculuğunuza başlamaya hazır mısınız? Bugün Health and Wonders ile iletişime geçin ve hak ettiğiniz bakımı ve desteği size sağlayalım.",
-            "button": "Hakkımızda",
+            "button": "Bize Ulaşın",
             "card1": "Otel Konaklaması",
             "card2": "Kirpik Ve Tırnak Bakımı",
             "card3": "Transfer Hizmetleriz",
@@ -76,7 +76,8 @@
         },
         "blogLatest": {
             "title": "Blog",
-            "description": "Son Makaleler"
+            "description": "Son Makaleler",
+            "noBlog": "Blog postu bulunamadı."
         },
         "appointmentForm": {
             "title": "Global Vizyonumuz: Sağlık Turizminde Yenilik Ve Özen",

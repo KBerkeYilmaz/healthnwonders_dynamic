@@ -7,21 +7,25 @@ section.blog-grid.pb-50
                     h3.heading__title=t('index.blogLatest.description')
         .row
             //- Post Items
-            each blog in blogs.slice(-3)
-                .col-sm-12.col-md-6.col-lg-4
-                        .post-item
-                            .post__img
-                                a(href=`/blog/${blog.name[currentLanguage]}`)
-                                    img(src="/images/blog/grid/kilo_verme_yolculugu.png", alt="post image", loading="lazy")
-                            .post__body
-                                .post__meta-cat(style="opacity: 0")
-                                    a(href="#") Tüp Mide Ameliyatı
-                                .post__meta.d-flex
-                                    - const createdAtDate = new Date(blog.createdAt)
-                                    span.post__meta-date= `${createdAtDate.getDate()}.${createdAtDate.getMonth() + 1}.${createdAtDate.getFullYear()}`
-                                h4.post__title
-                                    a(href=`/blog/${blog.name[currentLanguage]}`)= blog.name[currentLanguage]
-                                .post__desc= blog.thumbnailDescription[currentLanguage]
-                                a(href=`/blog/${blog.name[currentLanguage]}`, class="btn btn__secondary btn__link btn__rounded")
-                                    span=t("index.services.button2")
-                                    i.icon-arrow-right
+            if blogs && blogs.length > 0
+                each blog in blogs.slice(-3)
+                    .col-sm-12.col-md-6.col-lg-4
+                            .post-item
+                                .post__img
+                                    a(href=`/blog/${blog.slugs[currentLanguage]}`)
+                                        img(src=`/${blog.image}` alt="post image" loading="lazy")
+                                .post__body
+                                    .post__meta-cat(style="opacity: 0")
+                                        a(href="#") Tüp Mide Ameliyatı
+                                    .post__meta.d-flex
+                                        - const createdAtDate = new Date(blog.createdAt)
+                                        span.post__meta-date= `${createdAtDate.getDate()}.${createdAtDate.getMonth() + 1}.${createdAtDate.getFullYear()}`
+                                    h4.post__title
+                                        a(href=`/blog/${blog.slugs[currentLanguage]}`)= blog.name[currentLanguage]
+                                    .post__desc= blog.thumbnailDescription[currentLanguage]
+                                    a(href=`/blog/${blog.slugs[currentLanguage]}`, class="btn btn__secondary btn__link btn__rounded")
+                                        span=t("index.services.button2")
+                                        i.icon-arrow-right
+            else    
+                .col-sm-12.col-md-12.col-lg-12.d-flex.justify-content-center
+                    h4= t('index.blogLatest.noBlog')

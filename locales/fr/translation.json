@@ -42,7 +42,7 @@
         "callToAction": {
             "title": "Expérimentez le Confort de Votre Maison et la Chaleur de Votre Famille Avec Nous.",
             "description": "Votre confort et votre satisfaction pendant le processus de récupération sont notre priorité absolue. Ainsi, l'équipe dynamique et énergique de notre chirurgien fournit un service DANS VOTRE LANGUE MATERNELLE pendant votre séjour à l'hôpital. Avec ce service spécial qui vous soutient à chaque étape avant, pendant et après l'opération, se sentir en sécurité et à l'aise est garanti. Êtes-vous prêt à commencer votre voyage en paix ? Contactez Santé et Merveilles aujourd'hui et laissez-nous vous fournir les soins et le soutien que vous méritez.",
-            "button": "À Propos de Nous",
+            "button": "Contactez-Nous",
             "card1": "Hébergement à l'Hôtel",
             "card2": "Soins des Cils et des Ongles",
             "card3": "Services de Transfert",
@@ -76,7 +76,8 @@
         },
         "blogLatest": {
             "title": "Blog",
-            "description": "Derniers Articles"
+            "description": "Derniers Articles",
+            "noBlog": "Aucun article de blog n'est disponible pour le moment."
         },
         "appointmentForm": {
             "title": "Notre Vision Globale : Innovation et Soin dans le Tourisme de Santé",

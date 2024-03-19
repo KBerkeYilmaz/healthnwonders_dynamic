@@ -10,10 +10,23 @@ block content
                 .col-12.d-flex.justify-content-between.flex-wrap.align-items-center
                     h1.pagetitle__heading.my-3=t("navbar.about_us.sub-menu.faq")
                         nav
-                        ol.breadcrumb.my-3
-                            li.breadcrumb-item: a(href="/")=t("navbar.home")
-                            li.breadcrumb-item: a(href="/about-us")=t("navbar.about_us.title")
-                            li.breadcrumb-item.active(aria-current="page")=t("navbar.about_us.sub-menu.faq")
+                            ol.breadcrumb.my-3
+                                if currentLanguage === "tr"
+                                    li.breadcrumb-item: a(href="/")=t("navbar.home")
+                                    li.breadcrumb-item: a(href="/hakkimizda")=t("navbar.about_us.title")
+                                    li.breadcrumb-item.active(aria-current="page")=t("navbar.about_us.sub-menu.faq")
+                                if currentLanguage === "en"
+                                    li.breadcrumb-item: a(href="/")=t("navbar.home")
+                                    li.breadcrumb-item: a(href="/about-us")=t("navbar.about_us.title")
+                                    li.breadcrumb-item.active(aria-current="page")=t("navbar.about_us.sub-menu.faq")
+                                if currentLanguage === "fr"
+                                    li.breadcrumb-item: a(href="/")=t("navbar.home")
+                                    li.breadcrumb-item: a(href="/a-propos-de-nous")=t("navbar.about_us.title")
+                                    li.breadcrumb-item.active(aria-current="page")=t("navbar.about_us.sub-menu.faq")
+                                if currentLanguage === "de"
+                                    li.breadcrumb-item: a(href="/")=t("navbar.home")
+                                    li.breadcrumb-item: a(href="/uber-uns")=t("navbar.about_us.title")
+                                    li.breadcrumb-item.active(aria-current="page")=t("navbar.about_us.sub-menu.faq")
     // FAQ
     section.faq.pt-120.pb-70
         .container
@@ -47,8 +60,18 @@ block content
                                         span=t("faq.sidebar-workinghours.sunday")
                         // Widget Reports
                         .widget.widget-reports
-                            a.btn.btn__primary.btn__block(href="appointment.html") 
-                                span=t("faq.button")
+                            if currentLanguage === "tr"
+                                a.btn.btn__primary.btn__block(href="/bize-ulasin") 
+                                    span=t("faq.button")
+                            if currentLanguage === "fr"
+                                a.btn.btn__primary.btn__block(href="/contactez-nous") 
+                                    span=t("faq.button")
+                            if currentLanguage === "de"
+                                a.btn.btn__primary.btn__block(href="/kontaktiere-uns") 
+                                    span=t("faq.button")
+                            if currentLanguage === "en"
+                                a.btn.btn__primary.btn__block(href="/contact-us") 
+                                    span=t("faq.button")
                 .col-sm-12.col-md-12.col-lg-8#accordion
                         //- Accordion Item
                         .accordion-item

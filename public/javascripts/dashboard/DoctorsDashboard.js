@@ -20,21 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Attach click event to the confirmation button in the modal
-  document
-    .getElementById("confirmDelete")
-    .addEventListener("click", function () {
-      if (currentDoctorId) {
-        fetch(`/api/doctors/${currentDoctorId}`, {
-          method: "DELETE",
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data.message); // Log the success message
-            window.location.reload(); // Reload the page to reflect the changes
-          })
-          .catch((error) => console.error("Error:", error));
-      }
-    });
+  // const confirmDeleteAlert = document.getElementById("confirmDelete")
+  
+  // confirmDeleteAlert.addEventListener("click", function () {
+  //     if (currentDoctorId) {
+  //       fetch(`/api/doctors/${currentDoctorId}`, {
+  //         method: "DELETE",
+  //       })
+  //         .then((response) => response.json())
+  //         .then((data) => {
+  //           console.log(data.message); // Log the success message
+  //           window.location.reload(); // Reload the page to reflect the changes
+  //         })
+  //         .catch((error) => console.error("Error:", error));
+  //     }
+  //   });
 
   addExperienceBtn.addEventListener("click", () => {
     const newPane = document.createElement("div");

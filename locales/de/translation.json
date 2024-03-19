@@ -42,7 +42,7 @@
         "callToAction": {
             "title": "Erleben Sie den Komfort Ihres Zuhauses und die Wärme Ihrer Familie mit Uns.",
             "description": "Ihr Komfort und Ihre Zufriedenheit während des Genesungsprozesses sind unsere oberste Priorität. Deshalb bietet das dynamische und energische Team unseres Chirurgen einen Service IN IHRER MUTTERSPRACHE während Ihres Krankenhausaufenthaltes an. Mit diesem speziellen Service, der Sie vor, während und nach der Operation unterstützt, ist sich sicher und wohl zu fühlen garantiert. Sind Sie bereit, Ihre Reise in Frieden zu beginnen? Kontaktieren Sie heute Gesundheit und Wunder und lassen Sie uns Ihnen die Pflege und Unterstützung bieten, die Sie verdienen.",
-            "button": "Über Uns",
+            "button": "Kontaktiere uns",
             "card1": "Hotelunterbringung",
             "card2": "Wimpern- und Nagelpflege",
             "card3": "Transferdienste",
@@ -76,7 +76,8 @@
         },
         "blogLatest": {
             "title": "Blog",
-            "description": "Neueste Artikel"
+            "description": "Neueste Artikel",
+            "noBlog": "Keine Artikel verfügbar"
         },
         "appointmentForm": {
             "title": "Unsere Globale Vision: Innovation und Fürsorge im Gesundheitstourismus",
@@ -171,7 +172,7 @@
             "pre-title": "Expertenlösungen Für Ihre Gesundheit",
             "title": "Umfassende Behandlungsoptionen",
             "description": "Als Gesundheit und Wunder bieten wir verschiedene Gesundheitsdienste an, die Ihren Bedürfnissen entsprechen. Unser Ziel ist es, Ihnen die effektivsten Behandlungsmethoden zu bieten.",
-            "button": "Vereinbaren Sie Einen Termin",
+            "button": "Kontaktiere uns",
             "button2": "Über Uns"
         },
         "section1": {

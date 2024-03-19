@@ -12,11 +12,34 @@ block content
                     h1.pagetitle__heading(style="color: white;")= t("services.banner.title")
                     p.pagetitle__desc(style="color:white")= t("services.banner.description")
                     .d-flex.flex-wrap.align-items-center
-                    a.btn.btn__secondary.btn__rounded.mr-30(href="appointment.html")
-                        span=t("services.banner.button")
-                        i.icon-arrow-right
-                    a.btn.btn__secondary.btn__rounded(href="about-us.html")
-                        span=t("services.banner.button2")
+                        if currentLanguage === 'tr'
+                            a.btn.btn__secondary.btn__rounded.mr-30(href="/bize-ulasin")
+                                span=t("services.banner.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'en'
+                            a.btn.btn__secondary.btn__rounded.mr-30(href="/contact-us")
+                                span=t("services.banner.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'fr'
+                            a.btn.btn__secondary.btn__rounded.mr-30(href="/contactez-nous")
+                                span=t("services.banner.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'de'
+                            a.btn.btn__secondary.btn__rounded.mr-30(href="/kontaktiere-uns")
+                                span=t("services.banner.button")
+                                i.icon-arrow-right
+                        if currentLanguage === 'tr'
+                            a.btn.btn__secondary.btn__rounded(href="/hakkimizda")
+                                span=t("services.banner.button2")
+                        if currentLanguage === 'en'
+                            a.btn.btn__secondary.btn__rounded(href="/about-us")
+                                span=t("services.banner.button2")
+                        if currentLanguage === 'de'
+                            a.btn.btn__secondary.btn__rounded(href="/uber-uns")
+                                span=t("services.banner.button2")
+                        if currentLanguage === 'fr'
+                            a.btn.btn__secondary.btn__rounded(href="/a-propos-de-nous")
+                                span=t("services.banner.button2")
     // Services Layout 1
     section.services-layout1.pt-130
         .bg-img
@@ -123,5 +146,5 @@ block content
                     p.heading__desc.font-weight-bold.color-white.mb-30=t("services.section2.description")
             include ./partials/featured.pug
     include ./partials/certificates.pug
-    include ./partials/testimonials.pug
+    //- include ./partials/testimonials.pug
     include ./partials/blog_grid.pug

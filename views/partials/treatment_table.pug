@@ -3,9 +3,9 @@ table#treatmentsTable.table.table-striped.table-bordered.table-hover
         tr
         th İsim
     tbody
-        //- each treatment in treatments
-        //-     tr
-        //-         td= treatment.name
-        //-         td
-        //-             a.btn.btn-primary Düzenle
-        //-             a.btn.btn-danger.delete-btn Sil
+        each treatment in treatments
+            tr
+                td= treatment.name[currentLanguage]
+                td
+                    a.btn.btn-primary Düzenle
+                    a.btn.btn-danger.delete-btn Sil

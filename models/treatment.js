@@ -21,7 +21,6 @@ const treatmentSchema = new mongoose.Schema(
   {
     name: TranslationSchema,
     subTitle: TranslationSchema,
-    abstract: TranslationSchema,
     description: [TranslationSchema],
     youtubeLink: { type: String, required: false },
   },
