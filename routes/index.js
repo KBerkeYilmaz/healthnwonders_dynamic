@@ -6,7 +6,6 @@ const cache = require("../helpers/cache");
 const Blog = require("../models/blog");
 const Doctor = require("../models/doctor");
 const Treatment = require("../models/treatment");
-const User = require("../models/user");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {

@@ -27,7 +27,7 @@ var doctorsRouter = require("./routes/doctors");
 var treatmentsRouter = require("./routes/treatments");
 var blogRouter = require("./routes/blog");
 var loginRouter = require("./routes/login");
-
+var aboutRouter = require("./routes/about-us");
 // Initialize express app
 var app = express();
 
@@ -63,16 +63,8 @@ app.use(express.json());
 // Apply rate limiter to all requests
 app.use(limiter);
 
-
-
-//required models
-const Doctor = require("./models/doctor");
-const Treatment = require("./models/treatment");
-const Blog = require("./models/blog");
-// const Faq = require("./models/faq");
-
-
 app.use(compression()); // Compress all routes
+
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
@@ -90,62 +82,7 @@ app.use(express.static(path.join(__dirname, "public"), { maxAge: 31557600000 }))
 
 
 
-// Initialize the cache
-
-// In your cache helper/module
-
-// async function initializeCaches() {
-//   if (cacheInitialized) return;
-
-//   // console.log("Initializing caches...");
-//   try {
-//     const supportedLanguages = ["en", "fr", "de", "tr"]; // Set of supported languages
-
-//     const doctorsList = await Doctor.find({}).lean();
-//     // console.log("Doctors list:", doctorsList);
-//     cache.setDoctorsCache(doctorsList);
-
-//     const treatmentList = await Treatment.find({}).lean();
-
-//     const slugifiedTreatmentList = treatmentList.map((treatment) => ({
-//       ...treatment,
-//       slugs: supportedLanguages.reduce((acc, lang) => {
-//         acc[lang] = slugify(treatment.name[lang] || treatment.name["tr"], {
-//           lower: true,
-//           strict: true,
-//         }); // Fallback to Turkish if specific language name is not available
-//         return acc;
-//       }, {}),
-//     }));
-
-
-//     console.log("Treatment list:", slugifiedTreatmentList);
-//     cache.setTreatmentsCache(slugifiedTreatmentList);
-
-//     const blogList = await Blog.find({}).lean();
-
-//     const slugifiedBlogList = blogList.map((blog) => ({
-//       ...blog,
-//       slugs: supportedLanguages.reduce((acc, lang) => {
-//         acc[lang] = slugify(blog.name[lang] || blog.name["tr"], {
-//           lower: true,
-//           strict: true,
-//         }); // Fallback to Turkish if specific language name is not available
-//         return acc;
-//       }, {}),
-//     }));
-
-//     console.log("Blog list with slugs:", slugifiedBlogList);
-//     cache.setBlogsCache(slugifiedBlogList)
-//     cacheInitialized = true; // Prevent further initialization
-//   } catch (error) {
-//     console.error("Error initializing caches:", error);
-//   }
-// }
-
-// // In your app.js or a similar entry point
-// initializeCaches();
-
+// ---------------------------------- CACHE MIDDLEWARE ----------------------------------
 // Adjust your middleware to simply attach the cache to res.locals without checking or initializing
 app.use((req, res, next) => {
   res.locals.doctors = cache.getDoctorsCache();
@@ -205,7 +142,7 @@ app.use("/doctors", doctorsRouter);
 app.use("/treatments", treatmentsRouter);
 app.use("/blog", blogRouter);
 app.use("/login", loginRouter);
-
+app.use("/about-us", aboutRouter);
 // app.use((req, res, next) => {
 //   res.locals.currentLanguage = req.language;
 //   next();

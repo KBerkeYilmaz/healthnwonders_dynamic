@@ -1,6 +1,5 @@
 const slugify = require("slugify");
 const cache = require("./cache");
-//required models
 const Doctor = require("../models/doctor");
 const Treatment = require("../models/treatment");
 const Blog = require("../models/blog");
