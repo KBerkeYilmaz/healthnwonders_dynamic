@@ -6,13 +6,20 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var compression = require("compression");
+const helmet = require("helmet");
 const connectDB = require("./lib/database");
 const cache = require("./helpers/cache");
 const session = require("express-session");
 const slugify = require("slugify");
 const MongoStore = require("connect-mongo");
+const i18next = require("i18next");
+const Backend = require("i18next-fs-backend");
+const i18nextMiddleware = require("i18next-http-middleware");
+const RateLimit = require("express-rate-limit");
+const initializeCaches = require("./helpers/initializeCaches");
 
-// ROUTES
+
+// ROUTERS
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var dashboardRouter = require("./routes/dashboard");
@@ -21,100 +28,123 @@ var treatmentsRouter = require("./routes/treatments");
 var blogRouter = require("./routes/blog");
 var loginRouter = require("./routes/login");
 
-
-const i18next = require("i18next");
-const Backend = require("i18next-fs-backend");
-const i18nextMiddleware = require("i18next-http-middleware");
-
+// Initialize express app
 var app = express();
 
-// Connect to Database
-connectDB();
+// Connect to Database and setup the cache
+let cacheInitialized = false;
+
+connectDB().then(() => {
+  initializeCaches().then(() => {
+    console.log("Caches initialized.");
+  });
+});
+
+
+// Set up rate limiter: maximum of hundred requests per minute
+const limiter = RateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 100,
+});
+
+
+
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
+if (process.env.NODE_ENV === "development") {
+  app.use(logger("dev"));
+} else {
+  app.use(logger("combined"));
+}
+app.use(express.json());
+
+// Apply rate limiter to all requests
+app.use(limiter);
+
+
 
 //required models
 const Doctor = require("./models/doctor");
 const Treatment = require("./models/treatment");
 const Blog = require("./models/blog");
-const Faq = require("./models/faq");
+// const Faq = require("./models/faq");
 
-// view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
-app.use(compression());
-if (process.env.NODE_ENV === "development") {
-  app.use(logger("dev"));
-} else {
-  // 'tiny' or 'combined' can be used in production for less verbose logs
-  app.use(logger("combined"));
-}
-app.use(express.json());
+
+app.use(compression()); // Compress all routes
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"],
+    },
+  }),
+);
 
 // For simple form data
 // app.use(express.urlencoded({ extended: false }));
-
 // For complex, nested form data
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"), { maxAge: 31557600000 }));
+
+
 
 // Initialize the cache
 
 // In your cache helper/module
-let cacheInitialized = false;
 
-async function initializeCaches() {
-  if (cacheInitialized) return;
+// async function initializeCaches() {
+//   if (cacheInitialized) return;
 
-  // console.log("Initializing caches...");
-  try {
-    const supportedLanguages = ["en", "fr", "de", "tr"]; // Set of supported languages
+//   // console.log("Initializing caches...");
+//   try {
+//     const supportedLanguages = ["en", "fr", "de", "tr"]; // Set of supported languages
 
-    const doctorsList = await Doctor.find({}).lean();
-    // console.log("Doctors list:", doctorsList);
-    cache.setDoctorsCache(doctorsList);
+//     const doctorsList = await Doctor.find({}).lean();
+//     // console.log("Doctors list:", doctorsList);
+//     cache.setDoctorsCache(doctorsList);
 
-    const treatmentList = await Treatment.find({}).lean();
+//     const treatmentList = await Treatment.find({}).lean();
 
-    const slugifiedTreatmentList = treatmentList.map((treatment) => ({
-      ...treatment,
-      slugs: supportedLanguages.reduce((acc, lang) => {
-        acc[lang] = slugify(treatment.name[lang] || treatment.name["tr"], {
-          lower: true,
-          strict: true,
-        }); // Fallback to Turkish if specific language name is not available
-        return acc;
-      }, {}),
-    }));
+//     const slugifiedTreatmentList = treatmentList.map((treatment) => ({
+//       ...treatment,
+//       slugs: supportedLanguages.reduce((acc, lang) => {
+//         acc[lang] = slugify(treatment.name[lang] || treatment.name["tr"], {
+//           lower: true,
+//           strict: true,
+//         }); // Fallback to Turkish if specific language name is not available
+//         return acc;
+//       }, {}),
+//     }));
 
 
-    console.log("Treatment list:", slugifiedTreatmentList);
-    cache.setTreatmentsCache(slugifiedTreatmentList);
+//     console.log("Treatment list:", slugifiedTreatmentList);
+//     cache.setTreatmentsCache(slugifiedTreatmentList);
 
-    const blogList = await Blog.find({}).lean();
+//     const blogList = await Blog.find({}).lean();
 
-    const slugifiedBlogList = blogList.map((blog) => ({
-      ...blog,
-      slugs: supportedLanguages.reduce((acc, lang) => {
-        acc[lang] = slugify(blog.name[lang] || blog.name["tr"], {
-          lower: true,
-          strict: true,
-        }); // Fallback to Turkish if specific language name is not available
-        return acc;
-      }, {}),
-    }));
+//     const slugifiedBlogList = blogList.map((blog) => ({
+//       ...blog,
+//       slugs: supportedLanguages.reduce((acc, lang) => {
+//         acc[lang] = slugify(blog.name[lang] || blog.name["tr"], {
+//           lower: true,
+//           strict: true,
+//         }); // Fallback to Turkish if specific language name is not available
+//         return acc;
+//       }, {}),
+//     }));
 
-    console.log("Blog list with slugs:", slugifiedBlogList);
-    cache.setBlogsCache(slugifiedBlogList)
-    cacheInitialized = true; // Prevent further initialization
-  } catch (error) {
-    console.error("Error initializing caches:", error);
-  }
-}
+//     console.log("Blog list with slugs:", slugifiedBlogList);
+//     cache.setBlogsCache(slugifiedBlogList)
+//     cacheInitialized = true; // Prevent further initialization
+//   } catch (error) {
+//     console.error("Error initializing caches:", error);
+//   }
+// }
 
-// In your app.js or a similar entry point
-initializeCaches().then(() => {
-  console.log("Caches initialized.");
-});
+// // In your app.js or a similar entry point
+// initializeCaches();
 
 // Adjust your middleware to simply attach the cache to res.locals without checking or initializing
 app.use((req, res, next) => {
@@ -163,6 +193,9 @@ app.use(
     cookie: { secure: false, maxAge: 1000 * 60 * 60 }, // Example: 1 hour
   })
 );
+
+
+
 
 // ROUTE HANDLER
 app.use("/", indexRouter);
