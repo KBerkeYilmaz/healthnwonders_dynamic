@@ -60,8 +60,18 @@ block content
                     li= t("faq.sidebar-workinghours.sunday")
 
               .widget.widget-reports
-                a(href="/appointment", class="btn btn__primary btn__block")
-                  span=t("faq.button")
+                if currentLanguage === 'en'
+                  a(href="/contact-us", class="btn btn__primary btn__block")
+                    span=t("faq.button")
+                if currentLanguage === 'tr'
+                  a(href="/bize-ulasin", class="btn btn__primary btn__block")
+                    span=t("faq.button")
+                if currentLanguage === 'fr'
+                  a(href="/contactez-nous", class="btn btn__primary btn__block")
+                    span=t("faq.button")
+                if currentLanguage === 'de'
+                  a(href="/kontaktiere-uns", class="btn btn__primary btn__block")
+                    span=t("faq.button")
           .col-sm-12.col-md-12.col-lg-8
             //- Biography
             .text-block.mb-50
