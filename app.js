@@ -65,13 +65,13 @@ app.use(limiter);
 
 app.use(compression()); // Compress all routes
 
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"],
-    },
-  }),
-);
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"],
+//     },
+//   }),
+// );
 
 // For simple form data
 // app.use(express.urlencoded({ extended: false }));
