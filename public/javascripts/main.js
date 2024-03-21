@@ -35,16 +35,6 @@ $(function () {
     $(".preloader").remove();
   }, 1000);
 
-  $("a").click(function (e) {
-      $(".wrapper").addClass("spinner-border").addClass("text-primary");
-  });
-
-  // Optional: Hide the preloader when the page fully loads,
-  // in case there are situations where it might not get hidden properly.
-  $(window).on("load", function () {
-    $(".wrapper").removeClass("spinner-border").removeClass("text-primary");
-  });
-
   /*==========   Mobile Menu   ==========*/
   $(".navbar-toggler").on("click", function () {
     $(".navbar-collapse").addClass("menu-opened");

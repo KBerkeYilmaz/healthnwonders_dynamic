@@ -44,7 +44,7 @@ connectDB().then(() => {
 // Set up rate limiter: maximum of hundred requests per minute
 const limiter = RateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 100,
+  max: 2500,
 });
 
 
