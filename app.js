@@ -33,6 +33,10 @@ var app = express();
 
 // Connect to Database and setup the cache
 let cacheInitialized = false;
+app.use(express.json());
+
+// Apply rate limiter to all requests
+app.use(limiter);
 
 connectDB().then(() => {
   initializeCaches().then(() => {
@@ -47,8 +51,6 @@ const limiter = RateLimit({
   max: 2500,
 });
 
-
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -58,10 +60,6 @@ if (process.env.NODE_ENV === "development") {
 } else {
   app.use(logger("combined"));
 }
-app.use(express.json());
-
-// Apply rate limiter to all requests
-app.use(limiter);
 
 app.use(compression()); // Compress all routes
 
@@ -79,7 +77,6 @@ app.use(compression()); // Compress all routes
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public"), { maxAge: 31557600000 }));
-
 
 
 // ---------------------------------- CACHE MIDDLEWARE ----------------------------------
@@ -130,8 +127,6 @@ app.use(
     cookie: { secure: false, maxAge: 1000 * 60 * 60 }, // Example: 1 hour
   })
 );
-
-
 
 
 // ROUTE HANDLER

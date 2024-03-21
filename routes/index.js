@@ -104,26 +104,21 @@ router.delete("/api/doctors/:id", async (req, res) => {
 // POST
 router.post("/api/treatments", async (req, res) => {
   const { name, subTitle, abstract, description, youtubeLink } = req.body;
-  console.log(req.body);
+  
   try {
-    const newTreatment = new Treatment({
+    const newTreatment = await new Treatment({
       name,
       subTitle,
       description,
       abstract,
       youtubeLink,
-    });
+    }).save();
 
-    await newTreatment.save();
-    if (newTreatment) {
-      cache.addTreatmentToCache(newTreatment);
-      res.status(201).redirect("/dashboard");
-    }
+    cache.addTreatmentToCache(newTreatment);
+    res.status(201).redirect("/dashboard");
   } catch (error) {
     console.error("Failed to add new treatment:", error);
-    res
-      .status(500)
-      .json({ message: "Error adding new treatment", error: error.message });
+    res.status(500).json({ message: "Error adding new treatment", error: error.message });
   }
 });
 
@@ -160,46 +155,56 @@ router.get("/change-lang/:lang", (req, res) => {
 
 // -------------------------- Dynamic Route Handlers --------------------------
 
-
 // -------ABOUT US--------
-router.get(["/about-us", "/hakkimizda", "/uber-uns", "/a-propos-de-nous" ], function (req, res, next) {
-
-  const currentLanguage = req.language; // This should reflect the current language used in rendering
-  res.render("about", {
-    currentLanguage: currentLanguage,
-    title: req.t("route_titles.about_us_page_title"),
-  });
-});
+router.get(
+  ["/about-us", "/hakkimizda", "/uber-uns", "/a-propos-de-nous"],
+  function (req, res, next) {
+    const currentLanguage = req.language; // This should reflect the current language used in rendering
+    res.render("about", {
+      currentLanguage: currentLanguage,
+      title: req.t("route_titles.about_us_page_title"),
+    });
+  }
+);
 
 // -------FAQ--------
-router.get(["/faq", "/sik-sorulan-sorular", "/oft-gestellte-fragen", "/questions-frequemment-posees"],  function (req, res, next) {
-  const currentLanguage = req.language; 
-  res.render("faq", { title: "FAQ", currentLanguage: currentLanguage });
-});
-
+router.get(
+  [
+    "/faq",
+    "/sik-sorulan-sorular",
+    "/oft-gestellte-fragen",
+    "/questions-frequemment-posees",
+  ],
+  function (req, res, next) {
+    const currentLanguage = req.language;
+    res.render("faq", { title: "FAQ", currentLanguage: currentLanguage });
+  }
+);
 
 // ----------SERVICES----------
-router.get(["/services", "/our-services", "/hizmetlerimiz", "/dienstleistungen"], function (req, res, next) {
-  const currentLanguage = req.language; // This should reflect the current language used in rendering
+router.get(
+  ["/services", "/our-services", "/hizmetlerimiz", "/dienstleistungen"],
+  function (req, res, next) {
+    const currentLanguage = req.language; // This should reflect the current language used in rendering
 
-  res.render("services", {
-    title: req.t('route_titles.services_page_title'),
-    currentLanguage: currentLanguage,
-  });
-});
-
-
+    res.render("services", {
+      title: req.t("route_titles.services_page_title"),
+      currentLanguage: currentLanguage,
+    });
+  }
+);
 
 // ----------CONTACT US----------
-router.get(["/contact-us", "/bize-ulasin", "/kontaktiere-uns", "/contactez-nous"], function (req, res, next) {
-  const currentLanguage = req.language; // This should reflect the current language used in rendering
+router.get(
+  ["/contact-us", "/bize-ulasin", "/kontaktiere-uns", "/contactez-nous"],
+  function (req, res, next) {
+    const currentLanguage = req.language; // This should reflect the current language used in rendering
 
-  res.render("appointment", {
-    title: req.t('route_titles.appointment_page_title'),
-    currentLanguage: currentLanguage,
-  });
-});
-
-
+    res.render("appointment", {
+      title: req.t("route_titles.appointment_page_title"),
+      currentLanguage: currentLanguage,
+    });
+  }
+);
 
 module.exports = router;
