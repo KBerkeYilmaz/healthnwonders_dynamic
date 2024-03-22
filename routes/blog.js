@@ -3,6 +3,7 @@ var router = express.Router();
 const slugify = require("slugify"); // Assuming you have slugify installed
 const cache = require("../helpers/cache");
 
+
 /* GET blogs page. */
 router.get("/", function (req, res, next) {
   const currentLanguage = req.language;

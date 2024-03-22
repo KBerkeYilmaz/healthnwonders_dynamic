@@ -19,6 +19,12 @@ const RateLimit = require("express-rate-limit");
 const initializeCaches = require("./helpers/initializeCaches");
 
 
+// Developed by : Berke Yılmaz
+// Mail         : kberkeyilmaz@gmail.com
+// Github       : https://github.com/KBerkeYilmaz
+// LinkedIn     : https://www.linkedin.com/in/kutalmis-berke-yilmaz/
+
+
 // ROUTERS
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -30,26 +36,48 @@ var loginRouter = require("./routes/login");
 var aboutRouter = require("./routes/about-us");
 // Initialize express app
 var app = express();
-
-// Connect to Database and setup the cache
-let cacheInitialized = false;
+app.use(compression()); // Compress all routes
 app.use(express.json());
-
-// Apply rate limiter to all requests
-app.use(limiter);
-
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 connectDB().then(() => {
   initializeCaches().then(() => {
     console.log("Caches initialized.");
   });
 });
+//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION ----------------------------------
 
+i18next
+  .use(Backend)
+  .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    // debug: true,
+    backend: {
+      loadPath: __dirname + "/locales/{{lng}}/{{ns}}.json",
+      addPath: __dirname + "/locales/{{lng}}/{{ns}}.missing.json",
+    },
+    detection: {
+      order: ["cookie","querystring", "header"],
+      // order: ["path", "cookie"],
+      caches: ["cookie"],
+    },
+    lng: "tr",
+    fallbackLng: "tr",
+    preload: ["tr", "en"],
+    saveMissing: true,
+  });
+
+//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
+
+app.use(i18nextMiddleware.handle(i18next));
 
 // Set up rate limiter: maximum of hundred requests per minute
 const limiter = RateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
   max: 2500,
 });
+// Apply rate limiter to all requests
+app.use(limiter);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -61,7 +89,6 @@ if (process.env.NODE_ENV === "development") {
   app.use(logger("combined"));
 }
 
-app.use(compression()); // Compress all routes
 
 // app.use(
 //   helmet.contentSecurityPolicy({
@@ -74,8 +101,6 @@ app.use(compression()); // Compress all routes
 // For simple form data
 // app.use(express.urlencoded({ extended: false }));
 // For complex, nested form data
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public"), { maxAge: 31557600000 }));
 
 
@@ -91,32 +116,6 @@ app.use((req, res, next) => {
   next();
 });
 
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION ----------------------------------
-
-i18next
-  .use(Backend)
-  .use(i18nextMiddleware.LanguageDetector)
-  .init({
-    // debug: true,
-    backend: {
-      loadPath: __dirname + "/locales/{{lng}}/{{ns}}.json",
-      addPath: __dirname + "/locales/{{lng}}/{{ns}}.missing.json",
-    },
-    detection: {
-      order: ["querystring", "cookie"],
-      // order: ["path", "cookie"],
-      caches: ["cookie"],
-    },
-    lng: "tr",
-    fallbackLng: "tr",
-    preload: ["tr", "en", "de", "fr"],
-    saveMissing: true,
-  });
-
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
-
-// MIDDLEWARES
-app.use(i18nextMiddleware.handle(i18next));
 
 app.use(
   session({
