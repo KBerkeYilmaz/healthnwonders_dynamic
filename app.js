@@ -33,11 +33,6 @@ var app = express();
 
 // Connect to Database and setup the cache
 let cacheInitialized = false;
-app.use(express.json());
-
-// Apply rate limiter to all requests
-app.use(limiter);
-
 connectDB().then(() => {
   initializeCaches().then(() => {
     console.log("Caches initialized.");
@@ -60,6 +55,43 @@ if (process.env.NODE_ENV === "development") {
 } else {
   app.use(logger("combined"));
 }
+
+app.use(express.json());
+
+// Apply rate limiter to all requests
+app.use(limiter);
+
+
+
+
+//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION ----------------------------------
+
+i18next
+  .use(Backend)
+  .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    // debug: true,
+    backend: {
+      loadPath: __dirname + "/locales/{{lng}}/{{ns}}.json",
+      addPath: __dirname + "/locales/{{lng}}/{{ns}}.missing.json",
+    },
+    detection: {
+      order: ["querystring", "cookie"],
+      // order: ["path", "cookie"],
+      caches: ["cookie"],
+    },
+    lng: "tr",
+    fallbackLng: "tr",
+    preload: ["tr", "en", "de", "fr"],
+    saveMissing: true,
+  });
+
+//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
+
+// MIDDLEWARES
+app.use(i18nextMiddleware.handle(i18next));
+
+
 
 app.use(compression()); // Compress all routes
 
@@ -90,33 +122,6 @@ app.use((req, res, next) => {
   // console.log("Blogs:", res.locals.blogs);
   next();
 });
-
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION ----------------------------------
-
-i18next
-  .use(Backend)
-  .use(i18nextMiddleware.LanguageDetector)
-  .init({
-    // debug: true,
-    backend: {
-      loadPath: __dirname + "/locales/{{lng}}/{{ns}}.json",
-      addPath: __dirname + "/locales/{{lng}}/{{ns}}.missing.json",
-    },
-    detection: {
-      order: ["querystring", "cookie"],
-      // order: ["path", "cookie"],
-      caches: ["cookie"],
-    },
-    lng: "tr",
-    fallbackLng: "tr",
-    preload: ["tr", "en", "de", "fr"],
-    saveMissing: true,
-  });
-
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
-
-// MIDDLEWARES
-app.use(i18nextMiddleware.handle(i18next));
 
 app.use(
   session({
