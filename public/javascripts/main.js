@@ -33,7 +33,7 @@ $(function () {
   /*==========  Pre Loading   ==========*/
   setTimeout(function () {
     $(".preloader").remove();
-  }, 1000);
+  }, 1500);
 
   /*==========   Mobile Menu   ==========*/
   $(".navbar-toggler").on("click", function () {
