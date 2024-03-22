@@ -31,6 +31,34 @@ var aboutRouter = require("./routes/about-us");
 // Initialize express app
 var app = express();
 
+//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION ----------------------------------
+
+i18next
+  .use(Backend)
+  .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    // debug: true,
+    backend: {
+      loadPath: __dirname + "/locales/{{lng}}/{{ns}}.json",
+      addPath: __dirname + "/locales/{{lng}}/{{ns}}.missing.json",
+    },
+    detection: {
+      order: ["querystring", "cookie"],
+      // order: ["path", "cookie"],
+      caches: ["cookie"],
+    },
+    lng: "tr",
+    fallbackLng: "tr",
+    preload: ["tr", "en", "de", "fr"],
+    saveMissing: true,
+  });
+
+//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
+
+// MIDDLEWARES
+app.use(i18nextMiddleware.handle(i18next));
+
+
 // Connect to Database and setup the cache
 let cacheInitialized = false;
 connectDB().then(() => {
@@ -64,32 +92,6 @@ app.use(limiter);
 
 
 
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION ----------------------------------
-
-i18next
-  .use(Backend)
-  .use(i18nextMiddleware.LanguageDetector)
-  .init({
-    // debug: true,
-    backend: {
-      loadPath: __dirname + "/locales/{{lng}}/{{ns}}.json",
-      addPath: __dirname + "/locales/{{lng}}/{{ns}}.missing.json",
-    },
-    detection: {
-      order: ["querystring", "cookie"],
-      // order: ["path", "cookie"],
-      caches: ["cookie"],
-    },
-    lng: "tr",
-    fallbackLng: "tr",
-    preload: ["tr", "en", "de", "fr"],
-    saveMissing: true,
-  });
-
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
-
-// MIDDLEWARES
-app.use(i18nextMiddleware.handle(i18next));
 
 
 
