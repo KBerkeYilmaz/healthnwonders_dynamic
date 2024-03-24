@@ -12,7 +12,6 @@ const helmet = require("helmet");
 const connectDB = require("./lib/database");
 const cache = require("./helpers/cache");
 const session = require("express-session");
-const slugify = require("slugify");
 const MongoStore = require("connect-mongo");
 const i18next = require("i18next");
 const Backend = require("i18next-fs-backend");
@@ -31,67 +30,14 @@ var blogRouter = require("./routes/blog");
 var loginRouter = require("./routes/login");
 var aboutRouter = require("./routes/about-us");
 const bodyParser = require("body-parser");
+let cacheInitialized = false;
+
 // Initialize express app
 var app = express();
 
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION ----------------------------------
-
-i18next
-  .use(Backend)
-  .use(i18nextMiddleware.LanguageDetector)
-  .init({
-    // debug: true,
-    backend: {
-      loadPath: __dirname + "/locales/{{lng}}/{{ns}}.json",
-      addPath: __dirname + "/locales/{{lng}}/{{ns}}.missing.json",
-    },
-    detection: {
-      order: ["querystring", "cookie"],
-      // order: ["path", "cookie"],
-      caches: ["cookie"],
-    },
-    lng: "tr",
-    fallbackLng: "tr",
-    preload: ["tr", "en", "de", "fr"],
-    saveMissing: true,
-  });
-
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
-
-// MIDDLEWARES
-app.use(i18nextMiddleware.handle(i18next));
-
-
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION ----------------------------------
-
-i18next
-  .use(Backend)
-  .use(i18nextMiddleware.LanguageDetector)
-  .init({
-    // debug: true,
-    backend: {
-      loadPath: __dirname + "/locales/{{lng}}/{{ns}}.json",
-      addPath: __dirname + "/locales/{{lng}}/{{ns}}.missing.json",
-    },
-    detection: {
-      order: ["querystring", "cookie"],
-      // order: ["path", "cookie"],
-      caches: ["cookie"],
-    },
-    lng: "tr",
-    fallbackLng: "tr",
-    preload: ["tr", "en", "de", "fr"],
-    saveMissing: true,
-  });
-
-//---------------------------------- INTERNATIONALIZATION AND LOCALIZATION END ----------------------------------
-
-// MIDDLEWARES
-app.use(i18nextMiddleware.handle(i18next));
-
-
 app.use(express.json());
-let cacheInitialized = false;
+
+// Connect to Database and setup the cache
 connectDB().then(() => {
   initializeCaches().then(() => {
     console.log("Caches initialized.");
@@ -114,7 +60,7 @@ i18next
     lng: "tr",
     order: ["querystring", "cookie", "header"],
     lookupCookie: "i18next",
-    lookupQuerystring: "i18next",
+    lookupQuerystring: "lang",
     fallbackLng: "tr",
     preload: ["tr", "en", "de", "fr"],
     saveMissing: true,
@@ -128,8 +74,6 @@ i18next
 
 // MIDDLEWARES
 app.use(i18nextMiddleware.handle(i18next));
-
-// Connect to Database and setup the cache
 
 // Set up rate limiter: maximum of hundred requests per minute
 const limiter = RateLimit({
@@ -149,19 +93,6 @@ if (process.env.NODE_ENV === "development") {
 } else {
   app.use(logger("combined"));
 }
-
-app.use(express.json());
-
-// Apply rate limiter to all requests
-app.use(limiter);
-
-
-
-
-
-
-
-app.use(compression()); // Compress all routes
 
 // app.use(
 //   helmet.contentSecurityPolicy({
@@ -211,10 +142,10 @@ app.use("/treatments", treatmentsRouter);
 app.use("/blog", blogRouter);
 app.use("/login", loginRouter);
 app.use("/about-us", aboutRouter);
-// app.use((req, res, next) => {
-//   res.locals.currentLanguage = req.language;
-//   next();
-// });
+app.use((req, res, next) => {
+  res.locals.currentLanguage = req.cookies.i18next;
+  next();
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

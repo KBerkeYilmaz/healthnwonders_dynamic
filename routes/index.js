@@ -12,8 +12,8 @@ const Treatment = require("../models/treatment");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  const currentLanguage = req.cookies.i18next || "tr"; // Fallback to a default language code if the cookie doesn't exist
-  // const currentLanguage = req.language; // This should reflect the current language used in rendering
+  // const currentLanguage = req.cookies.i18next || "tr"; // Fallback to a default language code if the cookie doesn't exist
+  const currentLanguage = req.language || "tr"; // This should reflect the current language used in rendering
 
   res.render("index", {
     t: req.t,
@@ -183,13 +183,13 @@ router.post("/api/send-email", validationRules, async (req, res) => {
   }
 });
 
-router.get("/change-lang/:lang", (req, res) => {
-  const newLang = req.params.lang;
-  req.i18n.changeLanguage(newLang, (err) => {
-    if (err) console.error("Language change error:", err);
-    res.redirect("back");
-  });
-});
+// router.get("/change-lang/:lang", (req, res) => {
+//   const newLang = req.params.lang;
+//   req.i18n.changeLanguage(newLang, (err) => {
+//     if (err) console.error("Language change error:", err);
+//     res.redirect("back");
+//   });
+// });
 
 // -------------------------- Dynamic Route Handlers --------------------------
 
