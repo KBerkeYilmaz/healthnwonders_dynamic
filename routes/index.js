@@ -4,7 +4,7 @@ var { upload } = require("../middlewares/multer");
 const nodemailer = require("nodemailer");
 const { validationResult } = require("express-validator");
 const validationRules = require("../helpers/validationRules"); // Adjust the path based on your project structure
-
+const SMTP = require("../helpers/SMTP");
 const cache = require("../helpers/cache");
 const Blog = require("../models/blog");
 const Doctor = require("../models/doctor");
@@ -12,7 +12,7 @@ const Treatment = require("../models/treatment");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  const currentLanguage = req.cookies.i18next || 'tr'; // Fallback to a default language code if the cookie doesn't exist
+  const currentLanguage = req.cookies.i18next || "tr"; // Fallback to a default language code if the cookie doesn't exist
   // const currentLanguage = req.language; // This should reflect the current language used in rendering
 
   res.render("index", {
@@ -150,10 +150,16 @@ router.delete("/api/treatments/:id", async (req, res) => {
   }
 });
 
+
+
+
+// -------------------------- API EMAIL --------------------------
 router.post("/api/send-email", validationRules, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    res.render("error", {
+      message: "An error occurred",
+    });
   }
 
   const {
@@ -167,58 +173,13 @@ router.post("/api/send-email", validationRules, async (req, res) => {
     "contact-treatment": treatment,
   } = req.body;
 
-  console.log(
-    `Email from: ${name}, Email: ${email}, Phone: ${phone}, Date: ${date}, Gender: ${gender}, Special Requests: ${specialRequests}, doctor: ${doctor}, treatment: ${treatment}`
-  );
-
   try {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true, // Use `true` for port 465, `false` for all other ports
-      auth: {
-        user: "kberkeyilmaz@gmail.com",
-        pass: "kxwx kcea wyer jmxo",
-      },
-    });
-    async function main() {
-      // send mail with defined transport object
-      const info = await transporter.sendMail({
-        from: `Yeni Bir Mesajınız Var 👻 <${email}>`, // sender address
-        to: "kberkeyilmaz@gmail.com", // list of receivers
-        subject: "healthandwonders.com'dan Yeni Bir Mailiniz Var ✔", // Subject line
-        text: `${specialRequests}`, // plain text body
-        html: `
-        <h1>Yeni Bir Randevu Talebi!</h1>
-        <p>Yeni bir randevu talebi aldınız. Aşağıda detayları bulabilirsiniz.</p>
-        <br>
-        <b>İsim ${name} </b>
-        <br>
-        <b>Email: ${email}</b>
-        <br>
-        <b>Telefon: ${phone}</b>
-        <br>
-        <b>Randevu Tarihi: ${date}</b>
-        <br>
-        <b>Cinsiyet:${gender}</b>
-        <br>
-        <b>Doktor: ${doctor}</b>
-        <br>
-        <b>Tedavi: ${treatment}</b>
-        <br>
-        <b>Özel İstekler: ${specialRequests}</b>
-        
-        
-        `, // html body
-      });
-
-      console.log("Message sent: %s", info.messageId);
-    }
-    main().catch(console.error);
+    await SMTP(email, specialRequests, name, phone, date, gender, doctor, treatment)
     res.redirect("/");
   } catch (error) {
-    console.error("Failed to send email:", error, error.message);
-    res.render("error");
+    res.render("error", {
+      message: "Lütfen tekrar deneyin. Bir hata oluştu.",
+    });
   }
 });
 

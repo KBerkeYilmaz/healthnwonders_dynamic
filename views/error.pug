@@ -1,7 +1,8 @@
 extends layout
 
 block content
-  .d-flex.flex-column.p4(style='height: 50vh; width: 100vw;')
-    h1= message
-    h2= error.status
-    pre #{error.stack}
+  .d-flex.flex-column.p4.align-items-center.justify-content-center(style='height: 50vh; width: 100vw;')
+    h1= message ? message : 'Lütfen tekrar deneyin'
+    h2= error.status ? error.status : 'Error'
+    if error.stack
+     pre #{error.stack}
