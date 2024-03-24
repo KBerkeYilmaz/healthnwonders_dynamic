@@ -266,7 +266,7 @@ block content
             li=t("index.appointmentForm.grid_item5")
         .col-sm-12.col-md-12.col-lg-7
           .contact-panel.mb-50
-            form.contact-panel__form(method="post" action="assets/php/contact.php" id="contactForm")
+            form.contact-panel__form(method="post" action="/api/send-email" id="contactFormIndex")
               .row
                 .col-sm-12
                   h4.contact-panel__title= t('index.appointmentForm.form-title')
@@ -274,17 +274,17 @@ block content
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-widget.form-group-icon
-                    select.form-control
+                    select.form-control(name="contact-treatment" id="contact-treatment" required)
                       option(value="0")= t('index.appointmentForm.form-treatment')
                       each treatment in treatments ? treatments : []
-                        option(value=`${index+1}`)= treatment.name[currentLanguage]
+                        option(value=`${treatment.name[currentLanguage]}`)= treatment.name[currentLanguage]
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-user.form-group-icon
-                    select.form-control
+                    select.form-control(name="contact-doctor" id="contact-doctor" required)
                       option(value="0")= t('index.appointmentForm.form-doctor')
                       each doctor in doctors ? doctors : []
-                        option(value=`${index+1}`)= doctor.name
+                        option(value=`${doctor.name}`)= doctor.name
                 .col-sm-6.col-md-6.col-lg-6
                   .form-group
                     i.icon-news.form-group-icon
@@ -296,7 +296,7 @@ block content
                 .col-sm-4.col-md-4.col-lg-4
                   .form-group
                     i.icon-phone.form-group-icon
-                    input.form-control(type="text", placeholder=t('index.appointmentForm.form-phone'), id="contact-Phone" name="contact-phone", required)
+                    input.form-control(type="text", placeholder=t('index.appointmentForm.form-phone'), id="contact-phone" name="contact-phone", required)
                 .col-sm-4.col-md-4.col-lg-4
                   .form-group.form-group-date
                     i.icon-calendar.form-group-icon
@@ -322,5 +322,4 @@ block content
                   button.btn.btn__primary.btn__rounded.btn__block.btn__xhight.mt-10(type="submit")
                     span=t('index.appointmentForm.form-button')
                       i.icon-arrow-right
-                  .contact-result
   include ./partials/map.pug

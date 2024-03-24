@@ -138,17 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataFR = document.querySelector("form-fr");
   const dataTR = document.querySelector("form-tr");
 
-  // let activeForm = dataTR; // Assume TR is the default active form
-  // activeForm.style.display = "block"; // Show default active form
-
-  // // Function to switch forms based on selected language
-  // function switchLanguage(newActiveForm) {
-  //   $(activeForm).fadeOut("fast", () => {
-  //     $(newActiveForm).fadeIn("fast");
-  //     activeForm = newActiveForm; // Update the active form
-  //   });
-  // }
-
 
   function hideAllSections() {
     $('.form-section').hide();
@@ -183,86 +172,4 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#form-tr").fadeIn("fast");
   });
 
-  // $("#submitForm").on("click", function (event) {
-  //   event.preventDefault(); // Prevent default form submission
-
-  //   // Initialize an empty object to store form data
-  //   let formData = {
-  //     name: {
-  //       tr: "",
-  //       en: "",
-  //       fr: "",
-  //       de: "",
-  //     },
-  //     subTitle: {
-  //       tr: "",
-  //       en: "",
-  //       fr: "",
-  //       de: "",
-  //     },
-  //     abstract: {
-  //       tr: "",
-  //       en: "",
-  //       fr: "",
-  //       de: "",
-  //     },
-  //     description: [
-  //       {
-  //         tr: "",
-  //         en: "",
-  //         fr: "",
-  //         de: "",
-  //       },
-  //     ],
-  //     youtubeLink: $("#youtubeLink").val(), // Assuming youtubeLink has the same ID across all languages
-  //   };
-
-  //   // Assuming you have an array or object to iterate over languages
-  //   let languages = ["tr", "en", "fr", "de"];
-
-  //   languages.forEach((lang) => {
-  //     // Collect values for each language
-  //     formData.name[lang] = $(`input[name='name[${lang}]']`).val();
-  //     formData.subTitle[lang] = $(`textarea[name='subTitle[${lang}]']`).val();
-  //     formData.abstract[lang] = $(`textarea[name='abstract[${lang}]']`).val();
-
-  //     // Handle descriptions (assuming you have multiple descriptions per language)
-  //     $(`.description-${lang}`).each(function (index) {
-  //       if (!formData.description[index]) {
-  //         formData.description.push({ tr: "", en: "", fr: "", de: "" }); // Initialize if doesn't exist
-  //       }
-  //       formData.description[index][lang] = $(this).val(); // Assuming class names like description-tr, description-en, etc.
-  //     });
-  //   });
-
-
-
-
-  // Optional: Handle form submission
-  // $('#submitForm').click(function(e) {
-  //   e.preventDefault();
-  //   // Gather form data and submit it
-  //   console.log('Form submitted');
-  //   // Implement form submission logic here
-  // });
-
-
-
-  // AJAX request
-  // $.ajax({
-  //   url: "/api/treatments", // Your endpoint
-  //   type: "POST",
-  //   contentType: "application/json", // Make sure your server expects JSON body
-  //   data: JSON.stringify(formData), // Convert formData object to JSON string
-  //   success: function (response) {
-  //     // Handle success
-  //     console.log("Form submitted successfully", response);
-  //     // Redirect or update UI as needed
-  //   },
-  //   error: function (xhr, status, error) {
-  //     // Handle error
-  //     console.error("Form submission failed", xhr, status, error);
-  //     // Show error to user or log
-  //   },
-  // });
 });

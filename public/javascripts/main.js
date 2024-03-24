@@ -383,25 +383,18 @@ $(function () {
   // [Zoom Effect on Hovering] Find it in shop-single-product.html
   $(".zoomin").imagezoomsl();
 
-  // const links = document.querySelectorAll('a:not([target="_blank"])');
+});
 
-  // links.forEach(link => {
-  //   link.addEventListener("click", function(e) {
-  //     // Prevent the default link behavior if it's not pointing to an anchor on the same page
-  //     if (!this.getAttribute("href").startsWith('#')) {
-  //       e.preventDefault();
-  //       // Show the preloader
-  //       document.querySelector('.preloader').style.display = 'block';
-  //       // Navigate to the link's href after a short delay
-  //       setTimeout(() => {
-  //         window.location.href = this.getAttribute("href");
-  //       }, 100); // Small delay to ensure preloader shows
-  //     }
-  //   });
-  // });
 
-  // // Hide preloader when page fully loads
-  // window.addEventListener("load", () => {
-  //   document.querySelector('.preloader').style.display = 'none';
-  // });
+document.addEventListener("DOMContentLoaded", function() {
+  const languageSwitcherLinks = document.querySelectorAll('.dropdown-item');
+
+  languageSwitcherLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const newLang = this.getAttribute('href').split('=')[1];
+          document.cookie = `i18next=${newLang}; path=/`; // Set the language cookie
+          window.location.href = this.getAttribute('href'); // Then redirect
+      });
+  });
 });
