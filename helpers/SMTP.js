@@ -12,18 +12,18 @@ async function SMTP(
 ) {
   // send mail with defined transport object
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: "", // SMTP Adresi 
     port: 465,
     secure: true, // Use `true` for port 465, `false` for all other ports
     auth: {
-      user: "kberkeyilmaz@gmail.com", // Gönderen Adresi
-      pass: "vsyz kyin bcdq lcbb", // Gönderen Adresi Şifresi => Google hesabı Uygulama Parolaları, yeni parola oluştur.
+      user: "....", // Gönderen Adresi // Buraya healthandwonders'ın ilgili adresi yazılacak. 
+      pass: "....", // Gönderen Adresi Şifresi => Google hesabı Uygulama Parolaları, yeni parola oluştur.
     },
   });
 
   const info = await transporter.sendMail({
     from: `Yeni Bir Mesajınız Var 👻 <${email}>`, // Gönderen
-    to: "kberkeyilmaz@gmail.com", // Alıcı listesi
+    to: "info@healthandwonders.com", // Alıcı listesi
     subject: "healthandwonders.com'dan Yeni Bir Mailiniz Var ✔", // Subject line
     text: `${specialRequests}`, // plain text body
     html: `
