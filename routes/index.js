@@ -3,7 +3,7 @@ var router = express.Router();
 var { upload } = require("../middlewares/multer");
 const nodemailer = require("nodemailer");
 const { validationResult } = require("express-validator");
-const validationRules = require("../helpers/validationRules"); // Adjust the path based on your project structure
+const validationRules = require("../helpers/validationRules"); 
 const SMTP = require("../helpers/SMTP");
 const cache = require("../helpers/cache");
 const Blog = require("../models/blog");
@@ -25,7 +25,7 @@ router.get("/", function (req, res, next) {
 //------------------------ API BLOG ----------------
 router.post("/api/blog", upload.single("picture"), async (req, res) => {
   const { name, thumbnailDescription, description } = req.body; // Removed description, thumbnailName as it seems to be not used in this scope
-  let picture = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
+  let picture = req.file ? req.file.path : ""; 
   picture = picture.replace(/^public\//, "");
 
   try {
@@ -33,7 +33,7 @@ router.post("/api/blog", upload.single("picture"), async (req, res) => {
       name,
       description,
       thumbnailDescription,
-      image: picture, // Assuming 'image' is the field in your Blog model for storing the picture path
+      image: picture, 
     });
 
     await newBlog.save();
@@ -54,7 +54,7 @@ router.post("/api/blog", upload.single("picture"), async (req, res) => {
 router.post("/api/doctors", upload.single("profilePic"), async (req, res) => {
   const { name, specialty, location, bio, interests, education, experiences } =
     req.body;
-  const profilePic = req.file ? req.file.path : ""; // Adjust if you have a default picture or another handling
+  const profilePic = req.file ? req.file.path : ""; 
 
   try {
     const newDoctor = new Doctor({
@@ -183,13 +183,6 @@ router.post("/api/send-email", validationRules, async (req, res) => {
   }
 });
 
-// router.get("/change-lang/:lang", (req, res) => {
-//   const newLang = req.params.lang;
-//   req.i18n.changeLanguage(newLang, (err) => {
-//     if (err) console.error("Language change error:", err);
-//     res.redirect("back");
-//   });
-// });
 
 // -------------------------- Dynamic Route Handlers --------------------------
 
